@@ -36,11 +36,11 @@ def registrarSolicitud(request, idCliente):
             balance =""
         try:
             estado = EstadoResuMic.objects.get(IdBalanceSituMic = balance.Id)
-        except EstadoResuMic.Exception:
+        except :
             estado =""
         try:
             capacidad = CapacidadPagoMic.objects.get(IdEgresoFlujMic=estado.Id)
-        except CapacidadPagoMic.DoesNotExist:
+        except :
             capacidad =""
         
         alternativas = Alternativa.objects.all()
