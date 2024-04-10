@@ -32,11 +32,11 @@ def registrarSolicitud(request, idCliente):
         cliente = Perfil.objects.get(Id=idCliente)
         try:
             balance = BalanceSituMic.objects.get(Estado="1", IdPerfil = idCliente )
-        except BalanceSituMic.DoesNotExist:
+        except BalanceSituMic.Exception:
             balance =""
         try:
             estado = EstadoResuMic.objects.get(IdBalanceSituMic = balance.Id)
-        except EstadoResuMic.DoesNotExist:
+        except EstadoResuMic.Exception:
             estado =""
         try:
             capacidad = CapacidadPagoMic.objects.get(IdEgresoFlujMic=estado.Id)
