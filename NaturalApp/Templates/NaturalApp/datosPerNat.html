@@ -267,17 +267,18 @@
           <span class="bar"></span>
     </div>
     </div>
-      <div class="col-md-6 col-sm-12 col-xs-12">
-        <div class="form-group form-animate-text " style="margin-top:5px !important;">
-          <h4>Profesión u oficio del Fiador</h4>
-          <input type="text" list="ocupaciones"   class="form-text" id="profecionC" name="profecionC" maxlength="50"
-          value="{{soli.2.ProfecionFiad}}" required>
-        <datalist id="ocupaciones"  >
-          {% include "TesisApp/ocupaciones.html" %}
-      </datalist>
-      <span class="bar"></span>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="form-group form-animate-text " style="margin-top:5px !important;">
+          <h4>Profesión u oficio del Fiador<span style="color: #02b3db;" size="font-size:8px;">*</span></h4>
+              <select class="form-text" id="profecionC" name="profecionC"  required >
+                  <option selected disabled >Seleccione</option>
+                  {% for o in ocupaciones %}
+                  <option value="{{o.Id}}" >{{o.Nombre}}</option>
+                  {% endfor %}
+              </select>
+          <span class="bar"></span>
+      </div>
   </div>   
-    </div>
   </div>
   
   <input type="hidden" id="passDPN" name="passDPN" value="0">

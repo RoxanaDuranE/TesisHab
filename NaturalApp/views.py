@@ -21,6 +21,10 @@ def registrarSolicitudNatu(request, idCliente):
    #try:
         cliente = Perfil.objects.get(Id=idCliente)
         try:
+            listao=Ocupacion.objects.filter(Estado="activo")
+        except Ocupacion.DoesNotExist:
+            listao=""
+        try:
             egresosf = EgresosFami.objects.get(Estado="1", IdPerfil= idCliente )
         except:
             egresosf =""
@@ -36,7 +40,7 @@ def registrarSolicitudNatu(request, idCliente):
         
         alternativas = Alternativa.objects.all()
         modelos = ModeloVivi.objects.all()
-        return render(request, "NaturalApp/solicitudNatural.html", {
+        return render(request, "NaturalApp/solicitudNatural.html", {"ocupaciones":listao,
             "cliente":cliente, "ingresosf":ingresosf, "alternativas":alternativas,"modelos":modelos, "capacidaPago":capacidad})
 
     
@@ -344,7 +348,10 @@ def listarSN(request):
     return render(request, "NaturalApp/listarSN.html", {"solicitudes":listSolin})
 
 def editarSolicitudN(request, idSolicitud):
-   
+    try:
+            listao=Ocupacion.objects.filter(Estado="activo")
+    except Ocupacion.DoesNotExist:
+            listao=""
     try:
         solici = Solicitud.objects.get(Id=idSolicitud)
     except Solicitud.DoesNotExist:
@@ -432,7 +439,7 @@ def editarSolicitudN(request, idSolicitud):
     modelos = ModeloVivi.objects.all()
 
     soli = [solici, dps, dpc, gpf, mdl, mdlc, dob, ds, ec, rp, cmt,med]
-    return render(request, "NaturalApp/modificarSolicitudNatural.html", {
+    return render(request, "NaturalApp/modificarSolicitudNatural.html", {"ocupaciones":listao,
         "soli":soli,
         "alternativas":alternativas,
         "modelos":modelos,
@@ -515,6 +522,7 @@ def modSoliNatural(request):
         aestadoCivil=request.POST['estadoCivilC']
         Genero= request.POST['generoC']
         Profecion= request.POST['profecionC']
+        idocu=Ocupacion.objects.get(Id=Profecion)
         
         if(id==""):
             datos = DatosPersFia.objects.update_or_create(IdSolicitud=idSoli,
@@ -529,7 +537,7 @@ def modSoliNatural(request):
             'EdadFiad':edad,
             'EstadoCiviFiad':aestadoCivil,
             'GeneroFiad':Genero  ,
-            'ProfecionFiad': Profecion,    
+            'IdOcupacionFia': idocu,       
             'EstadoFiad':'1',    
             'IdSolicitud':soli })
         else:
@@ -545,7 +553,7 @@ def modSoliNatural(request):
                 'EdadFiad':edad,
                 'EstadoCiviFiad':aestadoCivil,
                 'GeneroFiad':Genero  ,
-                'ProfecionFiad': Profecion,   
+                'IdOcupacionFia': idocu,       
                 'EstadoFiad':'1',      
                 'IdSolicitud':soli })
             
