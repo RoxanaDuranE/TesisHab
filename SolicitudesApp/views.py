@@ -32,7 +32,7 @@ def registrarSolicitud(request, idCliente):
         cliente = Perfil.objects.get(Id=idCliente)
         try:
             balance = BalanceSituMic.objects.get(Estado="1", IdPerfil = idCliente )
-        except BalanceSituMic.Exception:
+        except :
             balance =""
         try:
             estado = EstadoResuMic.objects.get(IdBalanceSituMic = balance.Id)
