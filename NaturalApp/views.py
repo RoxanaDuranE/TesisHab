@@ -4,7 +4,7 @@ from django.core.serializers import serialize
 from django.shortcuts import render,redirect, HttpResponse
 from ClienteApp.models import *
 from django.contrib import messages
-from ConfiguracionApp.models import Alternativa, ModeloVivi, Agencia
+from ConfiguracionApp.models import Alternativa, ModeloVivi, Agencia, Ocupacion
 from ListaChequeoApp.models import ListaCheq
 from NaturalApp.models import *
 from SolicitudesApp.models import *
