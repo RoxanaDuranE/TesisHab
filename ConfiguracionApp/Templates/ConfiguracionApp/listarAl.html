@@ -1,0 +1,55 @@
+<!-- /con la linea del extends se hereda lo que tiene el index -->
+{% extends "TesisApp/base.html" %}
+{% load static %}<!-- /carga lo que esta en la carpeta static para linkear-->
+{% block titulo %}Lista de Alternativas{% endblock titulo %}<!-- /el titulo del formulario-->
+
+{% block content %}<!-- /abrir el bloque de contenido-->
+<p></p>
+                    <table id="example" class="table table-striped table-bordered">
+                      <thead>
+                        <tr style=" background: #1a1b1b; color: #dff0f2; font-weight: bold; font-size: 14px; ">
+                          <th><center>#</center></th>       
+                          <th><center>Linea </center></th>
+                          <th><center>Monto Minimo </center></th>
+                          <th><center>Monto Maximo</center></th>
+                          <th><center>Plazo en Años </center></th>
+                          <th><center>Plazo en Meses </center></th>
+                          <th><center>Tasa de Interes</center></th>
+                          <th><center>Opción</center></th>  
+                          
+                        </tr>
+                      </thead>
+
+
+                      <tbody style="color: #000000;">
+                        {% for d in Alternativa %}
+                        <tr>
+                          <td align="center" style="cursor:pointer">{{forloop.counter}}</td>
+                          <td align="left" style="cursor:pointer">{{d.Alternativa}}</td>
+                          <td align="right" style="cursor:pointer">{{d.MontoMini}}</td>
+                          <td align="right" style="cursor:pointer">{{d.MontoMaxi}}</td>
+                          <td align="right" style="cursor:pointer">{{d.Plazo}}</td>
+                          <td align="right" style="cursor:pointer">{{d.PlazoMese}}</td>
+                          <td align="center" style="cursor:pointer">{{d.IdTasaInte.Interes}}%</td>
+                          <td><a href="editarAlt/{{d.Id}}" class="btn btn-info">Editar</a></td> 
+                    
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                   
+                    {% endblock %}
+                    <!-- /cerrar el bloque de contenido-->
+                    {% block js %}
+                    <script>
+                        $(document).ready(function() {
+                            $('#example').DataTable({
+                                responsive: true,
+                                language: {
+                                    url: "{% static 'TesisApp/table/es-ar.json' %}" //Ubicacion del archivo con el json del cambio de idioma.
+                                }
+                            });
+                        });
+                      </script>
+                                           
+                      {% endblock %}

@@ -1,0 +1,107 @@
+<ul class="nav side-menu">
+                 
+    
+  <li><a><i class="fa fa-gear"></i> Configuraciones Generales <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+     
+      
+      <li><a><i class="fa fa-renren"></i> Infraestructura Lote<span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'infraestructura'%} " >Registrar Infraestructura</a></li> 
+          <li><a href="{% url 'listaInfra'%} " >Lista Infraestructura</a></li>       
+        </ul>
+      </li>
+      <li><a><i class="fa fa-renren"></i> Infraestructura Mejora<span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'infraestructuram'%} " >Registrar Infraestructura Mej</a></li> 
+          <li><a href="{% url 'listaInfram'%} " >Lista Infraestructura Mej</a></li>       
+        </ul>
+      </li>
+      <li><a><i class="fa fa-renren"></i> Materiales <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'materiales'%} " >Registro de Materiales</a></li>
+          <li><a href="{% url 'listaMater'%} " >Lista de Materiales</a></li>
+        </ul>
+      </li>
+      
+      
+      
+    </ul>
+  </li>
+  
+  <li><a><i class="fa fa-users"></i> Cliente <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      
+      <li><a href="{% url 'listaClientes' id=request.user.agencia.Id%}">Administrar Clientes</a></li>
+      
+    </ul>
+  </li>
+  
+  
+  
+  <li><a><i class="fa fa-edit"></i> Solicitud <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a><i class="fa fa-renren"></i> Solicitud Personal <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listaRFN' id=request.user.agencia.Id%} " >Listado Reportes Comité</a></li>
+          
+        </ul>
+      </li>
+      <li><a><i class="fa fa-renren"></i> Solicitud Microempresa <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listaRF' id=request.user.agencia.Id%} " >Listado Reportes Comité</a></li>
+             
+        </ul>
+      </li>
+    </ul>
+  </li>
+ 
+  <li><a><i class="fa fa-file-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{% url 'listaHis'%}">Historial</a></li>
+      <li><a href="{% url 'listaCC' id=request.user.agencia.Id %}">Conozca a su Cliente</a></li>
+      <li><a href="{% url 'listaDJ' id=request.user.agencia.Id %}">Declaración Jurada</a></li>
+      <li><a href="{% url 'listaIS' id=request.user.agencia.Id %}">Inscripción Seguro</a></li>
+      <li><a><i class="fa fa-home"></i> Inspección <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listaI' id=request.user.agencia.Id%}">Inspeccion Lote</a></li>
+          <li><a href="{% url 'listaPIL' id=request.user.agencia.Id%}">Primera Inspeccion Lote</a></li>
+          <li><a href="{% url 'listaIM' id=request.user.agencia.Id%}">Inspeccion Mejora</a></li>
+          <li><a href="{% url 'listaPIM' id=request.user.agencia.Id%}">Primera Inspeccion Mejora</a></li>
+        </ul>
+      </li>
+      
+      <li><a><i class="fa fa-home"></i> Presupuestos <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listaPV' id=request.user.agencia.Id%}">Vivienda</a></li>
+          <li><a href="{% url 'listaPVO' id=request.user.agencia.Id%}">Obras Adicionales</a></li>
+          <li><a href="{% url 'listaPM' id=request.user.agencia.Id%}">Mejora</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+
+  <li><a><i class="fa fa-bar-chart-o"></i>Graficas<span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{% url 'grafAgenciaP'%}">Grafica Perfiles por Agencia</a></li>
+      <li><a href="{% url 'grafAgenciaPN'%}">Grafica Perfiles N por Agencia</a></li>
+      <li><a href="{% url 'graficaAT'%}">Grafica Agencia Tipo</a></li>
+      <li><a href="{% url 'graficaATS'%}">Grafica Agencia Tipo Sol</a></li>
+      <li><a href="{% url 'graficaASolic'%}">Grafica Agencia Estado Sol</a></li>
+      <li><a href="{% url 'grafTipoSol'%}">Grafica Tipo Soli</a></li>
+      
+      
+    </ul>
+  </li>
+  <li><a><i class="fa fa-database"></i> Bitacora <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{% url 'listaBit'%}">Lista </a></li>
+      
+    </ul>
+  </li>
+
+ </ul>
+
+
+

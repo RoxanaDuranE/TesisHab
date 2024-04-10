@@ -1,0 +1,143 @@
+<ul class="nav side-menu">
+                 
+    
+    <li><a><i class="fa fa-gear"></i> Configuraciones Generales <span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li><a><i class="fa fa-home"></i> Direcci&oacute;n <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'depto'%}">Registro Departamento</a></li>
+            <li><a href="{% url 'listarDepto'%}">Lista de Departamentos</a></li>
+            <li><a href="{% url 'muni'%}">Registro Municipio</a></li>
+            <li><a href="{% url 'listarMuni'%}">Lista de Municipios</a></li>
+            <li><a href="{% url 'distrito'%}">Registro Distrito</a></li>
+            <li><a href="{% url 'listarDistrito'%}">Lista de Distritos</a></li>
+           
+          </ul>
+        </li>
+        <li><a><i class="fa fa-renren"></i> Agencia <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'registroAgencias'%}">Registro de Agencia</a></li>
+            <li><a href="{% url 'listarAgencias'%}">Lista de Agencias</a></li>
+            
+          </ul>
+        </li>
+        <li><a><i class="fa fa-renren"></i> Zona <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'zonaAgencia'%}">Registro de Zona</a></li>
+            <li><a href="{% url 'asignarZona'%}">Asignar Zona</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-renren"></i> Salario <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'salario'%}">Registro de Salario</a></li>
+            <li><a href="{% url 'listaSalario'%} " >Rangos de salario</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-renren"></i> Intereses <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'tasa'%}">Registro de tasa</a></li>
+            <li><a href="{% url 'listarTasa'%}">Lista tasa int</a></li>
+          </ul>
+        </li>
+        <li><a><i class="fa fa-renren"></i> Alternativas  <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'alternativa'%}">Registro de Alternativas</a></li>
+            <li><a href="{% url 'listarAl'%}">Lista de alternativas</a></li>
+            <li><a href="{% url 'rangoFinan'%}">Rango de financiamiento</a></li>
+            <li><a href="{% url 'listaRanFin'%}">Lista de rangos de financiamiento</a></li>
+                        
+          </ul>
+        </li>
+
+        <li><a><i class="fa fa-renren"></i> Empleados <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'listaEmpleados' id=request.user.agencia.Id%}" >Lista de empleados</a></li>
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li><a><i class="fa fa-users"></i> Cliente <span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li><a href="{% url 'perfil'%}">Perfil de Cliente</a></li>
+        <li><a href="{% url 'listaClientes' id=request.user.agencia.Id%}">Administrar Clientes</a></li>
+        <li><a href="{% url 'listaClientesAdmin'%}">Administrar Clientes Admin</a></li>
+        <li><a href="{% url 'listaPerfilNA' id=request.user.agencia.Id%}">Lista de Perfiles N/A</a></li> 
+        <li><a href="{% url 'listaPerfilNAAdmin'%}">Lista de Perfiles NA Admin</a></li> 
+        
+      </ul>
+    </li>
+    
+    
+    
+    <li><a><i class="fa fa-edit"></i> Solicitud <span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li><a><i class="fa fa-renren"></i> Solicitud Personal <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'listaRFN' id=request.user.agencia.Id%} " >Listado Reportes Comité</a></li>
+            <li><a href="{% url 'listarSNCA' id=request.user.agencia.Id%}">Listado Solicitudes por Agencia</a></li> 
+           
+            
+          </ul>
+        </li>
+        <li><a><i class="fa fa-renren"></i> Solicitud Microempresa <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'listaRF' id=request.user.agencia.Id%} " >Listado Reportes Comité</a></li>
+            <li><a href="{% url 'listaSCA' id=request.user.agencia.Id%}">Listado Solicitudes por Agencia</a></li>   
+               
+          </ul>
+        </li>
+      </ul>
+    </li>
+    
+    <li><a><i class="fa fa-file-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li><a href="{% url 'listaHis'%}">Historial</a></li>
+        <li><a href="{% url 'listaCC' id=request.user.agencia.Id %}">Conozca a su Cliente</a></li>
+        <li><a href="{% url 'listaDJ' id=request.user.agencia.Id %}">Declaración Jurada</a></li>
+        <li><a href="{% url 'listaIS' id=request.user.agencia.Id %}">Inscripción Seguro</a></li>
+        <li><a><i class="fa fa-home"></i> Inspección <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'listaI' id=request.user.agencia.Id%}">Inspeccion Lote</a></li>
+            <li><a href="{% url 'listaPIL' id=request.user.agencia.Id%}">Primera Inspeccion Lote</a></li>
+            <li><a href="{% url 'listaIM' id=request.user.agencia.Id%}">Inspeccion Mejora</a></li>
+            <li><a href="{% url 'listaPIM' id=request.user.agencia.Id%}">Primera Inspeccion Mejora</a></li>
+          </ul>
+        </li>
+        
+        <li><a><i class="fa fa-home"></i> Presupuestos <span class="fa fa-chevron-down"></span></a>
+          <ul class="nav child_menu">
+            <li><a href="{% url 'listaPV' id=request.user.agencia.Id%}">Vivienda</a></li>
+            <li><a href="{% url 'listaPVO' id=request.user.agencia.Id%}">Obras Adicionales</a></li>
+            <li><a href="{% url 'listaPM' id=request.user.agencia.Id%}">Mejora</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+ 
+
+    <li><a><i class="fa fa-bar-chart-o"></i>Graficas<span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li><a href="{% url 'grafAgenciaP'%}">Grafica Perfiles por Agencia</a></li>
+        <li><a href="{% url 'grafAgenciaPN'%}">Grafica Perfiles N/A por Agencia</a></li>
+        <li><a href="{% url 'graficaAT'%}">Grafica Agencia Tipo</a></li>
+        <li><a href="{% url 'graficaATS'%}">Grafica Agencia Tipo Sol</a></li>
+        <li><a href="{% url 'graficaASolic'%}">Grafica Agencia Estado Sol</a></li>
+        <li><a href="{% url 'grafTipoSol'%}">Grafica Tipo Soli</a></li>
+        
+        
+      </ul>
+    </li>
+    <li><a><i class="fa fa-database"></i> Bitacora <span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li><a href="{% url 'listaBit'%}">Lista </a></li>
+        
+      </ul>
+    </li>
+
+   </ul>
+
+ 
+

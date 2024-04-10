@@ -1,0 +1,137 @@
+<div>         <!--  tabla para grupo familiar del solicitante-->
+    <input  type="hidden" id="idGPN" value="{{soli.3.0.Id}}" name="idGPN" maxlength="50"  >
+    <input  type="hidden" id="idGPN" value="{{soli.3.1.Id}}" name="idGPN" maxlength="50"  >
+    <input  type="hidden" id="idGPN" value="{{soli.3.2.Id}}" name="idGPN" maxlength="50"  >
+  
+      <table class="table" >
+        <caption style="text-align: center;">
+          <h2>Grupo Familiar</h2>
+        </caption>
+        <thead>
+          <tr>
+            <th width="350">Nombre</th>
+            <th width="100">Edad</th>
+            <th width="150">Salario $</th>
+            <th width="400">Lugar de Trabajo</th>
+            <th width="150">Parentesco</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;" autocomplete="off" >
+                <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.0.Nombre}}" name="nombreGP" maxlength="50" 
+                  required  >
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" value="{{soli.3.0.Edad}}"  onchange="validarEdadGPN(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="2" placeholder=""
+                  required >
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.0.Salario}}" onchange="validarSalarioGPFN(this)"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="7" placeholder=""
+                  required>
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="trabajoGP" value="{{soli.3.0.Trabajo}}"  name="trabajoGP" maxlength="50" placeholder=""
+                  required>
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" list="parentesco-list" id="parentescoGP" name="parentescoGP" maxlength="50" value="{{soli.3.0.Parentesco}}" 
+                  required>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;" autocomplete="off" >
+                <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.1.Nombre}}" name="nombreGP" maxlength="50" 
+                  required  >
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" value="{{soli.3.1.Edad}}"  onchange="validarEdadGPN(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="2" placeholder=""
+                  required >
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.1.Salario}}" onchange="validarSalarioGPFN(this)"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="7" placeholder=""
+                  required>
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="trabajoGP" value="{{soli.3.1.Trabajo}}"  name="trabajoGP" maxlength="50" placeholder=""
+                  required>
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="parentescoGP" list="parentesco-list" name="parentescoGP" maxlength="50" value="{{soli.3.1.Parentesco}}" 
+                  required>
+              </div>
+            </td>          
+          </tr>
+          <tr>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;" autocomplete="off" >
+                <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.2.Nombre}}" name="nombreGP" maxlength="50" 
+                  required  >
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" value="{{soli.3.2.Edad}}"  onchange="validarEdadGPN(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="2" placeholder=""
+                  required >
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.2.Salario}}" onchange="validarSalarioGPFN(this)"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="7" placeholder=""
+                  required>
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="trabajoGP" value="{{soli.3.2.Trabajo}}"  name="trabajoGP" maxlength="50" placeholder=""
+                  required>
+              </div>
+            </td>
+            <td>
+              <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
+                style="padding-bottom:0px !important;">
+                <input type="text" class="form-text" id="parentescoGP" list="parentesco-list" name="parentescoGP" maxlength="50" value="{{soli.3.2.Parentesco}}" 
+                  required>
+              </div>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div><!-- / fin tabla para grupo familiar del  solicitante-->
+    <input type="hidden" id="passGPN" name="passGPN" value="0">
+    {% include "TesisApp/parentesco.html" %}

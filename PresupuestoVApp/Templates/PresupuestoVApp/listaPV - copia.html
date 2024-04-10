@@ -1,0 +1,59 @@
+
+<!-- /con la linea del extends se hereda lo que tiene el index -->
+{% extends "TesisApp/base.html" %}
+{% load static %}<!-- /carga lo que esta en la carpeta static para linkear-->
+{% block titulo %}Lista de Presupuesto de Vivienda{% endblock titulo %}<!-- /el titulo del formulario-->
+{% block uno %} {% endblock uno %}<!-- /Para el menu de formulario em la llave-->
+{% block dos %}    {% endblock dos %}<!-- /Para el menu de formulario em la llave-->
+
+
+{% block content %}<!-- /abrir el bloque de contenido-->
+
+                    <table id="example" class="table table-striped table-bordered">
+                      <thead>
+                        <tr style=" background: #1a1b1b; color: #dff0f2; font-weight: bold; font-size: 14px; ">
+                          <th>#</th>
+                          <th>Fecha</th>
+                          <th>Dui</th>
+                          <th>Nombre</th>
+                          <th>Modelo</th>
+                          <th>Costo Total</th>
+                          <th>Opción</th>
+                          <th>Opción</th>
+                          <th>Opción</th>
+                         
+                        </tr>
+                      </thead>
+
+                      <tbody style="color: #27575c;">
+                        {% for pv in listap %}
+                        <tr>
+                          <td>{{forloop.counter}}</td>
+                          <td>{{pv.IdPresupuestoViviDatGen.Fecha|date:'Y-m-d'}}</td>
+                          <td>{{pv.IdPresupuestoViviDatGen.IdSolicitud.IdPerfil.Dui}} </td>                        
+                          <td>{{pv.IdPresupuestoViviDatGen.IdSolicitud.IdPerfil.Nombres}} {{ pv.idp.IdSolicitud.IdPerfil.Apellidos}}</td>
+                          <td>{{pv.IdPresupuestoViviDatGen.Modelo}}</td>
+                          <td>{{pv.IdPresupuestoViviDatGen.CostoTotaViv}}</td>
+                          <td><a href="editarPV/{{pv.IdPresupuestoViviDatGen.Id}}" class="btn btn-info">Editar</a></td> 
+                          <td><a href="presupuestovoa/{{pv.IdPresupuestoViviDatGen.Id}}" class="btn btn-warning">Obras Adic</a></td> 
+                          <td><a href="presupuestoVv/{{pv.IdPresupuestoViviDatGen.Id}}" class="btn btn-info">Reporte</a></td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                    {% endblock %}
+                    <!-- /cerrar el bloque de contenido-->
+                    {% block js %}
+                    <script>
+                        $(document).ready(function() {
+                            $('#example').DataTable({
+                                responsive: true,
+                                language: {
+                                    url: "{% static 'TesisApp/table/es-ar.json' %}" //Ubicacion del archivo con el json del cambio de idioma.
+                                }
+                            });
+                        });
+                      </script>
+                      
+                      
+                      {% endblock %}

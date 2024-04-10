@@ -1,0 +1,102 @@
+<ul class="nav side-menu">
+                 
+    
+  <li><a><i class="fa fa-gear"></i> Configuraciones Generales <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a><i class="fa fa-home"></i> Direcci&oacute;n <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listarDepto'%}">Lista de Departamentos</a></li>          
+          <li><a href="{% url 'listarMuni'%}">Lista de Municipios</a></li>          
+          <li><a href="{% url 'listarDistrito'%}">Lista de Distritos</a></li>
+         
+        </ul>
+      </li>
+      <li><a><i class="fa fa-renren"></i> Agencia <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listarAgencias'%}">Lista de Agencias</a></li>
+          
+        </ul>
+      </li>
+     
+      <li><a><i class="fa fa-renren"></i> Alternativas  <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">          
+          <li><a href="{% url 'listarAl'%}">Lista de alternativas</a></li>          
+          <li><a href="{% url 'listaRanFin'%}">Lista de rangos de financiamiento</a></li>
+                      
+        </ul>
+      </li>
+
+      
+      <li><a><i class="fa fa-renren"></i> DICOM<span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{% url 'listaRango'%} " >Lista Rangos DICOM</a></li>       
+        </ul>
+      </li>
+          
+      
+    </ul>
+  </li>
+  
+  <li><a><i class="fa fa-users"></i> Cliente <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{% url 'perfil'%}">Perfil de Cliente</a></li>
+      <!--li><a href="{% url 'listaClientes' id=request.user.agencia.Id%}">Administrar Clientes</a></li-->
+      <li><a href="{% url 'listaClientesAdmin'%}">Administrar Clientes Admin</a></li>
+      
+      
+    </ul>
+  </li>
+  
+
+  
+  <li><a><i class="fa fa-edit"></i> Solicitud <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a><i class="fa fa-renren"></i> Solicitud Personal <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+      
+          <!--li><a href="# " >Listado Solicitudes por Agencia</a></li-->        
+          <li><a href="{% url 'listaRFNAdmin' %} " >Listado Reportes Comité</a></li>
+          <li><a href="{% url 'listaSolicitudesPANAdmin'%}">Solicitudes Pendientes de Aprobación</a></li>
+          <li><a href="{% url 'listaSolicitudesANAdmin' %}">Solicitudes Aprobadas</a></li>
+          <li><a href="{% url 'listaSolicitudesObsNAdmin' %}">Solicitudes Observadas</a></li>
+          <li><a href="{% url 'listaSolicitudesDenNAdmin'%}">Solicitudes Denegadas</a></li>
+        </ul>
+      </li>
+      <li><a><i class="fa fa-renren"></i> Solicitud Microempresa <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          
+          <!--li><a href="# " >Listado Solicitudes por Agencia</a></li--> 
+          <li><a href="{% url 'listaRFAdmin' %} " >Listado Reportes Comité</a></li>
+          <li><a href="{% url 'listaSolicitudesPAAdmin'%}">Solicitudes Pendientes de Aprobación</a></li>
+          <li><a href="{% url 'listaSolicitudesAAdmin' %}">Solicitudes Aprobadas</a></li>
+          <li><a href="{% url 'listaSolicitudesObsAdmin'%}">Solicitudes Observadas</a></li>
+          <li><a href="{% url 'listaSolicitudesDenAdmin'%}">Solicitudes Denegadas</a></li>     
+        </ul>
+      </li>
+    </ul>
+  </li>
+ 
+
+  <li><a><i class="fa fa-bar-chart-o"></i>Graficas<span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{% url 'grafAgenciaP'%}">Grafica Perfiles por Agencia</a></li>
+      <li><a href="{% url 'grafAgenciaPN'%}">Grafica Perfiles N por Agencia</a></li>
+      <li><a href="{% url 'graficaAT'%}">Grafica Agencia Tipo</a></li>
+      <li><a href="{% url 'graficaATS'%}">Grafica Agencia Tipo Sol</a></li>
+      <li><a href="{% url 'graficaASolic'%}">Grafica Agencia Estado Sol</a></li>
+      <li><a href="{% url 'grafTipoSol'%}">Grafica Tipo Soli</a></li>
+      
+      
+    </ul>
+  </li>
+  <li><a><i class="fa fa-database"></i> Bitacora <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{% url 'listaBit'%}">Lista </a></li>
+      
+    </ul>
+  </li>
+
+ </ul>
+
+
+
