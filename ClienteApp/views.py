@@ -695,6 +695,7 @@ def consulta_evaliacion_micro(request):
         except Exception:
            listaId.append("-1") 
         
+        listaId.append("-1") 
 
         print("micro  "+str(listaId)+" p= "+id)
         serialized_data = json.dumps(listaId, default=str)
