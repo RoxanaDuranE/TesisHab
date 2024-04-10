@@ -88,7 +88,7 @@ def registroSolicitudN(request):
             fechaExp="9999-01-01"
         
         datos = DatosPers.objects.create(LugarDuiCli=lugarExp, FechaDuiCli=fechaExp, LugarNaciCli=lugarNac,EstadoCiviCli=aestadoCivil,
-        GeneroClie=Genero , Profesion= Profecion,EstadoClie=estadoC,IdSolicitud=idSoli )
+        GeneroClie=Genero ,EstadoClie=estadoC,IdSolicitud=idSoli )
         
    
     bandera= request.POST['passDPNC']  # guarda datos personales
@@ -481,7 +481,6 @@ def modSoliNatural(request):
     lugarNac=request.POST['lugNaS']
     aestadoCivil=request.POST['estadoCivilS']
     Genero= request.POST['generoS']
-    Profecion= request.POST['profecionS']
 
     try:
         datos = DatosPers.objects.get(IdSolicitud=idSoli)
@@ -494,8 +493,7 @@ def modSoliNatural(request):
             'FechaDuiCli':fechaExp,     
             'LugarNaciCli':lugarNac,
             'EstadoCiviCli':aestadoCivil,
-            'GeneroClie':Genero  ,
-            'Profesion': Profecion,    
+            'GeneroClie':Genero  ,  
             'EstadoClie':'1',    
             'IdSolicitud':soli })
     
