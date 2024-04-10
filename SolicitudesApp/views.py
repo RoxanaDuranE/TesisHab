@@ -229,16 +229,23 @@ def registroSolicitud(request):
         if(edad==""):
             edad="0"
         aestadoCivil=request.POST['estadoCivilC']
-        Genero= request.POST['generoC']        
-        Profecion= request.POST['profecionC']        
-       
+        Genero= request.POST['generoC']   
+        try:     
+            Profecion= request.POST['profecionC']   
+            idocu=Ocupacion.objects.get(Id=Profecion)     
+        except:
+            Profecion=""
         estadoF=1
 
-        idocu=Ocupacion.objects.get(Id=Profecion)
-
-        datos1 = DatosPersFia.objects.create(Tipo=tipo, NombreFiad=nombre, ApellidoFiad=apellido, DuiFiad=dui,LugarDuiFia=lugarExp,
+        
+        if(Profecion!=""):
+            datos1 = DatosPersFia.objects.create(Tipo=tipo, NombreFiad=nombre, ApellidoFiad=apellido, DuiFiad=dui,LugarDuiFia=lugarExp,
         FechaDuiFia=fechaExp, FechaNaciFia=fechaNac,LugarNaciFia=lugarNac,EdadFiad=edad ,EstadoCiviFiad=aestadoCivil,
         GeneroFiad=Genero , IdOcupacionFia= idocu,EstadoFiad=estadoF, IdSolicitud=idSoli )
+        else:
+            datos1 = DatosPersFia.objects.create(Tipo=tipo, NombreFiad=nombre, ApellidoFiad=apellido, DuiFiad=dui,LugarDuiFia=lugarExp,
+        FechaDuiFia=fechaExp, FechaNaciFia=fechaNac,LugarNaciFia=lugarNac,EdadFiad=edad ,EstadoCiviFiad=aestadoCivil,
+        GeneroFiad=Genero ,EstadoFiad=estadoF, IdSolicitud=idSoli )
     #fin datos personales
 
 

@@ -564,13 +564,11 @@ def agenc(request):
         serialized_data = json.dumps(lista_agenciaC,default=str)
         return HttpResponse(serialized_data, content_type="application/json")
 
-
 def administrarPerfil(request, id):
     perfil = Perfil.objects.get(Id=id)    
     ocupaciones = Ocupacion.objects.all()
    
     return render(request, "ClienteApp/administracionPerfil.html", {"perfil":perfil,"ocupaciones":ocupaciones})
-
 
 def consulta_evaliacion_micro(request):    
     id = request.GET['idCliente']  
@@ -833,7 +831,6 @@ def consulta_evaliacion_natural(request):
     else:
         listam = Materiales.objects.filter(Estado="activo")
         return render(request, "PresupuestoApp/presupuesto.html", {"materiales": listam})
-
 
 def consulta_tipo_solicitud(request):    
     id = request.GET['idCliente']

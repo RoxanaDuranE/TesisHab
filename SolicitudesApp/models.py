@@ -51,7 +51,7 @@ class DatosPersFia(models.Model): # para tipo conyuge o codeudor
        EdadFiad= models.IntegerField()      
        EstadoCiviFiad=models.CharField(max_length=30)
        GeneroFiad=models.CharField(max_length=10)
-       IdOcupacionFia= models.ForeignKey('ConfiguracionApp.Ocupacion', on_delete=models.CASCADE)
+       IdOcupacionFia= models.ForeignKey('ConfiguracionApp.Ocupacion',null=True, on_delete=models.CASCADE)
        IdOcupacionDUIFia= models.ForeignKey('ConfiguracionApp.Ocupacion',null=True, on_delete=models.CASCADE, related_name='ocupacion_DUI_fiador')
        EstadoFiad= models.IntegerField()
        IdSolicitud=models.ForeignKey(Solicitud, on_delete=models.CASCADE)

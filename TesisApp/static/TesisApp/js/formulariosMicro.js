@@ -130,7 +130,6 @@ function cambiarUrlMicro(estado) {
         dataType: "json",
         success: function (response) {
             if (response != "-0") {
-                titulo.textContent = "Solicitud Personal"
                 descipcion.textContent = "Progreso: Evaluacion de Microempresa"
                 btnEvaluacioRepo.href = "../../../EvaluacionMicroApp/listaEvaluacionm/evaluacionIM/" + response[0]
                 progresoEvaluacionRepo.classList.remove("progress-bar-dange")
@@ -146,8 +145,6 @@ function cambiarUrlMicro(estado) {
                 }
                 if (parseInt(estadoCliente) > 3) {
                     $('#home-tab').fadeIn();
-
-
                     $('#btnDicom').fadeIn();
                     if (response[11] == "-0") {
                         btnDicom.href = "../../../HistorialApp/listaHis/registroHistCli/" + response[1]
@@ -156,25 +153,27 @@ function cambiarUrlMicro(estado) {
                     }
                     $('#btnlistaChequeo').fadeIn();
                     desactivarAlerta()
-                    btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
-                    btnSolicitudCredito.href = "../../../SolicitudesApp/listaSoli/modificarSolicitudMicro/" + response[1]
+                    progreso = 0.85
                     idSoli = response[1]
-
-                    progresoEvaluacionMicro.classList.remove("progress-bar-dange")
-                    progresoEvaluacionMicro.classList.add("progress-bar-success")
-
-                    progresoSoliMicro.classList.remove("progress-bar-dange")
-                    progresoSoliMicro.classList.add("progress-bar-success")
                     descipcion.textContent = "Progreso: Solicitud registrada"
-
-
                     titulo.textContent = "Solicitud para ingresos provenientes de microempresa"
                     btnSolicitudRepo.onclick = ""
-                    btnSolicitudRepo.href = "../../../SolicitudesApp/listaSC/solic/" + response[1] + "/" + idCliente
+                    btnSolicitudRepo.href = "../../../EvaluacionMicroApp/listaEvaluacionm/solicitudMicro/" + response[1] + "/" + idCliente
                     progresoSolicitudRepo.classList.remove("progress-bar-dange")
                     progresoSolicitudRepo.classList.add("progress-bar-success")
-                    progreso = 1.7
-                    //alert((estadoCliente*10)+"%")
+                    if(response[0] == "-0"){
+                        btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
+                    }else{
+                        btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
+                        btnSolicitudCredito.href = "../../../SolicitudesApp/listaSoli/modificarSolicitudMicro/" + response[1]
+                        progresoEvaluacionMicro.classList.remove("progress-bar-dange")
+                        progresoEvaluacionMicro.classList.add("progress-bar-success")
+    
+                        progresoSoliMicro.classList.remove("progress-bar-dange")
+                        progresoSoliMicro.classList.add("progress-bar-success")
+                        progreso = 0.85
+                    }
+                    
                     if (response[2] == "-0") {
                         btnConozCliente.href = "../../../SolicitudesApp/listaSC/ccliente/" + response[1]
 

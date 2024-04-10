@@ -20,9 +20,20 @@ from TesisApp.views import registroBit
 def registrarSolicitudNatu(request, idCliente):
    #try:
         cliente = Perfil.objects.get(Id=idCliente)
-        egresosf = EgresosFami.objects.get(Estado="1", IdPerfil= idCliente )
-        ingresosf = IngresosFami.objects.get(IdEgresosFami = egresosf.Id)
-        capacidad = CapacidadPagoFam.objects.get(IdEgresosFami=egresosf.Id)
+        try:
+            egresosf = EgresosFami.objects.get(Estado="1", IdPerfil= idCliente )
+        except:
+            egresosf =""
+        try:
+            ingresosf = IngresosFami.objects.get(IdEgresosFami = egresosf.Id)
+        except:
+           ingresosf =""
+        try:
+            capacidad = CapacidadPagoFam.objects.get(IdEgresosFami=egresosf.Id)
+        except:
+           capacidad =""
+        
+        
         alternativas = Alternativa.objects.all()
         modelos = ModeloVivi.objects.all()
         return render(request, "NaturalApp/solicitudNatural.html", {
@@ -99,17 +110,22 @@ def registroSolicitudN(request):
             edad="0"
         aestadoCivil=request.POST['estadoCivilC']
         Genero= request.POST['generoC']
-        try:
-            Profecion= request.POST['profecionC']
-        except :
-           Profecion= " "
-       
+        try:     
+            Profecion= request.POST['profecionC']   
+            idocu=Ocupacion.objects.get(Id=Profecion)     
+        except:
+            Profecion=""
         estadoF=1
 
         
-        datos1 = DatosPersFia.objects.create(Tipo=tipo, NombreFiad=nombre, ApellidoFiad=apellido, DuiFiad=dui,LugarDuiFia=lugarExp,
+        if(Profecion!=""):
+            datos1 = DatosPersFia.objects.create(Tipo=tipo, NombreFiad=nombre, ApellidoFiad=apellido, DuiFiad=dui,LugarDuiFia=lugarExp,
         FechaDuiFia=fechaExp, FechaNaciFia=fechaNac,LugarNaciFia=lugarNac,EdadFiad=edad ,EstadoCiviFiad=aestadoCivil,
-        GeneroFiad=Genero , ProfecionFiad= Profecion,EstadoFiad=estadoF, IdSolicitud=idSoli )
+        GeneroFiad=Genero , IdOcupacionFia= idocu,EstadoFiad=estadoF, IdSolicitud=idSoli )
+        else:
+            datos1 = DatosPersFia.objects.create(Tipo=tipo, NombreFiad=nombre, ApellidoFiad=apellido, DuiFiad=dui,LugarDuiFia=lugarExp,
+        FechaDuiFia=fechaExp, FechaNaciFia=fechaNac,LugarNaciFia=lugarNac,EdadFiad=edad ,EstadoCiviFiad=aestadoCivil,
+        GeneroFiad=Genero ,EstadoFiad=estadoF, IdSolicitud=idSoli )
     #fin datos personales
 
 
