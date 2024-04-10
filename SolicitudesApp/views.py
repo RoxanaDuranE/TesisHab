@@ -30,9 +30,19 @@ def registrarSolicitud(request, idCliente):
         except Ocupacion.DoesNotExist:
             listao=""
         cliente = Perfil.objects.get(Id=idCliente)
-        balance = BalanceSituMic.objects.get(Estado="1", IdPerfil = idCliente )
-        estado = EstadoResuMic.objects.get(IdBalanceSituMic = balance.Id)
-        capacidad = CapacidadPagoMic.objects.get(IdEgresoFlujMic=estado.Id)
+        try:
+            balance = BalanceSituMic.objects.get(Estado="1", IdPerfil = idCliente )
+        except BalanceSituMic.DoesNotExist:
+            balance =""
+        try:
+            estado = EstadoResuMic.objects.get(IdBalanceSituMic = balance.Id)
+        except EstadoResuMic.DoesNotExist:
+            estado =""
+        try:
+            capacidad = CapacidadPagoMic.objects.get(IdEgresoFlujMic=estado.Id)
+        except CapacidadPagoMic.DoesNotExist:
+            capacidad =""
+        
         alternativas = Alternativa.objects.all()
         modelos = ModeloVivi.objects.all()
         return render(request, "SolicitudesApp/solicitudMicro.html", {"ocupaciones":listao,
