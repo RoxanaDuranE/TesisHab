@@ -215,9 +215,7 @@ def registrarEvaluacionm(request):
     idperm.Id=idp
 
     balancesm=BalanceSituMic.objects.create(TipoNego=tiponegocio,IdPerfil=idperm,Estado=1)
-    # cambia estado de perfil a 2 que es para solicitud micro
-    idperm.EstadoSoli=2
-    idperm.save()
+    
 
     idbs= BalanceSituMic.objects.all().last() #obtengo el ultimo registro
 

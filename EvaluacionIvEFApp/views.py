@@ -129,9 +129,7 @@ def registrarEvaluacion(request):
 
     egresosf=EgresosFami.objects.create(Alimentacion=alimentaciongf,Educacion=educaciongf,Transporte=transporte,Salud=saludiio,Afp=afpiio,Servicios=servicios,Alquiler=alquiler,PorcentajePlan=planilla,PorcentajeVent=ventanilla,PorcentajeHplhes=hphes,OtrosDesc=otrosdes,Recreacion=recreacion,Imprevistos=imprevistos ,Total=totalp,Estado=1,IdPerfil=idperf)
     
-    #actualizo estado para administrar el perfil del cliente
-    idperf.EstadoSoli=3
-    idperf.save()
+    
     
     ideg= EgresosFami.objects.all().last() #obtengo el ultimo registro
 
