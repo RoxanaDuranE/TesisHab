@@ -155,7 +155,7 @@ function cambiarUrlMicro(estado) {
                     titulo.textContent = "Solicitud para ingresos provenientes de microempresa"
                     btnSolicitudCredito.href = "../../../SolicitudesApp/listaSoli/modificarSolicitudMicro/" + response[1]
                     btnSolicitudRepo.onclick = ""
-                    btnSolicitudRepo.href = "../../../EvaluacionMicroApp/listaEvaluacionm/solicitudMicro/" + response[1] 
+                    btnSolicitudRepo.href = "../../../SolicitudesApp/listaSC/solic/" + response[1] 
                     progresoSoliMicro.classList.remove("progress-bar-dange")
                     progresoSoliMicro.classList.add("progress-bar-success")
                     progresoSolicitudRepo.classList.remove("progress-bar-dange")
