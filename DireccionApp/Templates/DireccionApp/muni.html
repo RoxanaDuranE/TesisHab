@@ -88,10 +88,10 @@ $("#contact").validate({
   },
   rules: {
     nombre_muni:{
-      minlength:3,
+      minlength:5,
       required: true,
       letras:true,
-      maxlength:60
+      maxlength:22
     },
     id_depto:{
         required:true
@@ -101,8 +101,8 @@ $("#contact").validate({
   messages: {
     nombre_muni:{
         required : "<h2>Debe ingresar el nombre del municipio</h2>",
-        minlength : "<h2>El nombre debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>El nombre debe tener un maximo de 60 caracteres</h2>"
+        minlength : "<h2>El nombre debe tener un minimo de 5 caracteres</h2>",
+        maxlength : "<h2>El nombre debe tener un maximo de 22 caracteres</h2>"
     },
     id_depto:{
         required: "<h2>Seleccione Departamento</h2>"

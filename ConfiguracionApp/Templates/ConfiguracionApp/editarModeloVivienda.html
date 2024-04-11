@@ -12,7 +12,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="form-group form-animate-text " style="margin-top:5px !important;">
             <h4>Tipo de Vivienda</h4>
-            <input type="text" class="form-text" id="tipovivienda" name="tipovivienda"  maxlength="30" value="{{mmv.TipoVivi}}" disabled required>
+            <input type="text" class="form-text" id="tipovivienda" name="tipovivienda"  maxlength="15" value="{{mmv.TipoVivi}}" disabled required>
             <span class="bar"></span>
         </div>
     </div>
@@ -34,7 +34,7 @@
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="form-group form-animate-text " style="margin-top:5px !important;">
               <h4>Monto</h4>
-              <input type="text" class="form-text" id="montov" name="montov" onchange="vSalariom()" maxlength="10" value="{{mmv.MontoCons}}" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "
+              <input type="text" class="form-text" id="montov" name="montov" onchange="vSalariom()" maxlength="15" value="{{mmv.MontoCons}}" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "
               pattern="^\d*(\.\d{0,2})?$" title="Maximo 2 decimales" required>
               <span class="bar"></span>
           </div>
@@ -91,7 +91,7 @@ $("#vivienda").validate({
       minlength:3,
       required: true,
       letras:true,
-      maxlength:30
+      maxlength:15
     },
     modelov:{
       required: true,
@@ -100,7 +100,7 @@ $("#vivienda").validate({
       minlength:2,
       required: true,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
   
   },
@@ -108,12 +108,12 @@ $("#vivienda").validate({
     tipovivienda:{
         required : "<h2>Debe ingresar el tipo de vivienda</h2>",
         minlength : "<h2>EL tipo de vivienda debe tener un minimo de 3 digitos</h2>",
-        maxlength : "<h2>EL tipo de vivienda debe tener un maximo de 30 digitos</h2>"
+        maxlength : "<h2>EL tipo de vivienda debe tener un maximo de 15 digitos</h2>"
     },
     montov:{
         required : "<h2>Debe ingresar el monto de la vivienda</h2>",
         minlength : "<h2>EL monto debe tener un minimo de 2 digitos</h2>",
-        maxlength : "<h2>EL monto debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL monto debe tener un maximo de 15 digitos</h2>"
     },
   
   }

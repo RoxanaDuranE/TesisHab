@@ -106,7 +106,7 @@ class Materiales(models.Model):
 class Infraestructura(models.Model):
     Id= models.AutoField(primary_key=True)
     Nombre= models.CharField(max_length=40)
-    Tipo= models.CharField(max_length=30)
+    Tipo= models.CharField(max_length=3)
     TipoLoteMej= models.CharField(max_length=8)
     Estado= models.CharField(max_length=10)
 
@@ -167,7 +167,7 @@ class RangoFina(models.Model):#Rango de financiamiento
 class ModeloVivi(models.Model): 
     Id= models.AutoField(primary_key=True)
     TipoVivi = models.CharField(max_length=15)  
-    Modelo= models.FileField(upload_to = "documentos/")
+    Modelo= models.FileField(upload_to = "documentos/", blank=True)
     MontoCons= models.DecimalField(decimal_places=2, max_digits=15)
     Descripcion=models.CharField(max_length=300)
 

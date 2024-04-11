@@ -73,13 +73,7 @@ $('input').on('keypress', function(e){
   }
  
 });
-/*
-Swal.fire({
-    titleText:"hola",
-    text:"Mensaje de puta",
-    icon:"success",
-    confirmButtonText: "ok"
-  });*/
+
 
  $.validator.addMethod("letras", function(value, element) {
     return /^[ a-z0-9áéíóúüñ]*$/i.test(value);
@@ -100,7 +94,7 @@ $("#contact").validate({
       minlength:3,
       required: true,
       letras:true,
-      maxlength:60
+      maxlength:25
     },
     agencia:{
       required:true
@@ -110,7 +104,7 @@ $("#contact").validate({
     nombrezona:{
         required : "<h2>Debe ingresar la nombre</h2>",
         minlength : "<h2>El nombre debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>El nombre debe tener un maximo de 60 caracteres</h2>"
+        maxlength : "<h2>El nombre debe tener un maximo de 25 caracteres</h2>"
     },
     agencia:{
       required:"<h2>No hay agencias para asignar zona</h2>"

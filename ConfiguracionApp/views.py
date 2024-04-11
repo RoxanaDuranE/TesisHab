@@ -980,7 +980,10 @@ def tvivienda(request):
 def registrarModeloV(request):
        
     topovivienda=request.POST['tipovivienda']
-    modelo=request.FILES['modelov']
+    try:
+        modelo=request.FILES['modelov']
+    except :
+        modelo=""
     montoc=request.POST['montov']
     descripcion =request.POST['descripcion']
    

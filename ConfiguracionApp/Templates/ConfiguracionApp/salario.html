@@ -14,7 +14,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="form-group form-animate-text " style="margin-top:5px !important;">
             <h4>Tipo de Salario</h4>
-            <input type="text" class="form-text" id="tiposalario" name="tiposalario" onkeyup="LetraM(this)"    maxlength="100" required>
+            <input type="text" class="form-text" id="tiposalario" name="tiposalario" onkeyup="LetraM(this)"  maxlength="65" required>
             <span class="bar"></span>
         </div>
     </div>
@@ -77,10 +77,10 @@ $("#salario").validate({
   
   rules: {
     tiposalario:{
-      minlength:3,
+      minlength:5,
       required: true,
       letrasn:true,
-      maxlength:100
+      maxlength:65
     },
     salariomaximo:{
       minlength:3,
@@ -99,8 +99,8 @@ $("#salario").validate({
   messages: {
     tiposalario:{
         required : "<h2>Debe ingresar el tipo de salario</h2>",
-        minlength : "<h2>EL tipo de salario debe tener un minimo de 3 digitos</h2>",
-        maxlength : "<h2>EL tipo de salario debe tener un maximo de 100 digitos</h2>"
+        minlength : "<h2>EL tipo de salario debe tener un minimo de 5 digitos</h2>",
+        maxlength : "<h2>EL tipo de salario debe tener un maximo de 65 digitos</h2>"
     },
     salariomaximo:{
         required : "<h2>Debe ingresar el salario maximo</h2>",

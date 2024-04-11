@@ -18,7 +18,7 @@
       <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="form-group form-animate-text " style="margin-top:5px !important;">
           <h4>Monto Minimo</h4>
-          <input type="text" class="form-text"    id="montominimo" name="montominimo" value="{{alternativa.MontoMini}}" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "
+          <input type="text" class="form-text"  id="montominimo" name="montominimo" value="{{alternativa.MontoMini}}" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "
           pattern="^\d*(\.\d{0,2})?$" title="Maximo 2 decimales"  required>
           <span class="bar"></span>
   </div>   
@@ -146,19 +146,21 @@ $("#malternativa").validate({
      montominimo:{
       minlength:3,
       required: true,
-      numeros:true
+      numeros:true,
+      maxlength:10
     },
     alternativa:{
       minlength:4,
       required: true,
       letras:true,
-      maxlength:100
+      maxlength:50
 
     },
      montomaximo:{
       minlength:3,
       required: true,
-      numeros:true
+      numeros:true,
+      maxlength:10
 
     },
     plazo:{
@@ -169,18 +171,20 @@ $("#malternativa").validate({
   },
   messages: {
      montominimo:{
-        required : "<h2>Debe ingresar el monto minimo de credito </h2>",
-        minlength : "<h2>EL nombre debe tener un minimo de 3 numeros</h2>"
+        required : "<h2>Debe ingresar el monto mínimo de crédito </h2>",
+        minlength : "<h2>EL monto mínimo debe tener un mínimo de 3 numeros</h2>",
+        maxlength:"<h2>El monto mínimo debe tener un maximo de 10 caracteres</h2>"
     },
     alternativa:{
-      minlength:"<h2>Debe tener un minimo de 4 caracteres</h2>",
+      minlength:"<h2>La alternativa debe tener un minimo de 4 caracteres</h2>",
       required: "<h2>Debe ingresar el dato</h2>",
-      maxlength:"<h2>Debe tener un maximo de 100 caracteres</h2>"
+      maxlength:"<h2>La alternativa debe tener un maximo de 50 caracteres</h2>"
 
     },
      montomaximo:{
-      minlength:"<h2>Debe tener un minimo de 3 caracteres</h2>",
-      required: "<h2>Debe ingresar el monto maximo</h2>"
+      minlength:"<h2>El monto maximo debe tener un mínimo de 3 caracteres</h2>",
+      required: "<h2>Debe ingresar el monto maximo</h2>",
+      maxlength:"<h2>El monto maximo debe tener un maximo de 10 caracteres</h2>"
 
     },
     plazo:{

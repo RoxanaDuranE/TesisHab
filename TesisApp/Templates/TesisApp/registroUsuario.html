@@ -138,48 +138,48 @@
           minlength:3,
           required: true,
           letras:true,
-          maxlength:30
+          maxlength:50
         },
         apellido:{
           minlength:3,
           required: true,
           letras:true,
-          maxlength:30
+          maxlength:50
         },
         contra:{
           minlength:8,
           required: true,
           pass: true,
-          maxlength:20  
+          maxlength:200  
       },
         correo:{
-          minlength:3,
+          minlength:5,
           required: true,
           validaemail:true,
-          maxlength:30
+          maxlength:100
   
       },
      },
      messages: {
        nombre:{
-           required : "<h2>Debe ingresar el nombre del Departamento</h2>",
+           required : "<h2>Debe ingresar el nombre </h2>",
            minlength : "<h2>El nombre debe tener un minimo de 3 caracteres</h2>",
-           maxlength : "<h2>El nombre debe tener un maximo de 30 caracteres</h2>"
+           maxlength : "<h2>El nombre debe tener un maximo de 50 caracteres</h2>"
        },
        apellido:{
             required : "<h2>Debe ingresar los apellidos</h2>",
             minlength : "<h2>El apellido debe tener un minimo de 3 caracteres</h2>",
-            maxlength : "<h2>El apellido debe tener un maximo de 30 caracteres</h2>"
+            maxlength : "<h2>El apellido debe tener un maximo de 50 caracteres</h2>"
         },
        contra:{
             required : "<h2>Debe ingresar una contraseña</h2>",
             minlength : "<h2>La contraseña debe tener un minimo de 8 caracteres</h2>",
-            maxlength : "<h2>La contraseña debe tener un maximo de 30 caracteres</h2>"
+            maxlength : "<h2>La contraseña debe tener un maximo de 200 caracteres</h2>"
         },
         correo:{
             required : "<h2>Debe ingresar el correo</h2>",
-            minlength : "<h2>El correo debe tener un minimo de 8 caracteres</h2>",
-            maxlength : "<h2>El correo debe tener un maximo de 15 caracteres</h2>"
+            minlength : "<h2>El correo debe tener un minimo de 5 caracteres</h2>",
+            maxlength : "<h2>El correo debe tener un maximo de 100 caracteres</h2>"
         },
      },
    });

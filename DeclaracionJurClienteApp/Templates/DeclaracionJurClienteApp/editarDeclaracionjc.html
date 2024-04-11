@@ -256,23 +256,12 @@ $("#declaracionj").validate({
     $(label.parent("div").removeClass("form-animate-error"));
   },
   rules: {
-    nombrepoe:{    
-      required: true,
-      letras:true,
-      minlength:3,
-      maxlength:60
-    },
-    nregfiscal:{
-      minlength:3,
-      required: false,
-      numeroguion:true,
-      maxlength:15
-    },
-    nombrepno:{
+    
+    nombrepn:{
       minlength:3,
       required: true,
       letras:true,
-      maxlength:60
+      maxlength:100
     },
 
     ndui:{
@@ -281,12 +270,7 @@ $("#declaracionj").validate({
       validardui:true,
       maxlength:10
     },
-    nnitemp:{
-      minlength:9,
-      required: false,
-      numeroguion:true,
-      maxlength:15
-    },
+
     tipoop:{
       required: true,
     },
@@ -300,7 +284,7 @@ $("#declaracionj").validate({
       minlength:1,
       required: false,
       letrasn:true,
-      maxlength:20
+      maxlength:10
     },
     fpago:{
       required: true,
@@ -359,43 +343,28 @@ $("#declaracionj").validate({
 
   },
   messages: {
-    nombrepoe:{
-        required : "<h2>Debe ingresar los nombres</h2>",
-        minlength : "<h2>EL nombre debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>EL nombre debe tener un maximo de 60 caracteres</h2>"
-    },
-    nregfiscal:{
-        required : "<h2>Debe ingresar el numero de registro fiscal</h2>",
-        minlength : "<h2>EL numero debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>EL numero debe tener un maximo de 15 caracteres</h2>"
-    },
-    nombrepno:{
+    nombrepn:{
         required : "<h2>Debe ingresar el nombre</h2>",
         minlength : "<h2>EL nombre debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>EL nombre debe tener un maximo de 60 caracteres</h2>"
+        maxlength : "<h2>EL nombre debe tener un maximo de 100 caracteres</h2>"
     },
     ndui:{
-        required : "<h2>Debe ingresar el dui</h2>",
-        minlength : "<h2>EL dui debe tener un minimo de 10 caracteres</h2>",
-        maxlength : "<h2>EL dui debe tener un maximo de 10 caracteres</h2>"
-    },
-    nnitemp:{
-        required : "<h2>Debe ingresar el nit</h2>",
-        minlength : "<h2>EL nit debe tener un minimo de 9 caracteres</h2>",
-        maxlength : "<h2>EL nit debe tener un maximo de 15 caracteres</h2>"
+        required : "<h2>Debe ingresar el DUI</h2>",
+        minlength : "<h2>EL DUI debe tener un minimo de 10 caracteres</h2>",
+        maxlength : "<h2>EL DUI debe tener un maximo de 10 caracteres</h2>"
     },
     tipoop:{
         required : "<h2>Debe ingresar el tipo de operación</h2>",
     },
     ncredito:{
-        required : "<h2>Debe ingresar el numero de credito</h2>",
-        minlength : "<h2>EL numero de credito debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>EL numero de credito debe tener un maximo de 20 caracteres</h2>"
+        required : "<h2>Debe ingresar el número de crédito</h2>",
+        minlength : "<h2>EL número de crédito debe tener un minimo de 3 caracteres</h2>",
+        maxlength : "<h2>EL número de crédito debe tener un maximo de 20 caracteres</h2>"
     },
     plazo:{
         required : "<h2>Debe ingresar el plazo</h2>",
         minlength : "<h2>EL plazo debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>EL plazo debe tener un maximo de 20 caracteres</h2>"
+        maxlength : "<h2>EL plazo debe tener un maximo de 10 caracteres</h2>"
     },
     empleadoen:{
         required : "<h2>Debe ingresar el campo</h2>",

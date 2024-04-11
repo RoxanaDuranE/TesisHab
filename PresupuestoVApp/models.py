@@ -7,7 +7,7 @@ from SolicitudesApp.models import *
 class PresupuestoViviDatGen(models.Model):
     Id= models.AutoField(primary_key=True)
     Fecha= models.DateField(null=False)
-    TiempoCons= models.CharField(max_length=10)
+    TiempoCons= models.CharField(max_length=8)
     Modelo= models.CharField(max_length=20)
     DimensionVivi= models.CharField(max_length=35)
     CantidadVivi= models.IntegerField()

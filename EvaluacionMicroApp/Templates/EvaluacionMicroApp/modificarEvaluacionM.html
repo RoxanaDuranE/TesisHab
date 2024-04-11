@@ -49,7 +49,7 @@
               <td colspan="2" style="text-align: center; font-weight: bold; background-color: aquamarine ; font-size: 17px;">Circulante</td>
               <td >
                 <div class="form-group form-animate-text  " style="margin-top:0px !important; height: 0.1cm; ">
-                  <input type="text" class="form-text"  style="font-weight: bold;" id="circulantea" name="circulantea" value="{{activo.TotalCircAct}}"   maxlength="10" placeholder="$" disabled>
+                  <input type="text" class="form-text"  style="font-weight: bold;" id="circulantea" name="circulantea" value="{{activo.TotalCircAct}}"   maxlength="15" placeholder="$" disabled>
                 </div>
               </td>
               <td colspan="2"  style="text-align: center; font-weight: bold; background-color: aquamarine ; font-size: 17px;"> Circulante</td>
@@ -64,7 +64,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="caja" name="caja" value="{{activo.Caja}}"  oninput="calcularCirculanteA();" maxlength="10" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " placeholder="$">
+                  <input type="text" class="form-text" id="caja" name="caja" value="{{activo.Caja}}"  oninput="calcularCirculanteA();" maxlength="15" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " placeholder="$">
                 </div>
               </td>
               <td colspan="2"  style="font-size: 17px;"> Proveedores</td>
@@ -80,7 +80,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="banco" name="banco" value="{{activo.Bancos}}" oninput="calcularCirculanteA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$">
+                  <input type="text" class="form-text" id="banco" name="banco" value="{{activo.Bancos}}" oninput="calcularCirculanteA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$">
                 </div>
               </td>
               <td colspan="2"  style="font-size: 17px;"> Cuentas por Pagar</td>
@@ -96,7 +96,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="cuentaspc" name="cuentaspc" value="{{activo.CuentasPorCob}}" oninput="calcularCirculanteA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$">
+                  <input type="text" class="form-text" id="cuentaspc" name="cuentaspc" value="{{activo.CuentasPorCob}}" oninput="calcularCirculanteA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$">
                 </div>
               </td>
               <td colspan="2"  style="font-size: 17px;"> Préstamos a 1 año</td>
@@ -112,7 +112,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="inventario" name="inventario" value="{{activo.Inventarios}}" oninput="calcularCirculanteA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$">
+                  <input type="text" class="form-text" id="inventario" name="inventario" value="{{activo.Inventarios}}" oninput="calcularCirculanteA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$">
                 </div>
               </td>
               <td colspan="2"  > </td>
@@ -125,7 +125,7 @@
               <td >
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text"  style="font-weight: bold;" id="fijoa" name="fijoa" value="{{activo.TotalFijoAct}}"  maxlength="10" placeholder="$" disabled>
+                  <input type="text" class="form-text"  style="font-weight: bold;" id="fijoa" name="fijoa" value="{{activo.TotalFijoAct}}"  maxlength="15" placeholder="$" disabled>
                 </div>
               </td>
               <td colspan="2"  style="text-align: center; font-weight: bold; background-color: aquamarine ; font-size: 17px;"> Fijo</td>
@@ -141,7 +141,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="mobiliario" name="mobiliario" value="{{activo.Mobiliario}}" oninput="calcularFijoA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$">
+                  <input type="text" class="form-text" id="mobiliario" name="mobiliario" value="{{activo.Mobiliario}}" oninput="calcularFijoA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$">
                 </div>
               </td>
               <td colspan="2"  style="font-size: 17px;"> Préstamos a Largo Plazo</td>
@@ -157,7 +157,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="terreno" name="terreno" value="{{activo.Terrenos}}" oninput="calcularFijoA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$">
+                  <input type="text" class="form-text" id="terreno" name="terreno" value="{{activo.Terrenos}}" oninput="calcularFijoA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$">
                 </div>
               </td>
               <td colspan="2"  style="font-size: 17px;"> Total Pasivo</td>
@@ -173,7 +173,7 @@
               <td>
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" id="vehiculo" name="vehiculo" value="{{activo.Vehiculos}}" oninput="calcularFijoA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$">
+                  <input type="text" class="form-text" id="vehiculo" name="vehiculo" value="{{activo.Vehiculos}}" oninput="calcularFijoA();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$">
                 </div>
               </td>
               <td colspan="2"  style="font-size: 17px;"> Patrimonio</td>
@@ -206,7 +206,7 @@
               <td style="text-align: center; background-color: aquamarine ;">
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text" style="font-weight: bold;" id="totalact" name="totalact" value="{{activo.TotalActi}}" oninput="calcularTotalE();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$" disabled
+                  <input type="text" class="form-text" style="font-weight: bold;" id="totalact" name="totalact" value="{{activo.TotalActi}}" oninput="calcularTotalE();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$" disabled
                     required>
                 </div>
               </td>
@@ -239,7 +239,7 @@
                   <td colspan="2" style="font-size: 17px;">Ventas Totales</td>
                   <td>
                     <div class="form-group form-animate-text" style="margin-bottom:0px !important; height: 10px; padding-bottom:0px !important;">
-                      <input type="text" class="form-text" style="height: 21px;" id="ventastp" name="ventastp" value="{{estado.VentasTota}}" oninput="calcularCostoV();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$"
+                      <input type="text" class="form-text" style="height: 21px;" id="ventastp" name="ventastp" value="{{estado.VentasTota}}" oninput="calcularCostoV();" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$"
                         required>
                     </div>
                   </td>
@@ -255,7 +255,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; height: 0.5cm;"
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="costovt" name="costovt" oninput="calcularCostoV();" value="{{estado.CostoVent}}" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder="$"
+                      <input type="text" class="form-text" id="costovt" name="costovt" oninput="calcularCostoV();" value="{{estado.CostoVent}}" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="15" placeholder="$"
                         required>
                     </div>
                   </td>
@@ -266,7 +266,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="utilidadb" name="utilidadb" value="{{estado.UtilidadBrut}}"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled > 
+                      <input type="text" class="form-text" id="utilidadb" name="utilidadb" value="{{estado.UtilidadBrut}}"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled > 
                     </div>
                   </td>
 
@@ -277,7 +277,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="gastosg" name="gastosg" value="{{estado.GastosGral}}" oninput="calcularGastosER();"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="gastosg" name="gastosg" value="{{estado.GastosGral}}" oninput="calcularGastosER();"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
 
@@ -288,7 +288,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="transporteer" name="transporteer" value="{{estado.Transporte}}" oninput="calcularGastosER();"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="transporteer" name="transporteer" value="{{estado.Transporte}}" oninput="calcularGastosER();"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
 
@@ -299,7 +299,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="servicioser" name="servicioser" value="{{estado.Servicios}}" oninput="calcularGastosER();"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="servicioser" name="servicioser" value="{{estado.Servicios}}" oninput="calcularGastosER();"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
 
@@ -310,7 +310,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="impuestos" name="impuestos" value="{{estado.Impuestos}}" oninput="calcularGastosER();"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="impuestos" name="impuestos" value="{{estado.Impuestos}}" oninput="calcularGastosER();"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
 
@@ -321,7 +321,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="alquilerer" name="alquilerer" value="{{estado.Alquiler}}" oninput="calcularGastosER();"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="alquilerer" name="alquilerer" value="{{estado.Alquiler}}" oninput="calcularGastosER();"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
 
@@ -332,7 +332,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="cuotaprest" name="cuotaprest" value="{{estado.CuotaPres}}" oninput="calcularGastosER();" maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="cuotaprest" name="cuotaprest" value="{{estado.CuotaPres}}" oninput="calcularGastosER();" maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
 
@@ -343,7 +343,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="imprevistoser" name="imprevistoser" value="{{estado.ImprevistosEstaRes}}" oninput="calcularGastosER();"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text" id="imprevistoser" name="imprevistoser" value="{{estado.ImprevistosEstaRes}}" oninput="calcularGastosER();"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
                  
@@ -353,7 +353,7 @@
                   <td style=" background-color: aquamarine;">
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="utilidadn" name="utilidadn" value="{{estado.UtilidadNeta}}" maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled>
+                      <input type="text" class="form-text" id="utilidadn" name="utilidadn" value="{{estado.UtilidadNeta}}" maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled>
                     </div>
                   </td>
 
@@ -364,7 +364,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; "
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="mensual" name="mensual" value="{{estado.Mensual}}"  maxlength="10" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled >
+                      <input type="text" class="form-text" id="mensual" name="mensual" value="{{estado.Mensual}}"  maxlength="15" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled >
                     </div>
                   </td>
 
@@ -475,7 +475,7 @@
               <td rowspan="2" style="text-align: center;" id="dis">
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text"  id="disponible" name="disponible"  value="{{cpago.Disponible}}" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled >
+                  <input type="text" class="form-text"  id="disponible" name="disponible" oninput="validarDisp();"  value="{{cpago.Disponible}}" placeholder="$" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " disabled >
                 </div>
               </td>
               <style>
@@ -628,140 +628,140 @@ $("#mevaluacionm").validate({
       minlength:5,
       required: true,
       letrasn:true,
-      maxlength:100
+      maxlength:50
     },
     caja:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     proveedor:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     banco:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     cuantaspp:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     cuentaspc:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     prestamocp:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     inventario:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     mobiliario:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     prestamolp:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     terreno:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     vehiculo:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     patrimonio:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     capital:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
 
     ventastp:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     costovt:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     gastosg:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     transporteer:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     servicioser:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     impuestos:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     alquilerer:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     cuotaprest:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     imprevistoser:{
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     },
     alimentaciongf:{
       minlength:2,
@@ -851,124 +851,124 @@ $("#mevaluacionm").validate({
       minlength:1,
       required: false,
       numero:true,
-      maxlength:10
+      maxlength:15
     } 
   },
   messages: {
     tiponeg:{
         required : "<h2>Debe ingresar el tipo de Negocio</h2>",
         minlength : "<h2>EL tipo de Negocio debe tener un minimo de 5 digitos</h2>",
-        maxlength : "<h2>EL tipo de Negocio debe tener un maximo de 100 digitos</h2>"
+        maxlength : "<h2>EL tipo de Negocio debe tener un maximo de 50 digitos</h2>"
     },
     caja:{
         required : "<h2>Debe ingresar el valor de caja</h2>",
         minlength : "<h2>EL valor de caja debe tener un minimo de 2 digitos</h2>",
-        maxlength : "<h2>EL valor de caja debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de caja debe tener un maximo de 15 digitos</h2>"
     },
     proveedor:{
         required : "<h2>Debe ingresar el valor de proveedores</h2>",
         minlength : "<h2>EL valor de proveedores debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de proveedores debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de proveedores debe tener un maximo de 15 digitos</h2>"
     },
     banco:{
         required : "<h2>Debe ingresar el valor de banco</h2>",
         minlength : "<h2>EL valor de banco debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de banco debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de banco debe tener un maximo de 15 digitos</h2>"
     },
     cuantaspp:{
         required : "<h2>Debe ingresar el valor de cuentas por pagar</h2>",
         minlength : "<h2>EL valor de cuentas por pagar debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de cuentas por pagar debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de cuentas por pagar debe tener un maximo de 15 digitos</h2>"
     },
     cuentaspc:{
         required : "<h2>Debe ingresar el valor de cuentas por cobrar</h2>",
         minlength : "<h2>EL valor de cuentas por cobrar debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de cuentas por cobrar debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de cuentas por cobrar debe tener un maximo de 15 digitos</h2>"
     },
     prestamocp:{
         required : "<h2>Debe ingresar el valor de prestamos</h2>",
         minlength : "<h2>EL valor de prestamos debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de prestamos debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de prestamos debe tener un maximo de 15 digitos</h2>"
     },
     inventario:{
         required : "<h2>Debe ingresar el valor de inventarios</h2>",
         minlength : "<h2>EL valor de inventarios debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de inventarios debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de inventarios debe tener un maximo de 15 digitos</h2>"
     },
     mobiliario:{
         required : "<h2>Debe ingresar el valor de mobiliario</h2>",
         minlength : "<h2>EL valor de mobiliario debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de mobiliario debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de mobiliario debe tener un maximo de 15 digitos</h2>"
     },
     prestamolp:{
         required : "<h2>Debe ingresar el valor de prestamos</h2>",
         minlength : "<h2>EL valor de prestamos debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de prestamos debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de prestamos debe tener un maximo de 15 digitos</h2>"
     },
     terreno:{
         required : "<h2>Debe ingresar el valor de terreno</h2>",
         minlength : "<h2>EL valor de terreno debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de terreno debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de terreno debe tener un maximo de 15 digitos</h2>"
     },
     vehiculo:{
         required : "<h2>Debe ingresar el valor de vehiculo</h2>",
         minlength : "<h2>EL valor de vehiculo debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de vehiculo debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de vehiculo debe tener un maximo de 15 digitos</h2>"
     },
     patrimonio:{
         required : "<h2>Debe ingresar el valor de patrimonio</h2>",
         minlength : "<h2>EL valor de patrimonio debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de patrimonio debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de patrimonio debe tener un maximo de 15 digitos</h2>"
     },
     capital:{
         required : "<h2>Debe ingresar el valor de capital</h2>",
         minlength : "<h2>EL valor de capital debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de capital debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de capital debe tener un maximo de 15 digitos</h2>"
     },
     ventastp:{
         required : "<h2>Debe ingresar el valor de ventas</h2>",
         minlength : "<h2>EL valor de ventas debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de ventas debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de ventas debe tener un maximo de 15 digitos</h2>"
     },
     costovt:{
         required : "<h2>Debe ingresar el valor de costo de ventas</h2>",
         minlength : "<h2>EL valor de costo de ventas debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de costo de ventas debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de costo de ventas debe tener un maximo de 15 digitos</h2>"
     },
     gastosg:{
         required : "<h2>Debe ingresar el valor de gastos</h2>",
         minlength : "<h2>EL valor de gastos debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de gastos debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de gastos debe tener un maximo de 15 digitos</h2>"
     },
     transporteer:{
         required : "<h2>Debe ingresar el valor de transporte</h2>",
         minlength : "<h2>EL valor de transporte debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de transporte debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de transporte debe tener un maximo de 15 digitos</h2>"
     },
     servicioser:{
         required : "<h2>Debe ingresar el valor de servicios</h2>",
         minlength : "<h2>EL valor de servicios debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de servicios debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de servicios debe tener un maximo de 15 digitos</h2>"
     },
     impuestos:{
         required : "<h2>Debe ingresar el valor de impuestos</h2>",
         minlength : "<h2>EL valor de impuestos debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de impuestos debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de impuestos debe tener un maximo de 15 digitos</h2>"
     },
     alquilerer:{
         required : "<h2>Debe ingresar el valor de alquiler</h2>",
         minlength : "<h2>EL valor de alquiler debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de alquiler debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de alquiler debe tener un maximo de 15 digitos</h2>"
     },
     cuotaprest:{
         required : "<h2>Debe ingresar el valor de cuota</h2>",
         minlength : "<h2>EL valor de cuota debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de cuota debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de cuota debe tener un maximo de 15 digitos</h2>"
     },
     imprevistoser:{
         required : "<h2>Debe ingresar el valor de imprevistos</h2>",
         minlength : "<h2>EL valor de imprevistos debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de imprevistos debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de imprevistos debe tener un maximo de 15 digitos</h2>"
     },
     alimentaciongf:{
         required : "<h2>Debe ingresar el costo de alimentación</h2>",
@@ -1043,35 +1043,43 @@ $("#mevaluacionm").validate({
     cuota:{
         required : "<h2>Debe ingresar el valor de la cuota</h2>",
         minlength : "<h2>EL valor de la cuota debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de la cuota debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de la cuota debe tener un maximo de 15 digitos</h2>"
     },
   }
 });
 
 $("#btnguardar").click(function(){
 if($("#mevaluacionm").valid()){  
-  document.getElementById("circulantea").disabled= false;
-  document.getElementById("circulantep").disabled = false;
-  document.getElementById("fijoa").disabled = false;
-  document.getElementById("fijop").disabled = false;
-  document.getElementById("totalpasivo").disabled = false;
-  document.getElementById("totalact").disabled = false;
-  document.getElementById("pasivopat").disabled = false;
-  document.getElementById("capital").disabled = false;
+  vdis=document.getElementById("disponible").value;
+  vpdis=document.getElementById("pdisponible").value;
+  vcuo=document.getElementById("cuota").value;
+  vpcuo=document.getElementById("pcuota").value;
+  if(vdis=="" || vpdis =="" || vcuo=="" || vpcuo=="" || vpcuo=="0%"){
+    alertE("Debe Registrar Datos Validos!");
+  }else{
+      document.getElementById("circulantea").disabled = false;
+      document.getElementById("circulantep").disabled = false;
+      document.getElementById("fijoa").disabled = false;
+      document.getElementById("fijop").disabled = false;
+      document.getElementById("totalpasivo").disabled = false;
+      document.getElementById("totalact").disabled = false;
+      document.getElementById("pasivopat").disabled = false;
+      document.getElementById("capital").disabled = false;
 
-  document.getElementById("utilidadb").disabled = false;
-  document.getElementById("utilidadn").disabled = false;
-  document.getElementById("mensual").disabled = false;
-  
-  document.getElementById("negocio").disabled = false;
-  document.getElementById("pendeudamientoa").disabled = false;
-  document.getElementById("pdisponible").disabled = false;
-  document.getElementById("pcuota").disabled = false;
-  document.getElementById("totalp").disabled = false;
-  document.getElementById("totald").disabled = false;
-  document.getElementById("disponible").disabled = false;
-  document.getElementById("superavit").disabled = false;
-  document.getElementById("deficit").disabled = false;
+      document.getElementById("utilidadb").disabled = false;
+      document.getElementById("utilidadn").disabled = false;
+      document.getElementById("mensual").disabled = false;
+      
+      document.getElementById("negocio").disabled = false;
+      document.getElementById("pendeudamientoa").disabled = false;
+      document.getElementById("pdisponible").disabled = false;
+      document.getElementById("pcuota").disabled = false;
+      document.getElementById("totalp").disabled = false;
+      document.getElementById("totald").disabled = false;
+      document.getElementById("disponible").disabled = false;
+      document.getElementById("superavit").disabled = false;
+      document.getElementById("deficit").disabled = false;
+    }
 
 }else{
   alertE("Debe Registrar Datos Validos!");
@@ -1275,9 +1283,29 @@ function calcularDisponible() {  //resta los egresos de los ingresos
       if(isNaN(i)){
         i=0
       }
-      document.getElementById("disponible").value = i - e;
+      
+      dis=i-e;
+      
+      document.getElementById("disponible").value = dis;
+      if(dis>0){
+        document.getElementById("pdisponible").value=(((dis*100)/i).toFixed(2))+'%';
+        validarDisp()
+    
+      }else{
+        document.getElementById("pdisponible").value=0+'%';
+      }
       porcuota()
-  } 
+  }  
+
+  function validarDisp(){
+      pd = parseFloat( document.getElementById("pdisponible").value);
+      if(pd < 30){
+        alertE("El disponible no debe ser menor al 30% ");
+        document.getElementById("disponible").value=" ";
+        document.getElementById("pdisponible").value=" ";
+      }
+
+}
 function calcularTotalE() {    
       a = parseFloat( document.getElementById("alimentaciongf").value);
       e = parseFloat( document.getElementById("educaciongf").value);

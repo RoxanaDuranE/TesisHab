@@ -50,10 +50,10 @@ $("#mtoperaciones").validate({
   
   rules: {
     toperacion:{
-      minlength:6,
+      minlength:5,
       required: true,
       letras:true,
-      maxlength:50
+      maxlength:25
     },
   
 
@@ -61,8 +61,8 @@ $("#mtoperaciones").validate({
   messages: {
     toperacion:{
         required : "<h2>Debe ingresar el Tipo de operación</h2>",
-        minlength : "<h2>El tipo de operación debe tener un minimo de 6 caracteres</h2>",
-        maxlength : "<h2>El tipo de operación debe tener un maximo de 50 caracteres</h2>"
+        minlength : "<h2>El tipo de operación debe tener un minimo de 5 caracteres</h2>",
+        maxlength : "<h2>El tipo de operación debe tener un maximo de 25 caracteres</h2>"
     },
    
   }

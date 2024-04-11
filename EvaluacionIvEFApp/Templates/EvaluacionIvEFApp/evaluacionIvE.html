@@ -37,7 +37,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; height: 0.6cm;"
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text" id="numerob" name="numerob" maxlength="5" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  >
+                      <input type="text" class="form-text" id="numerob" name="numerob" maxlength="10" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  >
                     </div>
                   </td>
                   <td>
@@ -63,7 +63,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; height: 0.6cm;"
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="5" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="10" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
                   <td>
@@ -89,7 +89,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; height: 0.6cm;"
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="5" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 ">
+                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="10" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 ">
                     </div>
                   </td>
                   <td>
@@ -115,7 +115,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important;height: 0.6cm;"
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="5"onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
+                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="10"onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " >
                     </div>
                   </td>
                   <td>
@@ -141,7 +141,7 @@
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important; height: 0.6cm;"
                       style="padding-bottom:0px !important;">
-                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="5" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 ">
+                      <input type="text" class="form-text"  name="numerob" id="numerob" maxlength="10" onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 ">
                     </div>
                   </td>
                   <td>
@@ -265,7 +265,7 @@
               <td rowspan="2" style="text-align: center;" id="dis">
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text"  id="disponible" name="disponible" placeholder="$" disabled>
+                  <input type="text" class="form-text"  id="disponible" name="disponible" oninput="validarDisp();" placeholder="$" disabled>
                 </div>
               </td>
               <style>
@@ -522,20 +522,26 @@ $("#evaluacioni").validate({
       numero:true,
       maxlength:10
     },
-    cuota:{
+    otrosing:{
       minlength:1,
       required: false,
       numero:true,
       maxlength:10
+    },
+    cuota:{
+      minlength:1,
+      required: false,
+      numero:true,
+      maxlength:15
     },
     
 
   },
   messages: {
     numerob:{
-        required : "<h2>Debe ingresar el numero</h2>",
-        minlength : "<h2>EL numero debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL numero debe tener un maximo de 10 digitos</h2>"
+        required : "<h2>Debe ingresar el número</h2>",
+        minlength : "<h2>EL número debe tener un minimo de 1 digitos</h2>",
+        maxlength : "<h2>EL número debe tener un maximo de 10 digitos</h2>"
     },
     descripcionbien:{
         required : "<h2>Debe ingresar la descripción</h2>",
@@ -626,21 +632,29 @@ $("#evaluacioni").validate({
     cuota:{
         required : "<h2>Debe ingresar el valor de la cuota</h2>",
         minlength : "<h2>EL valor de la cuota debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de la cuota debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de la cuota debe tener un maximo de 15 digitos</h2>"
     }
   }
 });
 
 $("#btnguardar").click(function(){
 if($("#evaluacioni").valid()){  
-  document.getElementById("pendeudamientoa").disabled = false;
-  document.getElementById("pdisponible").disabled = false;
-  document.getElementById("pcuota").disabled = false;
-  document.getElementById("totalp").disabled = false;
-  document.getElementById("totald").disabled = false;
-  document.getElementById("disponible").disabled = false;
-  document.getElementById("superavit").disabled = false;
-  document.getElementById("deficit").disabled = false;
+  vdis=document.getElementById("disponible").value;
+  vpdis=document.getElementById("pdisponible").value;
+  vcuo=document.getElementById("cuota").value;
+  vpcuo=document.getElementById("pcuota").value;
+  if(vdis=="" || vpdis =="" || vcuo=="" || vpcuo=="" || vpcuo=="0%"){
+    alertE("Debe Registrar Datos Validos!");
+  }else{
+    document.getElementById("pendeudamientoa").disabled = false;
+    document.getElementById("pdisponible").disabled = false;
+    document.getElementById("pcuota").disabled = false;
+    document.getElementById("totalp").disabled = false;
+    document.getElementById("totald").disabled = false;
+    document.getElementById("disponible").disabled = false;
+    document.getElementById("superavit").disabled = false;
+    document.getElementById("deficit").disabled = false;
+  }  
 
 }else{
   alertE("Debe Registrar Datos Validos!");
@@ -664,13 +678,25 @@ function calcularDisponible() {  //resta los egresos de los ingresos
       
       document.getElementById("disponible").value = dis;
       if(dis>0){
-        document.getElementById("pdisponible").value=(((dis*100)/i).toFixed(2))+'%';
+        cdp=(((dis*100)/i).toFixed(2))
+        document.getElementById("pdisponible").value=cdp+'%';
+        validarDisp()
     
       }else{
         document.getElementById("pdisponible").value=0+'%';
       }
       porcuota()
   }  
+
+  function validarDisp(){
+      pd = parseFloat( document.getElementById("pdisponible").value);
+      if(pd < 30){
+        alertE("El disponible no debe ser menor al 30% ");
+        document.getElementById("disponible").value=" ";
+        document.getElementById("pdisponible").value=" ";
+      }
+
+}
 
 
 function calcularTotalE() {    

@@ -347,7 +347,7 @@ $("#solicitudIs").validate({
     nuevom:{  
       required: true,
       numero:true,
-      minlength:3,
+      minlength:1,
       maxlength:10
     },
     plazo:{  
@@ -361,13 +361,13 @@ $("#solicitudIs").validate({
       required: true,
       letras:true,
       minlength:4,
-      maxlength:30
+      maxlength:50
     },
     estatura:{    
       required: true,
       numero:true,
       minlength:2,
-      maxlength:10
+      maxlength:5
     },
     peso:{
       required:true,
@@ -384,7 +384,7 @@ $("#solicitudIs").validate({
     },
     nuevom:{
         required : "<h2>Debe ingresar el nuevo monto a asegurar</h2>",
-        minlength : "<h2>EL nuevo monto debe tener un minimo de 3 caracteres</h2>",
+        minlength : "<h2>EL nuevo monto debe tener un minimo de 1 caracteres</h2>",
         maxlength : "<h2>EL nuevo monto debe tener un maximo de 10 caracteres</h2>"
     },
     plazo:{
@@ -395,13 +395,13 @@ $("#solicitudIs").validate({
     garantia:{
         required : "<h2>Debe ingresar la garantia</h2>",
         minlength : "<h2>La garantia debe tener un minimo de 4 caracteres</h2>",
-        maxlength : "<h2>La garantia debe tener un maximo de 30 caracteres</h2>"
+        maxlength : "<h2>La garantia debe tener un maximo de 50 caracteres</h2>"
     },
    
     estatura:{
         required : "<h2>Debe ingresar la estatura</h2>",
         minlength : "<h2>La estatura debe tener un minimo de 2 caracteres</h2>",
-        maxlength : "<h2>La estatura debe tener un maximo de 10 caracteres</h2>"
+        maxlength : "<h2>La estatura debe tener un maximo de 5 caracteres</h2>"
     },
     peso:{
         required : "<h2>Debe ingresar el peso</h2>",

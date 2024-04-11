@@ -14,7 +14,7 @@
       <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="form-group form-animate-text " style="margin-top:5px !important;">
             <h4> Estado</h4>
-            <input type="text" class="form-text" id="est" name="est"  value="{{rango.Tipo}}"   maxlength="30" onkeyup="LetraM(this)" required>
+            <input type="text" class="form-text" id="est" name="est"  value="{{rango.Tipo}}"   maxlength="15" onkeyup="LetraM(this)" required>
             <span class="bar"></span>
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="form-group form-animate-text " style="margin-top:5px !important;">
             <h4> Porcentaje de financiamiento</h4>
-            <input type="number" class="form-text" id="porc" name="porc"  value="{{rango.Porcentaje}}" placeholder="Digite numeros de 0 a 100"  maxlength="10" required>
+            <input type="number" class="form-text" id="porc" name="porc"  value="{{rango.Porcentaje}}" placeholder="Digite numeros de 0 a 100"  maxlength="5" required>
             <span class="bar"></span>
         </div>
       </div>
@@ -84,19 +84,24 @@ $("#contact").validate({
       minlength:3,
       required: true,
       letras:true,
-      maxlength:20
+      maxlength:15
     },
     histmax:{
-      minlength:3,
+      minlength:1,
       required: true,
       numero:true,
       maxlength:10
     },
     histmin:{
-      minlength:3,
+      minlength:1,
       required: true,
       numero:true,
       maxlength:10
+    },
+    porc:{
+      minlength:1,
+      required: true,
+      maxlength:5
     },
   
   },
@@ -104,18 +109,23 @@ $("#contact").validate({
     est:{
       required : "<h2>Debe ingresar el estado</h2>",
       minlength : "<h2>El estado debe tener un minimo de 3 digitos</h2>",
-      maxlength : "<h2>El estado debe tener un maximo de 20 digitos</h2>"
+      maxlength : "<h2>El estado debe tener un maximo de 15 digitos</h2>"
   },
     histmax:{
         required : "<h2>Debe ingresar el valor maximo</h2>",
-        minlength : "<h2>El salario debe tener un minimo de 3 digitos</h2>",
-        maxlength : "<h2>El salario debe tener un maximo de 10 digitos</h2>"
+        minlength : "<h2>El valor maximo debe tener un minimo de 1 digitos</h2>",
+        maxlength : "<h2>El valor maximo debe tener un maximo de 10 digitos</h2>"
     },
     histmin:{
         required : "<h2>Debe ingresar el valor minimo</h2>",
-        minlength : "<h2>El salario debe tener un minimo de 3 digitos</h2>",
-        maxlength : "<h2>El salario debe tener un maximo de 10 digitos</h2>"
+        minlength : "<h2>El valor minimo debe tener un minimo de 1 digitos</h2>",
+        maxlength : "<h2>El valor minimo debe tener un maximo de 10 digitos</h2>"
     },
+    porc:{
+        required : "<h2>Debe ingresar el porcentaje</h2>",
+        minlength : "<h2>El porcentaje debe tener un minimo de 1 digitos</h2>",
+        maxlength : "<h2>El porcentaje debe tener un maximo de 5 digitos</h2>"
+    }
   
   }
 });

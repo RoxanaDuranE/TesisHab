@@ -18,7 +18,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Dirección actual del domicilio</h4>
-        <input type="text" class="form-text" id="direActS" name="direActS" maxlength="50" minlength="6"
+        <input type="text" class="form-text" id="direActS" name="direActS" maxlength="150" minlength="8"
           value="{{soli.0.IdPerfil.Direccion}}{{cliente.Direccion}}" disabled required>
         <span class="bar"></span>
       </div>
@@ -26,7 +26,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Dirección actual del domicilio</h4>
-        <input type="text" class="form-text" id="direActC" name="direActC" maxlength="50" minlength="6"
+        <input type="text" class="form-text" id="direActC" name="direActC" maxlength="150" minlength="8"
           value="{{soli.5.Direccion}}" required>
         <span class="bar"></span>
       </div>
@@ -36,7 +36,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Punto de referencia</h4>
-        <input type="text" class="form-text" id="puntoRefS" name="puntoRefS" maxlength="50" minlength="6"
+        <input type="text" class="form-text" id="puntoRefS" name="puntoRefS" maxlength="75" minlength="6"
           value="{{soli.4.Referencia}}" required>
         <span class="bar"></span>
       </div>
@@ -44,7 +44,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Punto de referencia</h4>
-        <input type="text" class="form-text" id="puntoRefC" name="puntoRefC" maxlength="50" minlength="6"
+        <input type="text" class="form-text" id="puntoRefC" name="puntoRefC" maxlength="75" minlength="6"
           value="{{soli.5.Referencia}}" required>
         <span class="bar"></span>
       </div>
@@ -75,7 +75,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Reside desde</h4>
-        <input type="text" class="form-text" id="resideS" name="resideS" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="resideS" name="resideS" maxlength="10" minlength="1"
           value="{{soli.4.ResideDesd}}" required>
         <span class="bar"></span>
       </div>
@@ -83,7 +83,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Reside desde</h4>
-        <input type="text" class="form-text" id="resideC" name="resideC" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="resideC" name="resideC" maxlength="10" minlength="1"
           value="{{soli.5.ResideDesd}}" required>
         <span class="bar"></span>
       </div>
@@ -93,7 +93,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Condición de vivienda </h4>
-        <input type="text" class="form-text" id="condicionS" name="condicionS" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="condicionS" name="condicionS" maxlength="20" minlength="4"
           value="{{soli.4.CondicionVivi}}" required>
         <span class="bar"></span>
       </div>
@@ -101,7 +101,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Condición de vivienda </h4>
-        <input type="text" class="form-text" id="condicionC" name="condicionC" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="condicionC" name="condicionC" maxlength="20" minlength="4"
           value="{{soli.5.CondicionVivi}}" required>
         <span class="bar"></span>
       </div>
@@ -129,7 +129,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Lugar de la microempresa </h4>
-        <input type="text" class="form-text" id="lugrMicroS" name="lugrMicroS" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="lugrMicroS" name="lugrMicroS" maxlength="100" minlength="4"
           value="{{soli.4.LugarTrab}}" required>
         <span class="bar"></span>
       </div>
@@ -137,7 +137,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Lugar de la microempresa </h4>
-        <input type="text" class="form-text" id="lugrMicroC" name="lugrMicroC" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="lugrMicroC" name="lugrMicroC" maxlength="100" minlength="4"
           value="{{soli.5.LugarTrab}}" required>
         <span class="bar"></span>
       </div>
@@ -147,7 +147,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Tiempo de funcionamiento de la microempresa </h4>
-        <input type="text" class="form-text" id="tiempoS" name="tiempoS" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="tiempoS" name="tiempoS" maxlength="10" minlength="1"
           value="{{soli.4.TiempoEmprTieFun}}" required>
 
         <span class="bar"></span>
@@ -156,7 +156,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Tiempo de funcionamiento de la microempresa </h4>
-        <input type="text" class="form-text" id="tiempoC" name="tiempoC" maxlength="50" minlength="4"
+        <input type="text" class="form-text" id="tiempoC" name="tiempoC" maxlength="10" minlength="1"
           value="{{soli.5.TiempoEmprTieFun}}" required>
         <span class="bar"></span>
       </div>
@@ -168,7 +168,7 @@
         <h4>Ingreso(Utilidad neta mensual) </h4>
         <input type="text" class="form-text"
           onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46  " id="salarioS"
-          name="salarioS" maxlength="7" minlength="2" value="{{estado.Mensual}}" disabled
+          name="salarioS" maxlength="10" minlength="2" value="{{estado.Mensual}}" disabled
           required>
 
         <span class="bar"></span>
@@ -179,7 +179,7 @@
         <h4>Ingreso(Utilidad neta mensual) </h4>
         <input type="text" class="form-text"
           onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " id="salarioC"
-          name="salarioC" maxlength="7" minlength="2" value="{{soli.5.SalarioIngr}}" required>
+          name="salarioC" maxlength="10" minlength="2" value="{{soli.5.SalarioIngr}}" required>
         <span class="bar"></span>
       </div>
     </div>
@@ -188,7 +188,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Dirección de microempresa </h4>   
-        <input type="text" class="form-text" id="direccionMS" name="direccionMS" maxlength="100" minlength="4" value="{{soli.4.DireccionTrabMic}}"
+        <input type="text" class="form-text" id="direccionMS" name="direccionMS" maxlength="150" minlength="4" value="{{soli.4.DireccionTrabMic}}"
           required>
         <span class="bar"></span>
       </div>
@@ -196,7 +196,7 @@
     <div class="col-md-6 col-sm-12 col-xs-12">
       <div class="form-group form-animate-text " style="margin-top:5px !important;">
         <h4>Dirección de microempresa </h4>
-        <input type="text" class="form-text" id="direccionMC" name="direccionMC" maxlength="100" minlength="4"
+        <input type="text" class="form-text" id="direccionMC" name="direccionMC" maxlength="150" minlength="4"
           value="{{soli.5.DireccionTrabMic}}" required>
         <span class="bar"></span>
       </div>

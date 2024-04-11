@@ -257,13 +257,13 @@ autocomplete="off">{%  csrf_token %}
                     minlength: 3,
                     required: true,
                     letras: true,
-                    maxlength: 30
+                    maxlength: 50
                 },
                 apellidos: {
                     minlength: 3,
                     required: true,
                     letras: true,
-                    maxlength: 30
+                    maxlength: 50
                 },
                 fecha:{
                 required:true,
@@ -271,22 +271,22 @@ autocomplete="off">{%  csrf_token %}
                 },              
                 salario:{
                 required:true,
-                minlength:3,
+                minlength:2,
                 maxlength:10,
                 numero:true,            
                 },
                 direccion:{
-                minlength:10,
+                minlength:8,
                 required: true,
                 dire:true,
-                maxlength:100
+                maxlength:150
 
                 },
                 correo:{
-                minlength:3,
+                minlength:8,
                 required: true,
                 validaemail:true,
-                maxlength:30
+                maxlength:50
 
                 },
 
@@ -295,12 +295,12 @@ autocomplete="off">{%  csrf_token %}
                 nombres: {
                     required: "<h2>Debe ingresar los nombres</h2>",
                     minlength: "<h2>El nombre debe tener un minimo de 3 caracteres</h2>",
-                    maxlength: "<h2>El nombre debe tener un maximo de 30 caracteres</h2>"
+                    maxlength: "<h2>El nombre debe tener un maximo de 50 caracteres</h2>"
                 },
                 apellidos: {
                     required: "<h2>Debe ingresar los apellidos</h2>",
                     minlength: "<h2>El nombre debe tener un minimo de 3 caracteres</h2>",
-                    maxlength: "<h2>El nombre debe tener un maximo de 30 caracteres</h2>"
+                    maxlength: "<h2>El nombre debe tener un maximo de 50 caracteres</h2>"
                 },             
                 telefono:{
                     required : "<h2>Debe ingresar el teléfono</h2>",
@@ -313,7 +313,7 @@ autocomplete="off">{%  csrf_token %}
                 },
                 salario:{
                     required : "<h2>Debe ingresar un salario </h2>",
-                    minlength : "<h2>El salario debe tener un minimo de 3 digitos</h2>",
+                    minlength : "<h2>El salario debe tener un minimo de 2 digitos</h2>",
                     maxlength : "<h2>El salario debe tener un maximo de 10 digitos</h2>"
                 },
                 departamento:{
@@ -321,13 +321,13 @@ autocomplete="off">{%  csrf_token %}
                 },
                 direccion:{
                     required : "<h2>Debe ingresar la dirección</h2>",
-                    minlength : "<h2>La direción debe tener un minimo de 10 caracteres</h2>",
-                    maxlength : "<h2>La direción debe tener un maximo de 100 caracteres</h2>"
+                    minlength : "<h2>La direción debe tener un minimo de 8 caracteres</h2>",
+                    maxlength : "<h2>La direción debe tener un maximo de 150 caracteres</h2>"
                 },
                 correo:{
                     required : "<h2>Debe ingresar el correo</h2>",
                     minlength : "<h2>El correo debe tener un minimo de 8 caracteres</h2>",
-                    maxlength : "<h2>El correo debe tener un maximo de 11 caracteres</h2>"
+                    maxlength : "<h2>El correo debe tener un maximo de 50 caracteres</h2>"
                 },
                }
         });

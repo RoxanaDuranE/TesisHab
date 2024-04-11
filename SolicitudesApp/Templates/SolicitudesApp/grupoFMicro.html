@@ -1,7 +1,7 @@
 <div>         <!--  tabla para grupo familiar del solicitante-->
-  <input  type="hidden" id="idGP" value="{{soli.3.0.Id}}" name="idGP" maxlength="50"  >
-  <input  type="hidden" id="idGP" value="{{soli.3.1.Id}}" name="idGP" maxlength="50"  >
-  <input  type="hidden" id="idGP" value="{{soli.3.2.Id}}" name="idGP" maxlength="50"  >
+  <input  type="hidden" id="idGP" value="{{soli.3.0.Id}}" name="idGP"  >
+  <input  type="hidden" id="idGP" value="{{soli.3.1.Id}}" name="idGP"  >
+  <input  type="hidden" id="idGP" value="{{soli.3.2.Id}}" name="idGP"  >
 
     <table class="table" >
       <caption style="text-align: center;">
@@ -22,21 +22,21 @@
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;" autocomplete="off" >
-              <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.0.Nombre}}" name="nombreGP" maxlength="50" 
+              <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.0.Nombre}}" name="nombreGP" maxlength="100" 
                 required  >
             </div>
           </td>
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" value="{{soli.3.0.Edad}}"  onchange="validarEdadGP(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="2" placeholder=""
+              <input type="text" class="form-text" value="{{soli.3.0.Edad}}"  onchange="validarEdadGP(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="3" placeholder=""
                 required >
             </div>
           </td>
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.0.Salario}}"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="7" placeholder=""
+              <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.0.Salario}}"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder=""
                 required>
             </div>
           </td>
@@ -50,7 +50,7 @@
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" list="parentesco-list" id="parentescoGP" name="parentescoGP" maxlength="50" value="{{soli.3.0.Parentesco}}" 
+              <input type="text" class="form-text" list="parentesco-list" id="parentescoGP" name="parentescoGP" maxlength="30" value="{{soli.3.0.Parentesco}}" 
                 required>
             </div>
           </td>
@@ -59,21 +59,21 @@
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;" autocomplete="off" >
-              <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.1.Nombre}}" name="nombreGP" maxlength="50" 
+              <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.1.Nombre}}" name="nombreGP" maxlength="100" 
                 required  >
             </div>
           </td>
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" value="{{soli.3.1.Edad}}"  onchange="validarEdadGP(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="2" placeholder=""
+              <input type="text" class="form-text" value="{{soli.3.1.Edad}}"  onchange="validarEdadGP(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="3" placeholder=""
                 required >
             </div>
           </td>
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.1.Salario}}"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="7" placeholder=""
+              <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.1.Salario}}"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder=""
                 required>
             </div>
           </td>
@@ -87,7 +87,7 @@
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" id="parentescoGP" list="parentesco-list" name="parentescoGP" maxlength="50" value="{{soli.3.1.Parentesco}}" 
+              <input type="text" class="form-text" id="parentescoGP" list="parentesco-list" name="parentescoGP" maxlength="30" value="{{soli.3.1.Parentesco}}" 
                 required>
             </div>
           </td>          
@@ -96,21 +96,21 @@
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;" autocomplete="off" >
-              <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.2.Nombre}}" name="nombreGP" maxlength="50" 
+              <input autocomplete="off" type="text" class="form-text" id="nombreGP" value="{{soli.3.2.Nombre}}" name="nombreGP" maxlength="100" 
                 required  >
             </div>
           </td>
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" value="{{soli.3.2.Edad}}"  onchange="validarEdadGP(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="2" placeholder=""
+              <input type="text" class="form-text" value="{{soli.3.2.Edad}}"  onchange="validarEdadGP(this)" onkeypress="return event.charCode>=48 && event.charCode<=57 " id="edadGP" name="edadGP" maxlength="3" placeholder=""
                 required >
             </div>
           </td>
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.2.Salario}}"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="7" placeholder=""
+              <input type="text" class="form-text" id="salarioGP" name="salarioGP" value="{{soli.3.2.Salario}}"  onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 "  maxlength="10" placeholder=""
                 required>
             </div>
           </td>
@@ -124,7 +124,7 @@
           <td>
             <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
               style="padding-bottom:0px !important;">
-              <input type="text" class="form-text" id="parentescoGP" list="parentesco-list" name="parentescoGP" maxlength="50" value="{{soli.3.2.Parentesco}}" 
+              <input type="text" class="form-text" id="parentescoGP" list="parentesco-list" name="parentescoGP" maxlength="30" value="{{soli.3.2.Parentesco}}" 
                 required>
             </div>
           </td>

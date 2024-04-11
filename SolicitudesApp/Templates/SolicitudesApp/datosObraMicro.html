@@ -15,7 +15,7 @@
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="form-group form-animate-text " style="margin-top:5px !important;">
             <h4>Nombre del dueño de la propiedad</h4>
-            <input type="text" class="form-text" id="duenoME" name="duenoME" maxlength="50" minlength="4"
+            <input type="text" class="form-text" id="duenoME" name="duenoME" maxlength="100" minlength="3"
               value="{{soli.6.Dueno}}" required>
             <span class="bar"></span>
     </div>   
@@ -26,14 +26,14 @@
           <div class="form-group form-animate-text " style="margin-top:5px !important;">
               <h4>Parentesco con el solicitante</h4>
               <input type="text" class="form-text" list="parentesco-list" id="parentescoME" name="parentescoME"
-              maxlength="50" minlength="4" value="{{soli.6.Parentesco}}" required>
+              maxlength="30" minlength="4" value="{{soli.6.Parentesco}}" required>
               <span class="bar"></span>
       </div>
       </div>
         <div class="col-md-6 col-sm-12 col-xs-12">
           <div class="form-group form-animate-text " style="margin-top:5px !important;">
-            <h4>Direccion Exacta de donde se construira</h4>
-            <input type="text" class="form-text" id="direccionE" name="direccionE" maxlength="100" minlength="4"
+            <h4>Dirección Exacta de donde se construira</h4>
+            <input type="text" class="form-text" id="direccionE" name="direccionE" maxlength="150" minlength="4"
               value="{{soli.6.DireccionExac}}" required>
             <span class="bar"></span>
     </div>   
@@ -53,7 +53,7 @@
         <div class="form-group form-animate-text " style="margin-top:5px !important;">
           <h4>Detalle adicional</h4>
           <input type="text" class="form-text" id="detalleAD"
-            name="detalleAD" maxlength="40" minlength="3" value="{{soli.6.DetalleAdic}}" required>
+            name="detalleAD" maxlength="80" minlength="3" value="{{soli.6.DetalleAdic}}" required>
           <span class="bar"></span>
   </div>   
     </div>
@@ -62,7 +62,7 @@
             <h4>Presupuesto de la obra</h4>
             <input type="text" class="form-text"
               onkeypress="return event.charCode>=48 && event.charCode<=57 || event.charCode==46 " id="PresupuestoME"
-              name="PresupuestoME" maxlength="7" minlength="3" value="{{soli.6.Presupuesto}}" required>
+              name="PresupuestoME" maxlength="15" minlength="3" value="{{soli.6.Presupuesto}}" required>
             <span class="bar"></span>
     </div>   
       </div>

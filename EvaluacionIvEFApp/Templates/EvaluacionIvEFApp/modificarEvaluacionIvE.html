@@ -33,11 +33,11 @@
                 </tr>
               </thead>
               <tbody>
-                <input  type="hidden"  value="{{bienes.0.Id}}" name="idbns" id="idbns" maxlength="50"  >
-                <input  type="hidden"  value="{{bienes.1.Id}}" name="idbns"  maxlength="50"  >
-                <input  type="hidden"  value="{{bienes.2.Id}}" name="idbns"  maxlength="50"  >
-                <input  type="hidden"  value="{{bienes.3.Id}}" name="idbns"  maxlength="50"  >
-                <input  type="hidden"  value="{{bienes.4.Id}}" name="idbns"  maxlength="50"  >
+                <input  type="hidden"  value="{{bienes.0.Id}}" name="idbns" id="idbns"  >
+                <input  type="hidden"  value="{{bienes.1.Id}}" name="idbns"   >
+                <input  type="hidden"  value="{{bienes.2.Id}}" name="idbns"   >
+                <input  type="hidden"  value="{{bienes.3.Id}}" name="idbns"   >
+                <input  type="hidden"  value="{{bienes.4.Id}}" name="idbns"   >
                 <tr>
                   <td>
                     <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
@@ -271,7 +271,7 @@
               <td rowspan="2" style="text-align: center;" id="dis">
                 <div class="form-group form-animate-text  " style="margin-bottom:0px !important;"
                   style="padding-bottom:0px !important;">
-                  <input type="text" class="form-text"  id="disponible" name="disponible" value="{{cpago.Disponible}}" placeholder="$" disabled>
+                  <input type="text" class="form-text"  id="disponible" name="disponible" value="{{cpago.Disponible}}" oninput="validarDisp();" placeholder="$" disabled>
                 </div>
               </td>
               <style>
@@ -528,20 +528,26 @@ $("#contact").validate({
       numero:true,
       maxlength:10
     },
-    cuota:{
+    otrosing:{
       minlength:1,
       required: false,
       numero:true,
       maxlength:10
+    },
+    cuota:{
+      minlength:1,
+      required: false,
+      numero:true,
+      maxlength:15
     },
     
   
   },
   messages: {
     numerob:{
-        required : "<h2>Debe ingresar el numero</h2>",
-        minlength : "<h2>EL numero debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL numero debe tener un maximo de 10 digitos</h2>"
+        required : "<h2>Debe ingresar el número</h2>",
+        minlength : "<h2>EL número debe tener un minimo de 1 digitos</h2>",
+        maxlength : "<h2>EL número debe tener un maximo de 10 digitos</h2>"
     },
     descripcionbien:{
         required : "<h2>Debe ingresar la descripción</h2>",
@@ -632,21 +638,30 @@ $("#contact").validate({
     cuota:{
         required : "<h2>Debe ingresar el valor de la cuota</h2>",
         minlength : "<h2>EL valor de la cuota debe tener un minimo de 1 digitos</h2>",
-        maxlength : "<h2>EL valor de la cuota debe tener un maximo de 10 digitos</h2>"
+        maxlength : "<h2>EL valor de la cuota debe tener un maximo de 15 digitos</h2>"
     },
   }
 });
 
 $("#btnguardar").click(function(){
 if($("#mevaluacioni").valid()){  
-  document.getElementById("pendeudamientoa").disabled = false;
-  document.getElementById("pdisponible").disabled = false;
-  document.getElementById("pcuota").disabled = false;
-  document.getElementById("totalp").disabled = false;
-  document.getElementById("totald").disabled = false;
-  document.getElementById("disponible").disabled = false;
-  document.getElementById("superavit").disabled = false;
-  document.getElementById("deficit").disabled = false;
+  vdis=document.getElementById("disponible").value;
+  vpdis=document.getElementById("pdisponible").value;
+  vcuo=document.getElementById("cuota").value;
+  vpcuo=document.getElementById("pcuota").value;
+  if(vdis=="" || vpdis =="" || vcuo=="" || vpcuo=="" || vpcuo=="0%"){
+    alertE("Debe Registrar Datos Validos!");
+    return false;
+  }else{
+    document.getElementById("pendeudamientoa").disabled = false;
+    document.getElementById("pdisponible").disabled = false;
+    document.getElementById("pcuota").disabled = false;
+    document.getElementById("totalp").disabled = false;
+    document.getElementById("totald").disabled = false;
+    document.getElementById("disponible").disabled = false;
+    document.getElementById("superavit").disabled = false;
+    document.getElementById("deficit").disabled = false;
+  }
 
 }else{
   alertE("Debe Registrar Datos Validos!");
@@ -666,9 +681,30 @@ function calcularDisponible() {  //resta los egresos de los ingresos
       if(isNaN(i)){
         i=0
       }
-      document.getElementById("disponible").value = i - e;
+      dis=i-e;
+      
+      document.getElementById("disponible").value = dis;
+      if(dis>0){
+        cdp=(((dis*100)/i).toFixed(2))
+        document.getElementById("pdisponible").value=cdp+'%';
+        validarDisp()
+    
+      }else{
+        document.getElementById("pdisponible").value=0+'%';
+      }
       porcuota()
   }  
+ 
+
+function validarDisp(){
+      pd = parseFloat( document.getElementById("pdisponible").value);
+      if(pd < 30){
+        alertE("El disponible no debe ser menor al 30% ");
+        document.getElementById("disponible").value=" ";
+        document.getElementById("pdisponible").value=" ";
+      }
+
+}
 
 function calcularTotalE() {    
       a = parseFloat( document.getElementById("alimentaciongf").value);

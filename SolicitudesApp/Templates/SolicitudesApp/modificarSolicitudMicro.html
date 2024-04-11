@@ -111,7 +111,7 @@
           <div class="col-md-6 col-sm-6 col-xs-12">
             <!-- /comienzo columna  derecha-->
             <div class="form-group form-animate-text " style="margin-top:0px !important;">
-              <input type="text" class="form-text" disabled id="fechaSM1M" name="fechaSM1M" maxlength="50"
+              <input type="text" class="form-text" disabled id="fechaSM1M" name="fechaSM1M" 
                 placeholder="Fecha" value="{{soli.0.Fecha|date:'d-m-Y'}}" required>
               <input type="hidden" id="fechaSMM" name="fechaSMM" value="{{soli.0.Fecha}}"> 
               <span class="bar"></span>
@@ -121,7 +121,7 @@
           <div class="col-md-6 col-sm-6 col-xs-12">
             <!-- /comienzo columna  derecha-->
             <div class="form-group form-animate-text " style="margin-top:0px !important;">
-              <input type="text" class="form-text" disabled id="" name="" maxlength="50" value="{{soli.0.IdPerfil.IdAgencia.Nombre}}" 
+              <input type="text" class="form-text" disabled id="" name="" maxlength="25" value="{{soli.0.IdPerfil.IdAgencia.Nombre}}" 
                 required>
               <input type="hidden" id="agenciaMod" name="agenciaMod" value="1">
               <span class="bar"></span>
@@ -130,7 +130,7 @@
           <div class="col-md-6 col-sm-6 col-xs-12">
             <!-- /comienzo columna  derecha-->
             <div class="form-group form-animate-text " style="margin-top:0px !important;">
-              <input type="text" class="form-text" disabled id="nMod" name="nMod" maxlength="50" placeholder=""
+              <input type="text" class="form-text" disabled id="nMod" name="nMod" maxlength="12" placeholder=""
                 value="{{soli.0.Numero}}" required>
               <span class="bar"></span>
             </div>
@@ -148,7 +148,7 @@
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
             <div class="form-group form-animate-text " style="margin-top:0px !important;">
-              <input type="text" class="form-text" id="municipioMod" name="municipioMod" maxlength="50"
+              <input type="text" class="form-text" id="municipioMod" name="municipioMod" maxlength="28"
                 value="{{soli.0.IdPerfil.IdDistrito.Distrito}}" required>
               <span class="bar"></span>
             </div>

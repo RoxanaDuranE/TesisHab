@@ -125,21 +125,23 @@ $("#rangoFin").validate({
   },
   rules: {
      montominimo:{
-      minlength:3,
-      required: true,
-      numeros:true
-    },
-    vecesFin:{
       minlength:2,
       required: true,
       numeros:true,
-      maxlength:10
+      maxlength:8
+    },
+    vecesFin:{
+      minlength:1,
+      required: true,
+      numeros:true,
+      maxlength:5
 
     },
      montomaximo:{
       minlength:3,
       required: true,
-      numeros:true
+      numeros:true,
+      maxlength:8
 
     },
     salario:{
@@ -157,17 +159,17 @@ $("#rangoFin").validate({
   messages: {
      montominimo:{
         required : "<h2>Debe ingresar el monto minimo de credito </h2>",
-        minlength : "<h2>EL nombre debe tener un minimo de 3 numeros</h2>"
+        minlength : "<h2>EL monto debe tener un minimo de 2 numeros</h2>",
+        maxlength:"<h2>El monto mínimo debe tener un maximo de 8 caracteres</h2>"
     },
     alternativa:{
-      minlength:"<h2>Debe tener un minimo de 4 caracteres</h2>",
-      required: "<h2>Debe ingresar el dato</h2>",
-      maxlength:"<h2>Debe tener un maximo de 100 caracteres</h2>"
+      required: "<h2>Debe seleccionar la alternativa</h2>"
 
     },
      montomaximo:{
-      minlength:"<h2>Debe tener un minimo de 3 caracteres</h2>",
-      required: "<h2>Debe ingresar el monto maximo</h2>"
+      required: "<h2>Debe ingresar el monto maximo</h2>",
+      minlength:"<h2>El monto maximo debe tener un minimo de 3 caracteres</h2>",
+      maxlength:"<h2>El monto maximo debe tener un maximo de 8 caracteres</h2>"
 
     },
     plazo:{

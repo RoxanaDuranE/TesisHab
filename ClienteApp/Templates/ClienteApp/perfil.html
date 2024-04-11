@@ -254,13 +254,13 @@ $("#perfil").validate({
       minlength:3,
       required: true,
       letras:true,
-      maxlength:30
+      maxlength:50
     },
     apellidos:{
       minlength:3,
       required: true,
       letras:true,
-      maxlength:30
+      maxlength:50
     },
     dui:{
       minlength:10,
@@ -283,7 +283,7 @@ $("#perfil").validate({
    
     salario:{
       required:true,
-      minlength:3,
+      minlength:2,
       maxlength:10,
       numero:true,     
     },
@@ -299,16 +299,16 @@ $("#perfil").validate({
     },
  
     direccion:{
-      minlength:10,
+      minlength:8,
       required: true,
       dire:true,
-      maxlength:100
+      maxlength:150
     },
     correo:{
-      minlength:3,
+      minlength:8,
       required: true,
       validaemail:true,
-      maxlength:30
+      maxlength:50
     },
     contrasena:{
       minlength:8,
@@ -325,12 +325,12 @@ $("#perfil").validate({
     nombres:{
         required : "<h2>Debe ingresar los Nombres</h2>",
         minlength : "<h2>El nombre debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>El nombre debe tener un maximo de 30 caracteres</h2>"
+        maxlength : "<h2>El nombre debe tener un maximo de 50 caracteres</h2>"
     },
     apellidos:{
         required : "<h2>Debe ingresar los Apellidos</h2>",
         minlength : "<h2>El apellido debe tener un minimo de 3 caracteres</h2>",
-        maxlength : "<h2>El apellido debe tener un maximo de 30 caracteres</h2>"
+        maxlength : "<h2>El apellido debe tener un maximo de 50 caracteres</h2>"
     },
     dui:{
         required : "<h2>Debe ingresar el Dui</h2>",
@@ -353,7 +353,7 @@ $("#perfil").validate({
     },
     salario:{
         required : "<h2>Debe ingresar un Salario </h2>",
-        minlength : "<h2>El salario debe tener un minimo de 3 digitos</h2>",
+        minlength : "<h2>El salario debe tener un minimo de 2 digitos</h2>",
         maxlength : "<h2>El salario debe tener un maximo de 10 digitos</h2>"
     },
     departamento:{
@@ -367,22 +367,22 @@ $("#perfil").validate({
     },
     direccion:{
         required : "<h2>Debe ingresar una Dirección</h2>",
-        minlength : "<h2>La direción debe tener un minimo de 10 caracteres</h2>",
-        maxlength : "<h2>La direción debe tener un maximo de 100 caracteres</h2>"
+        minlength : "<h2>La direción debe tener un minimo de 8 caracteres</h2>",
+        maxlength : "<h2>La direción debe tener un maximo de 150 caracteres</h2>"
     },
     correo:{
         required : "<h2>Debe ingresar el Correo</h2>",
-        minlength : "<h2>El correo debe tener un minimo de 8 caracteres</h2>",
-        maxlength : "<h2>El correo debe tener un maximo de 11 caracteres</h2>"
+        minlength : "<h2>El correo debe tener un mínimo de 8 caracteres</h2>",
+        maxlength : "<h2>El correo debe tener un maximo de 50 caracteres</h2>"
     },
     contrasena:{
         required : "<h2>Debe ingresar una Contraseña</h2>",
-        minlength : "<h2>La contraseña debe tener un minimo de 8 caracteres</h2>",
-        maxlength : "<h2>La contraseña debe tener un numero, una mayuscula y minimo de 8 caracteres</h2>"
+        minlength : "<h2>La contraseña debe tener un mínimo de 8 caracteres</h2>",
+        maxlength : "<h2>La contraseña debe tener un maximo de 30 caracteres</h2>"
     },
     rcontrasena:{
         required : "<h2>Debe ingresar una Contraseña</h2>",
-        minlength : "<h2>La contraseña debe tener un minimo de 8 caracteres</h2>",
+        minlength : "<h2>La contraseña debe tener un mínimo de 8 caracteres</h2>",
         maxlength : "<h2>La contraseña debe tener un maximo de 30 caracteres</h2>"
     },
   }

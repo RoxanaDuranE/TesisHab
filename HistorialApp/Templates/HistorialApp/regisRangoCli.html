@@ -32,7 +32,6 @@
           class="form-text"
           id="est"
           name="est"
-          maxlength="10"
           value="{{per.IdPerfil.Nombres}} {{per.IdPerfil.Apellidos}}"
           disabled
         />
@@ -51,10 +50,8 @@
           type="date"
           class="form-text"
           id="fec"
-          name="fec"
-          
+          name="fec" 
           onkeypress=""
-          maxlength="10"
           required
         />
         <span class="bar"></span>
@@ -73,7 +70,7 @@
           id="punt"
           name="punt"
           onchange="compararPuntaje()"
-          maxlength="10"
+          maxlength="5"
           required
         />
         <span class="bar"></span>
@@ -132,41 +129,25 @@ success: function(label) {
 },
 
 rules: {
-  est:{
-    minlength:3,
-    required: true,
-    letras:true,
-    maxlength:20
+  fec:{
+    required: true,   
   },
   punt:{
-    minlength:2,
+    minlength:1,
     required: true,
     numero:true,
-    maxlength:10
-  },
-  histmin:{
-    minlength:3,
-    required: true,
-    numero:true,
-    maxlength:10
+    maxlength:5
   },
 
 },
 messages: {
-  est:{
-    required : "<h2>Debe ingresar el estado</h2>",
-    minlength : "<h2>El estado debe tener un minimo de 3 digitos</h2>",
-    maxlength : "<h2>El estado debe tener un maximo de 20 digitos</h2>"
+  fec:{
+    required : "<h2>Debe ingresar la fecha</h2>",
 },
   punt:{
-      required : "<h2>Debe ingresar el valor maximo</h2>",
-      minlength : "<h2>El salario debe tener un minimo de 3 digitos</h2>",
-      maxlength : "<h2>El salario debe tener un maximo de 10 digitos</h2>"
-  },
-  histmin:{
-      required : "<h2>Debe ingresar el valor minimo</h2>",
-      minlength : "<h2>El salario debe tener un minimo de 3 digitos</h2>",
-      maxlength : "<h2>El salario debe tener un maximo de 10 digitos</h2>"
+      required : "<h2>Debe ingresar el puntaje</h2>",
+      minlength : "<h2>El puntaje debe tener un minimo de 1 digitos</h2>",
+      maxlength : "<h2>El puntaje debe tener un maximo de 5 digitos</h2>"
   },
 
 }

@@ -108,8 +108,10 @@ $("#mtasa").validate({
     
     },
     numerocredito:{
-     required: true,
-     letras:true
+      minlength:5, 
+      required: true,
+      letras:true,
+      maxlength:50
      
     }
   },
@@ -120,9 +122,9 @@ $("#mtasa").validate({
       
     },
     numerocredito:{
-        required : "<h2>Debe ingresar el dato</h2>",
-     
-
+        required : "<h2>Debe ingresar el número de crédito</h2>",
+        minlength : "<h2>El número de crédito debe tener un minimo de 5 caracteres</h2>",
+        maxlength : "<h2>El número de crédito debe tener un maximo de 50 caracteres</h2>"
     }
   },
 });// fin del form 

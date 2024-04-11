@@ -84,22 +84,27 @@
                 nombre : {
                     required : true,
                     minlength : 3,
-                    maxlength : 9
+                    maxlength : 50
                 },
+                apellido:{
+                    minlength:3,
+                    required: true,
+                    maxlength:50
+                    },
                correo: {
                     required : true,
                     minlength : 5,
-                    maxlength : 15
+                    maxlength : 100
                 },
                 contrasena: {
                     required : true,
-                    minlength : 10,
-                    maxlength : 15
+                    minlength : 8,
+                    maxlength : 200
                 },
                 cargo: {
                     required : true,
-                    minlength : 3,
-                    maxlength : 8
+                    minlength : 1,
+                    maxlength : 5
                 }
             },
             messages : {
@@ -107,22 +112,27 @@
                 nombre : {
                     required : "<h2>Debe ingresar un nombre</h2>",
                     minlength : "<h2>EL nombre debe tener un minimo de 3 caracteres</h2>",
-                    maxlength : "<h2>EL nombre debe tener un maximo de 9 caracteres</h2>"
+                    maxlength : "<h2>EL nombre debe tener un maximo de 50 caracteres</h2>"
+                },
+                apellido:{
+                    required : "<h2>Debe ingresar los apellidos</h2>",
+                    minlength : "<h2>El apellido debe tener un minimo de 3 caracteres</h2>",
+                    maxlength : "<h2>El apellido debe tener un maximo de 50 caracteres</h2>"
                 },
                  correo : {
                     required : "<h2>Debe ingresar un correo</h2>",
                     minlength : "<h2>EL correo debe tener un minimo de 5 caracteres</h2>",
-                    maxlength : "<h2>EL correo debe tener un maximo de 15 caracteres</h2>"
+                    maxlength : "<h2>EL correo debe tener un maximo de 100 caracteres</h2>"
                 },
                  contrasena : {
                     required : "<h2>Debe ingresar una contraseña</h2>",
-                    minlength : "<h2>LA contraseña debe tener un minimo de 10 caracteres</h2>",
-                    maxlength : "<h2>LA contraseña debe tener un maximo de 15 caracteres</h2>"
+                    minlength : "<h2>LA contraseña debe tener un minimo de 8 caracteres</h2>",
+                    maxlength : "<h2>LA contraseña debe tener un maximo de 200 caracteres</h2>"
                 },
                  cargo : {
                     required : "<h2>Debe seleccionar un cargo</h2>",
-                    minlength : "<h2>EL cargo debe tener un minimo de 3 caracteres</h2>",
-                    maxlength : "<h2>EL cargoo debe tener un maximo de 8 caracteres</h2>"
+                    minlength : "<h2>EL cargo debe tener un minimo de 1 caracteres</h2>",
+                    maxlength : "<h2>EL cargoo debe tener un maximo de 5 caracteres</h2>"
                 }
             }
         });    

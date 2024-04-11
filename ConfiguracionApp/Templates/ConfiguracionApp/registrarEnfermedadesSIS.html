@@ -52,7 +52,7 @@ $("#fenfermedad").validate({
   
   rules: {
     enfermedadop:{
-      minlength:6,
+      minlength:3,
       required: true,
       letras:true,
       maxlength:50
@@ -63,7 +63,7 @@ $("#fenfermedad").validate({
   messages: {
     enfermedadop:{
         required : "<h2>Debe ingresar la enfermedad o padecimiento</h2>",
-        minlength : "<h2>La enfermedad o padecimiento debe tener un minimo de 6 caracteres</h2>",
+        minlength : "<h2>La enfermedad o padecimiento debe tener un minimo de 3 caracteres</h2>",
         maxlength : "<h2>La enfermedad o padecimiento debe tener un maximo de 50 caracteres</h2>"
     },
    
