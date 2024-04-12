@@ -196,7 +196,7 @@ class solicitudPer(FPDF):
         pdf.cell(w=50,h=5,txt='Profesión u Oficio', border=1,  align='L', fill=0)
         pdf.set_text_color(0,0,0)
         pdf.cell(w=80,h=5,txt=sol.IdPerfil.IdOcupacion.Nombre if hasattr(sol, 'IdPerfil') else '', border=1,  align='L', fill=0)
-        pdf.multi_cell(w=0,h=5,txt=dpf.ProfecionFiad if hasattr(dpf, 'ProfecionFiad') else '', border=1,  align='L', fill=0)
+        pdf.multi_cell(w=0,h=5,txt=dpf.IdOcupacionFia.Nombre if hasattr(dpf, 'ProfecionFiad') else '', border=1,  align='L', fill=0)
         pdf.cell(w=0,h=5,txt='', border='TB',  align='L', ln=1, fill=0)
         pdf.set_text_color(255,255,255)
         pdf.cell(w=0,h=5,txt='Grupo Familiar', border=1, ln=1, align='C', fill=1)
