@@ -479,7 +479,7 @@ def editarD(request):
         perfil.IdOcupacionDUI=idocu
         perfil.save()
     else:
-        fiador = DatosPersFia.objects.get(IsSolicitud =idsol.IdPerfil.Id)
+        fiador = DatosPersFia.objects.get(IdSolicitud =idsol.IdPerfil.Id)
         fiador.IdOcupacionDUIFia=idocu
         fiador.save()
     
