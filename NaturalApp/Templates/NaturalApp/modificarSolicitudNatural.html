@@ -340,6 +340,7 @@
       var estadoExp = ['{{soli.8.0.Estado}}','{{soli.8.1.Estado}}','{{soli.8.2.Estado}}']
       var alternativa = "{{soli.6.IdAlternativa_id}}"
       var destino="{{soli.6.IdModeloVivi_id}}"
+      var ocupacionFiador ="{{soli.2.IdOcupacionFia.Id}}"
       //luego se asignan los optios segun los valores cargados
       $('#estadoCivilS option[value="' + estadoSiv + '"]').prop('selected', true);
       $('#estadoCivilC option[value="' + estadoCivilC + '"]').prop('selected', true);
@@ -348,7 +349,7 @@
       $('#formaPagoNE option[value="' + fpago + '"]').prop('selected', true);
       $('#estadoEC0 option[value="' + estadoExp[0] + '"]').prop('selected', true);
       $('#estadoEC1 option[value="' + estadoExp[1] + '"]').prop('selected', true);
-      
+      $('#profecionC option[value="' + ocupacionFiador + '"]').prop('selected', true);
       obtenerRangoNatural("-0")
 
       //variable de evento para realizar todos los cambios en los select
