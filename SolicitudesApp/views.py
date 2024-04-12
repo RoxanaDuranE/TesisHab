@@ -342,6 +342,9 @@ def registroSolicitud(request):
        if(cuotaME==""):
             cuotaME='0'
        formaPagoME =request.POST['formaPagoME']   
+       if(formaPagoME==""):
+           formaPagoME=""
+
        FechaPagoME =request.POST['FechaPagoME']
 
        ds = Detalle.objects.create(Monto=montoME, Plazo= plazoME, Cuota=cuotaME, 
@@ -710,6 +713,9 @@ def modSoli(request):
         if(cuotaME==""):
             cuotaME=0
         formaPagoME =request.POST['formaPagoME']   
+        if(formaPagoME==""):
+           formaPagoME=""
+           
         FechaPagoME =request.POST['FechaPagoME']
         
         ds = Detalle.objects.update_or_create(IdSolicitud=idSoli, 

@@ -327,7 +327,17 @@ class solicitudPer(FPDF):
         pdf.set_text_color(r,g,b)
         pdf.cell(w=70,h=10,txt='Forma de pago', border=1,  align='L', fill=0)
         pdf.set_xy(80, 30)
-        if det.FormaPago=='Ventanilla':
+        if det.FormaPago=='':
+            pdf.cell(w=30,h=10,txt='Ventanilla', border=0,  align='L', fill=0)
+            pdf.set_xy(105, 32)
+            pdf.cell(w=5,h=5,txt='', border=1,  align='L', fill=0)
+            pdf.set_xy(140, 30)
+            pdf.cell(w=20,h=10,txt='OPI', border=0,  align='L', fill=0)
+            pdf.set_xy(150, 32)
+            pdf.cell(w=5,h=5,txt='', border=1,  align='L', fill=0)
+            pdf.set_xy(170, 30)
+            pdf.multi_cell(w=0, h=10, border='R')
+        elif det.FormaPago=='Ventanilla':
             pdf.cell(w=30,h=10,txt='Ventanilla', border=0,  align='L', fill=0)
             pdf.set_xy(105, 32)
             pdf.cell(w=5,h=5,txt='X', border=1,  align='L', fill=0)

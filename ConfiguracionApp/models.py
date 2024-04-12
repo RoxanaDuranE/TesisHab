@@ -153,7 +153,7 @@ class Alternativa(models.Model):
 
 class RangoFina(models.Model):#Rango de financiamiento
     Id=models.AutoField(primary_key=True)
-    VecesFina=models.DecimalField(max_digits=5, decimal_places=2)
+    VecesFina=models.DecimalField(max_digits=8, decimal_places=2)
     MontoMini=models.DecimalField(max_digits=8, decimal_places=2)
     MontoMaxi=models.DecimalField(max_digits=8, decimal_places=2)
     IdAlternativa=models.ForeignKey(Alternativa, on_delete=models.CASCADE)

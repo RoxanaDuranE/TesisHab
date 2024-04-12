@@ -89,7 +89,7 @@ class Domicilio(models.Model):
     ActividadMicr=models.CharField(max_length=50, null=True)# para micro
     JefeInme=models.CharField(max_length=100, null=True)#para natural
     TiempoEmprTieFun=models.CharField(max_length=10)
-    SalarioIngr=models.DecimalField(max_digits=10, decimal_places=2)
+    SalarioIngr=models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     DireccionTrabMic=models.CharField(max_length=150)
     TelefonoTrabMic=models.CharField(max_length=9)
     Tipo= models.CharField(max_length=12)
@@ -109,7 +109,7 @@ class DatosObra(models.Model):
     DireccionExac=models.CharField(max_length=150)
     IdModeloVivi=models.ForeignKey('ConfiguracionApp.ModeloVivi', on_delete=models.CASCADE)
     DetalleAdic=models.CharField(max_length=80, null=True)
-    Presupuesto=models.DecimalField(max_digits=15, decimal_places=2)
+    Presupuesto=models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True)
     EstadoSoli=models.IntegerField(null=True)
 
     class Meta:
@@ -122,8 +122,8 @@ class Detalle(models.Model):
     IdSolicitud=models.ForeignKey(Solicitud, on_delete=models.CASCADE)
     Monto=models.DecimalField(max_digits=10, decimal_places=2)
     Plazo=models.CharField(max_length=10)
-    Cuota=models.DecimalField(max_digits=10, decimal_places=2)
-    FormaPago=models.CharField(max_length=12)
+    Cuota=models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
+    FormaPago=models.CharField(max_length=12, null=True)
     FechaPago=models.CharField(max_length=15)
     EstadoSoli=models.IntegerField(null=True)
 

@@ -225,6 +225,9 @@ def registroSolicitudN(request):
        if(cuotaNE==""):
             cuotaNE='0'
        formaPagoNE =request.POST['formaPagoNE']   
+       if(formaPagoNE==""):
+           formaPagoNE=""
+
        FechaPagoNE =request.POST['FechaPagoNE']
 
        ds = Detalle.objects.create(Monto=montoNE, Plazo= plazoNE, Cuota=cuotaNE, 
@@ -706,6 +709,9 @@ def modSoliNatural(request):
         if(cuotaNE==""):
             cuotaNE=0
         formaPagoNE =request.POST['formaPagoNE']   
+        if(formaPagoNE==""):
+           formaPagoNE=""
+           
         FechaPagoNE =request.POST['FechaPagoNE']
         
         ds = Detalle.objects.update_or_create(IdSolicitud=idSoli, 
