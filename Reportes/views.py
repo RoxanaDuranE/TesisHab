@@ -29,7 +29,7 @@ from Reportes.solicitudesPA import *
 from Reportes.perfilesNA import *
 from Reportes.solicitudesObs import *
 from Reportes.solicitudesDen import *
-
+from django.contrib import messages
 
 # Create your views here.
 
@@ -62,7 +62,11 @@ def declaracion(request, id, idp):
 def conozcaClient(request, id):
     con=ConozcaC()
     conoz=con.conozcaClie(id)
-    return conoz
+    if (conoz == None):
+         mensaje="Datos guardados"
+         messages.success(request, mensaje)
+    else:
+        return conoz
 
 def seguro(request, id):
     seg=Seguro()
