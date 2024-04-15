@@ -408,7 +408,7 @@ class ConozcaC(FPDF):
             pdf.cell(w=36, h=5, txt='', border='BR', align='L', fill=False)
         else:
             # Verifica si FechaInicAct es un objeto datetime antes de formatearlo
-            if hasattr(cddn, 'FechaInicAct') and isinstance(cddn.FechaInicAct, datetime.datetime):
+            if isinstance(cddn.FechaInicAct, datetime.datetime):
                 formatted_date = cddn.FechaInicAct.strftime("%d/%m/%Y")
             else:
                 formatted_date = ''  # Si FechaInicAct no es datetime, establece como cadena vacía
