@@ -1,5 +1,5 @@
 from fpdf import FPDF
-from datetime import date
+from datetime import date, datetime
 import locale
 from ClienteApp.models import *
 
@@ -57,7 +57,7 @@ class ConozcaC(FPDF):
         try: 
             cddn= ClienteDatoNeg.objects.get(IdClienteDatoGen=id)
         except ClienteDatoNeg.DoesNotExist:
-            cddn="" 
+            cddn= None 
         try: 
             cdrrf= ClienteReciRemFam.objects.filter(IdClienteDatoGen=id)
         except ClienteReciRemFam.DoesNotExist:
@@ -404,12 +404,22 @@ class ConozcaC(FPDF):
         pdf.set_text_color(r,g,b)
         pdf.cell(w=40,h=5,txt='Fecha de inicio de actividades: ' , border='BL', align='L', fill=False)
         pdf.set_text_color(0,0,0)
-        if cddn == '':
-            pdf.cell(w=36,h=5,txt='', border='BR', align='L', fill=False)
-        elif cddn.FechaInicAct != '':
-            pdf.cell(w=36,h=5,txt= (cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else ''), border='BR', align='L', fill=False)
+        if cddn is None or cddn.FechaInicAct is None:
+            pdf.cell(w=36, h=5, txt='', border='BR', align='L', fill=False)
         else:
-            pdf.cell(w=36,h=5,txt= (cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else ''), border='BR', align='L', fill=False)
+            # Verifica si FechaInicAct es un objeto datetime antes de formatearlo
+            if hasattr(cddn, 'FechaInicAct') and isinstance(cddn.FechaInicAct, datetime.datetime):
+                formatted_date = cddn.FechaInicAct.strftime("%d/%m/%Y")
+            else:
+                formatted_date = ''  # Si FechaInicAct no es datetime, establece como cadena vacía
+            
+            pdf.cell(w=36, h=5, txt=formatted_date, border='BR', align='L', fill=False)
+        #if cddn == '':
+        #    pdf.cell(w=36,h=5,txt='', border='BR', align='L', fill=False)
+        #elif cddn.FechaInicAct != '':
+        #    pdf.cell(w=36,h=5,txt= (cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else ''), border='BR', align='L', fill=False)
+        #else:
+        #    pdf.cell(w=36,h=5,txt= (cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else ''), border='BR', align='L', fill=False)
         pdf.set_text_color(r,g,b)
         pdf.cell(w=56,h=5,txt='Rango de ingresos mensuales del negocio: ', border='BL', align='L', fill=False)
         pdf.set_text_color(0,0,0)
