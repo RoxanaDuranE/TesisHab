@@ -404,8 +404,10 @@ class ConozcaC(FPDF):
         pdf.set_text_color(r,g,b)
         pdf.cell(w=40,h=5,txt='Fecha de inicio de actividades: ' , border='BL', align='L', fill=False)
         pdf.set_text_color(0,0,0)
-        if cddn == None:
+        if cddn == '':
             pdf.cell(w=36,h=5,txt='', border='BR', align='L', fill=False)
+        elif cddn.FechaInicAct != '':
+            pdf.cell(w=36,h=5,txt= (cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else ''), border='BR', align='L', fill=False)
         else:
             pdf.cell(w=36,h=5,txt= (cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else ''), border='BR', align='L', fill=False)
         pdf.set_text_color(r,g,b)
