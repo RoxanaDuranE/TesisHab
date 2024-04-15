@@ -116,23 +116,25 @@ def registrarD(request):
     
     idsol= Solicitud.objects.get(Id=ids)
     
+   
+
     
-    clientedg=ClienteDatoGen.objects.create(Fecha=fecha,Codigo=codigo,
-                                            CalidadActu=calidadactua,
-                                            NombreConzCli=nombrecc,
-                                            ConocidoComo=conocidocomo,
-                                            Nacionalidad=nacionalidad,
-                                            DocumentoIden=docidentidad,
-                                            NumeroDocu=numerodoc,
-                                            FechaVencdoc=fechavdoc,
-                                            DireccionDomi=direcciondomic,
-                                            CorreoElec=correoe,
-                                            TelefonoCelu=telcelular,
-                                            TelefonoFijo=telfijo,
-                                            EstatusProp=estatusp,
-                                            NombreCony=nombrecony,
-                                            Estado=estado,
-                                            IdSolicitud=idsol)
+    #clientedg=ClienteDatoGen.objects.create(Fecha=fecha,Codigo=codigo,
+    #                                        CalidadActu=calidadactua,
+    #                                        NombreConzCli=nombrecc,
+    #                                        ConocidoComo=conocidocomo,
+    #                                        Nacionalidad=nacionalidad,
+    #                                        DocumentoIden=docidentidad,
+    #                                        NumeroDocu=numerodoc,
+    #                                        FechaVencdoc=fechavdoc,
+    #                                        DireccionDomi=direcciondomic,
+    #                                        CorreoElec=correoe,
+    #                                        TelefonoCelu=telcelular,
+    #                                        TelefonoFijo=telfijo,
+    #                                        EstatusProp=estatusp,
+    #                                        NombreCony=nombrecony,
+    #                                        Estado=estado,
+    #                                        IdSolicitud=idsol)
    
     
     idsol.Id=ids
@@ -141,9 +143,10 @@ def registrarD(request):
         perfil.IdOcupacionDUI=idocu
         perfil.save()
     else:
-        fiador = DatosPersFia.objects.get(IdSolicitud =idsol.Id)
-        fiador.IdOcupacionDUIFia=idocu
-        fiador.save()
+        print("paso")
+    #    fiador = DatosPersFia.objects.get(IdSolicitud =idsol.Id)
+    # #  fiador.IdOcupacionDUIFia=idocu
+    #    fiador.save()
 
     registroBit(request, "Llenado de formulario Conozca a su cliente", Nivel="Registro")
 
