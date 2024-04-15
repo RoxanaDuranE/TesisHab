@@ -188,7 +188,7 @@ class solicitudPer(FPDF):
         pdf.cell(w=80,h=5,txt=dps.EstadoCiviCli if hasattr(dps, 'EstadoCiviCli') else '', border=1,  align='L', fill=0)
         pdf.multi_cell(w=0,h=5,txt=dpf.EstadoCiviFiad if hasattr(dpf, 'EstadoCiviFiad') else '', border=1,  align='L', fill=0)
         pdf.set_text_color(r,g,b)
-        pdf.cell(w=50,h=5,txt='Genero', border=1,  align='L', fill=0)
+        pdf.cell(w=50,h=5,txt='Género', border=1,  align='L', fill=0)
         pdf.set_text_color(0,0,0)
         pdf.cell(w=80,h=5,txt=dps.GeneroClie if hasattr(dps, 'GeneroClie') else '', border=1,  align='L', fill=0)
         pdf.multi_cell(w=0,h=5,txt=dpf.GeneroFiad if hasattr(dpf, 'GeneroFiad') else '', border=1,  align='L', fill=0)
@@ -236,7 +236,7 @@ class solicitudPer(FPDF):
         pdf.cell(w=70,h=5,txt=ds.Referencia if hasattr(ds, 'Referencia') else '', border=0,  align='L', fill=0)
         pdf.multi_cell(w=0,h=5,txt=df.Referencia if hasattr(df, 'Referencia') else '', border=1,  align='L', fill=0)
         pdf.set_text_color(r,g,b)
-        pdf.cell(w=50,h=5,txt='Telefóno', border=1,  align='L', fill=0)
+        pdf.cell(w=50,h=5,txt='Teléfono', border=1,  align='L', fill=0)
         pdf.set_text_color(0,0,0)
         pdf.cell(w=70,h=5,txt=ds.Telefono if hasattr(ds, 'Telefono') else '', border=1,  align='L', fill=0)
         pdf.multi_cell(w=0,h=5,txt=df.Telefono if hasattr(df, 'Telefono') else '', border=1,  align='L', fill=0)
@@ -276,7 +276,7 @@ class solicitudPer(FPDF):
         pdf.cell(w=70,h=5,txt=ds.DireccionTrabMic if hasattr(ds, 'DireccionTrabMic') else '', border=1,  align='L', fill=0)
         pdf.multi_cell(w=0,h=5,txt=df.DireccionTrabMic if hasattr(df, 'DireccionTrabMic') else '', border=1,  align='L', fill=0)
         pdf.set_text_color(r,g,b)
-        pdf.cell(w=50,h=5,txt='Telefono del trabajo', border=1,  align='L', fill=0)
+        pdf.cell(w=50,h=5,txt='Teléfono del trabajo', border=1,  align='L', fill=0)
         pdf.set_text_color(0,0,0)
         pdf.cell(w=70,h=5,txt=ds.TelefonoTrabMic if hasattr(ds, 'TelefonoTrabMic') else '', border=1,  align='L', fill=0)
         pdf.multi_cell(w=0,h=5,txt=df.TelefonoTrabMic if hasattr(df, 'TelefonoTrabMic') else '', border=1,  align='L', fill=0)
@@ -296,7 +296,7 @@ class solicitudPer(FPDF):
         pdf.set_text_color(0,0,0)
         pdf.multi_cell(w=0,h=5,txt=do.Parentesco if hasattr(do, 'Parentesco') else '', border=1,  align='L', fill=0)
         pdf.set_text_color(r,g,b)
-        pdf.cell(w=70,h=5,txt='Direccion exacta de donde se construira', border=1,  align='L', fill=0)
+        pdf.cell(w=70,h=5,txt='Dirección exacta de donde se construira', border=1,  align='L', fill=0)
         pdf.set_text_color(0,0,0)
         pdf.multi_cell(w=0,h=5,txt=do.DireccionExac if hasattr(do, 'DireccionExac') else '', border=1,  align='L', fill=0)
         pdf.set_text_color(r,g,b)
@@ -327,7 +327,17 @@ class solicitudPer(FPDF):
         pdf.set_text_color(r,g,b)
         pdf.cell(w=70,h=10,txt='Forma de pago', border=1,  align='L', fill=0)
         pdf.set_xy(80, 30)
-        if det.FormaPago=='Ventanilla':
+        if det=='':
+            pdf.cell(w=30,h=10,txt='Ventanilla', border=0,  align='L', fill=0)
+            pdf.set_xy(105, 32)
+            pdf.cell(w=5,h=5,txt='', border=1,  align='L', fill=0)
+            pdf.set_xy(140, 30)
+            pdf.cell(w=20,h=10,txt='OPI', border=0,  align='L', fill=0)
+            pdf.set_xy(150, 32)
+            pdf.cell(w=5,h=5,txt='', border=1,  align='L', fill=0)
+            pdf.set_xy(170, 30)
+            pdf.multi_cell(w=0, h=10, border='R')
+        elif det.FormaPago=='Ventanilla':
             pdf.cell(w=30,h=10,txt='Ventanilla', border=0,  align='L', fill=0)
             pdf.set_xy(105, 32)
             pdf.cell(w=5,h=5,txt='X', border=1,  align='L', fill=0)
@@ -436,47 +446,67 @@ class solicitudPer(FPDF):
         pdf.set_text_color(r,g,b)
         pdf.multi_cell(w=0,h=5,txt='Medio por el cual se infomo del servicio crediticio de HPHES', border=0,  align='C', fill=0,)
         pdf.ln(5)
-        pdf.cell(w=30,h=5,txt='Redes Sociales', border=0,  align='L', fill=0,)
-        if med.RedesSoci=='Redes sociales':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+        if med: 
+            pdf.cell(w=30,h=5,txt='Redes Sociales', border=0,  align='L', fill=0,)
+            if med.RedesSoci=='Redes sociales':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.cell(w=20,h=5,txt='PVV', border=0,  align='C', fill=0)
+            if med.Pvv=='PVV':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.cell(w=40,h=5,txt='Referenciado', border=0,  align='C', fill=0)
+            if med.Referenciado=='Referenciado':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.cell(w=40,h=5,txt='Perofoneo', border=0,  align='C', fill=0)
+            if med.Perifoneo=='Perifoneo':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.cell(w=20,h=5,txt='Radio', border=0,  align='C', fill=0)
+            if med.Radio=='Radio':
+                pdf.multi_cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.multi_cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.ln(5)
+            pdf.cell(w=35,h=5,txt='Feria de Vivienda', border=0,  align='L', fill=0)
+            if med.FeriaVivi=='Feria de Vivienda':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.cell(w=50,h=5,txt='Campaña de Promocion', border=0,  align='C', fill=0)
+            if med.CampanaProm=='Campaña de Promoción':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+            pdf.cell(w=20,h=5,txt='Otros', border=0,  align='C', fill=0)
+            if med.Otros=='Otros':
+                pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
+            else:
+                pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
         else:
+            pdf.cell(w=30,h=5,txt='Redes Sociales', border=0,  align='L', fill=0)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.cell(w=20,h=5,txt='PVV', border=0,  align='C', fill=0)
-        if med.Pvv=='PVV':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.cell(w=20,h=5,txt='PVV', border=0,  align='C', fill=0)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.cell(w=40,h=5,txt='Referenciado', border=0,  align='C', fill=0)
-        if med.Referenciado=='Referenciado':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.cell(w=40,h=5,txt='Referenciado', border=0,  align='C', fill=0)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.cell(w=40,h=5,txt='Perofoneo', border=0,  align='C', fill=0)
-        if med.Perifoneo=='Perifoneo':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.cell(w=40,h=5,txt='Perifoneo', border=0,  align='C', fill=0)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.cell(w=20,h=5,txt='Radio', border=0,  align='C', fill=0)
-        if med.Radio=='Radio':
-            pdf.multi_cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.cell(w=20,h=5,txt='Radio', border=0,  align='C', fill=0)
             pdf.multi_cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.ln(5)
-        pdf.cell(w=35,h=5,txt='Feria de Vivienda', border=0,  align='L', fill=0)
-        if med.FeriaVivi=='Feria de Vivienda':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.ln(5)
+            pdf.cell(w=35,h=5,txt='Feria de Vivienda', border=0,  align='L', fill=0,)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.cell(w=50,h=5,txt='Campaña de Promocion', border=0,  align='C', fill=0)
-        if med.CampanaProm=='Campaña de Promoción':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.cell(w=50,h=5,txt='Campaña de Promocion', border=0,  align='C', fill=0,)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
-        pdf.cell(w=20,h=5,txt='Otros', border=0,  align='C', fill=0)
-        if med.Otros=='Otros':
-            pdf.cell(w=5,h=5,txt='X', border=1,  align='C', fill=0)
-        else:
+            pdf.cell(w=20,h=5,txt='Otros', border=0,  align='C', fill=0)
             pdf.cell(w=5,h=5,txt='', border=1,  align='C', fill=0)
+        pdf.cell(w=25,h=5,txt='Especifique:', border=0,  align='C', fill=0)
         pdf.cell(w=25,h=5,txt='Especifique:', border=0,  align='C', fill=0)
         pdf.multi_cell(w=0,h=5,txt=med.Especifique if hasattr(med, 'Especifique') else '', border='B',  align='C', fill=0)
         pdf.ln(5)

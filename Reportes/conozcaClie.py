@@ -249,7 +249,7 @@ class ConozcaC(FPDF):
         if cdg.CalidadActu == "Cliente":
             pdf.cell(w=22,h=5,txt= perf.Telefono if hasattr(perf, 'Telefono') else '', border='TR', align='L', fill=False , ln=1)
         elif cdg.CalidadActu == "Fiador":
-            pdf.multi_cell(w=0,h=5,txt=cdg.TelefonoCelu if hasattr(cdg, 'TelefonoCelu') else '', border='BLR', align='C', fill=False)
+            pdf.multi_cell(w=0,h=5,txt=cdg.TelefonoCelu if hasattr(cdg, 'TelefonoCelu') else '', border='TR', align='C', fill=False)
         else:
             pdf.cell(w=22,h=5,txt= '', border='TR', align='L', fill=False , ln=1)
         pdf.cell(w=45,h=5,txt='--------------------', border='BLR', align='C', fill=False)
@@ -575,7 +575,7 @@ class ConozcaC(FPDF):
         pdf.set_text_color(r,g,b)
         pdf.cell(w=62,h=5,txt='Tipo y número de documento de indentificación:', border='LTB', align='L', fill=False)
         pdf.set_text_color(0,0,0)
-        pdf.cell(w=134,h=5,txt=(str(cdpbo.TipoDocuPers if hasattr(cdpbo, 'TipoDocuPers') else'    -------------------------------------') or '      -------------------------------------')+', '+ (str(cdpbo.NumeroDocuPers if hasattr(cdpbo, 'NumeroDocuPers') else'    -------------------------------------') or '      -------------------------------------'), border='TRB', align='L', fill=False, ln=1)
+        pdf.cell(w=134,h=5,txt=(str(cdpbo.TipoDocuPers if hasattr(cdpbo, 'TipoDocuPers') else'    -------------------------------------') or '      -------------------------------------')+', '+ (str(cdpbo.NumeroDocuPers if hasattr(cdpbo, 'NumeroDocuPers') else' ') or ''), border='TRB', align='L', fill=False, ln=1)
         pdf.set_text_color(r,g,b)
         pdf.cell(w=196,h=5,txt='El beneficiario es Persona Expuesta Politicamente:', border=1, align='L', fill=False, ln=1)
 
