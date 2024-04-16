@@ -103,7 +103,7 @@
             <div class="form-group form-animate-text " style="margin-top:5px !important;">
               <h4>Profesión según DUI<span style="color: #02b3db;" size="font-size:8px;">*</span></h4>
                   <select class="form-text" id="profesionsd" name="profesionsd"  required >
-                      <option selected disabled >Seleccione</option>
+                      <option value="-0" selected disabled >Seleccione</option>
                       {% for o in ocupaciones %}
                       <option value="{{o.Id}}" >{{o.Nombre}}</option>
                       {% endfor %}
@@ -294,6 +294,10 @@
       // estas son banderas para no guardar los formularios que estan en blanco
       // los metodos validar devulven 0 si no estan completos los formularios
       // y 1 si los formularios estan completos
+      if(document.getElementById("lugart").value == "-0" ){
+        alertE("Seleccione una profecion valida")
+        return
+      }
       var passAED = document.getElementById("passAED").value = validarDatos();
       var passDN = document.getElementById("passDN").value = validarDN();
       var passRRF = document.getElementById("passRRF").value = validarRRF();

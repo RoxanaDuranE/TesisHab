@@ -143,7 +143,6 @@ def registrarD(request):
         perfil.IdOcupacionDUI=idocu
         perfil.save()
     else:
-        print("paso")
         fiador = DatosPersFia.objects.get(IdSolicitud =idsol.Id)
         fiador.IdOcupacionDUIFia=idocu
         fiador.save()
