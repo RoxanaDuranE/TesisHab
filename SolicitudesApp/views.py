@@ -130,10 +130,15 @@ def modificarSolicitud(request, idSolicitud):
              estado = EstadoResuMic.objects.get(IdBalanceSituMic = balance.Id)
          except EstadoResuMic.DoesNotExist:
              None
+         try:
+            egresos = EgresoFlujMic.objects.get(IdBalanceSituMic = balance.Id)
+            capacidaPago = CapacidadPagoMic.objects.get(IdEgresoFlujMic = egresos.Id)
+         except :
+            None
     except BalanceSituMic.DoesNotExist:
           balance = ""   
           estado =  ""
-          
+          capacidaPago = ""
     
     alternativas = Alternativa.objects.all()
     modelos = ModeloVivi.objects.all()
@@ -144,7 +149,8 @@ def modificarSolicitud(request, idSolicitud):
         "alternativas":alternativas,
         "modelos":modelos,
         "balance":balance, 
-        "estado":estado
+        "estado":estado,
+        "capacidaPago":capacidaPago
         })
 
 def listaSC(request):

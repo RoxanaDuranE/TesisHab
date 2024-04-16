@@ -166,6 +166,7 @@ function cambiarUrlMicro(estado) {
                         btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
                         progresoEvaluacionMicro.classList.remove("progress-bar-dange")
                         progresoEvaluacionMicro.classList.add("progress-bar-success")
+                        btnEvaluacioRepo.onclick=""
                         btnEvaluacioRepo.href = "../../../EvaluacionMicroApp/listaEvaluacionm/evaluacionIM/" + response[0]
                         progresoEvaluacionRepo.classList.remove("progress-bar-dange")
                         progresoEvaluacionRepo.classList.add("progress-bar-success")
@@ -477,6 +478,7 @@ function cambiarUrlNatural(estado) {
                         btnEvaluacion.href = "../../../EvaluacionIvEFApp/listaEvaluacion/editarEvaluacion/" + response[0]
                         progresoEvaluacionMicro.classList.remove("progress-bar-dange")
                         progresoEvaluacionMicro.classList.add("progress-bar-success")
+                        btnEvaluacioRepo.onclick=""
                         btnEvaluacioRepo.href = "../../../EvaluacionIvEFApp/listaEvaluacion/evaluacionIvEF/" + response[0]
                         progresoEvaluacionRepo.classList.remove("progress-bar-dange")
                         progresoEvaluacionRepo.classList.add("progress-bar-success")
