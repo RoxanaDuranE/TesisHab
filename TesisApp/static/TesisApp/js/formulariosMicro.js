@@ -711,8 +711,8 @@ function cambiarUrlNatural(estado) {
 
                                 btnObrasAdicionalesRepo.onclick = ""
                                 btnObrasAdicionalesRepo.href = "../../../PresupuestoVApp/listaPVO/presupuestoVvO/" + response[12]
-                                btnObrasAdicionalesRepo.classList.remove("progress-bar-danger")
-                                btnObrasAdicionalesRepo.classList.add("progress-bar-success")
+                                progresoObrasAdicionalesRepo.classList.remove("progress-bar-danger")
+                                progresoObrasAdicionalesRepo.classList.add("progress-bar-success")
                             }
 
 
