@@ -1,1 +1,1 @@
-web: python manage.py migrate  && gunicorn Tesis.wsgi
+web: python manage.py migrate  && gunicorn Tesis.wsgi && heroku buildpacks:add heroku-community/locale
