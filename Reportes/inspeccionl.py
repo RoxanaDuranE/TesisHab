@@ -99,7 +99,7 @@ class InspeccionL(FPDF):
         
 
         
-        locale.setlocale(locale.LC_TIME, '')    
+        locale.setlocale(locale.LC_ALL,'es_ES.UTF-8')    
         pdf=FPDF(orientation='P', unit='mm', format='Letter') 
         pdf.add_page()
         

@@ -643,7 +643,7 @@ def modSoliNatural(request):
         tipo=request.POST['tipoSN']
 
         if(idd==""):
-                domicilioC = Domicilio.objects.update_or_create(IdSolicitud=idSoli, tipo=tipo,
+                domicilioC = Domicilio.objects.update_or_create(IdSolicitud=idSoli, Tipo=tipo,
             defaults={ 'Direccion':direActC,
                 'Referencia':puntoRefC,
                 'Telefono':telefonoC, 
