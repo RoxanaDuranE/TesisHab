@@ -10,8 +10,8 @@ class HistorialC(FPDF):
 
    def historialC(request, id):
       
-      locale.setlocale(locale.LC_TIME, '')
-      fecha=date.today()
+    locale.setlocale(locale.LC_TIME, '')
+    fecha=date.today()
    # idSolicitud=request.POST['idSoli']
     per=Perfil.objects.get(Id=id)
     
