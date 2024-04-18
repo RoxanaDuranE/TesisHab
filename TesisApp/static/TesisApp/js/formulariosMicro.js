@@ -14,7 +14,7 @@ fetch('/user-info/')
   });
   
 
-console.log(data.email);
+console.log(userData.email);
 //botones para formularios
 let btnEvaluacion = document.getElementById("btnEvaliacionMicro")
 let btnSolicitudCredito = document.getElementById("btnSolicitudCredito")
