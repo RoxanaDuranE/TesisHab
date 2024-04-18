@@ -1,15 +1,20 @@
 let csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 //Datos de usuario 
+let userData//datos de usuario
+
 fetch('/user-info/')
   .then(response => response.json())
   .then(data => {
     // Procesa la información del usuario aquí
+    userData = data;
     console.log(data);
   })
   .catch(error => {
     console.error('Error:', error);
   });
   
+
+console.log(data.email);
 //botones para formularios
 let btnEvaluacion = document.getElementById("btnEvaliacionMicro")
 let btnSolicitudCredito = document.getElementById("btnSolicitudCredito")
@@ -255,7 +260,7 @@ function cambiarUrlMicro(estado) {
                         progresoSeguroRepo.classList.add("progress-bar-success")
                         progreso = progreso + 1.66
                     }
-                    if(request.user.cargo != 4){
+                    if(userData.cargo != 4){
                         if (tipoObra != "vivienda") { // **  mejora de vivienda
                             btnInspeccionLote.textContent = "Inspección vivienda"
                             if (response[5] == "-0") {
