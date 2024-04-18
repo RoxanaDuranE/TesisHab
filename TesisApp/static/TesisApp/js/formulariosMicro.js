@@ -1,6 +1,13 @@
 let csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 //Datos de usuario 
 let userData//datos de usuario
+let cargo
+function procesarDatosUsuario(userCargo) {
+    // Procesa los datos del usuario aquí
+    cargo = userCargo;
+    console.log(cargo);
+  
+  }
 
 fetch('/user-info/')
   .then(response => response.json())
@@ -8,13 +15,14 @@ fetch('/user-info/')
     // Procesa la información del usuario aquí
     userData = data;
     console.log(data);
+    procesarDatosUsuario(userCargo);
   })
   .catch(error => {
     console.error('Error:', error);
   });
   
 
-console.log(userData.email);
+
 //botones para formularios
 let btnEvaluacion = document.getElementById("btnEvaliacionMicro")
 let btnSolicitudCredito = document.getElementById("btnSolicitudCredito")
@@ -260,7 +268,7 @@ function cambiarUrlMicro(estado) {
                         progresoSeguroRepo.classList.add("progress-bar-success")
                         progreso = progreso + 1.66
                     }
-                    if(userData.cargo != 4){
+                    if(cargo != 4){
                         if (tipoObra != "vivienda") { // **  mejora de vivienda
                             btnInspeccionLote.textContent = "Inspección vivienda"
                             if (response[5] == "-0") {
