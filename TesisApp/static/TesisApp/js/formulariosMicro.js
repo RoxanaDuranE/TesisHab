@@ -432,6 +432,9 @@ function cambiarUrlMicro(estado) {
                                 progreso = progreso + 1.66
                             }
                         }
+                    }else{
+                        $('#btnInspeccionLote').hide();
+                        $('#progresoInspeccion').hide();
                     }
                     if (response[10] != "-0") {
                         btnlistaChequeo.href = "../../../ListaChequeoApp/listaC/editarCheq/" + response[10]
