@@ -348,5 +348,15 @@ class ChangePasswordView(FormView):
         return context
         
 
+@login_required
+def user_info(request):
+    user = request.user
+    user_info = {
+        'username': user.username,
+        'email': user.email,
+        'cargo': user.cargo,
+        # Agrega más campos según sea necesario
+    }
+    return JsonResponse(user_info)
         
 

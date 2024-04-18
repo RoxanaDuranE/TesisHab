@@ -1,4 +1,15 @@
 let csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+//Datos de usuario 
+fetch('/user-info/')
+  .then(response => response.json())
+  .then(data => {
+    // Procesa la información del usuario aquí
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+  
 //botones para formularios
 let btnEvaluacion = document.getElementById("btnEvaliacionMicro")
 let btnSolicitudCredito = document.getElementById("btnSolicitudCredito")
