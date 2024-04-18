@@ -407,14 +407,11 @@ class ConozcaC(FPDF):
         if cddn is None or cddn.FechaInicAct is None:
             pdf.cell(w=36, h=5, txt='', border='BR', align='L', fill=False)
         else:
+            #cdg.FechaVencdoc.strftime("%d/%m/%Y") if hasattr(cdg, 'FechaVencdoc') else ''
             # Verifica si FechaInicAct es un objeto datetime antes de formatearlo
-            if isinstance(cddn.FechaInicAct, datetime):
-                formatted_date = cddn.FechaInicAct.strftime("%d/%m/%Y")
-                pdf.cell(w=36, h=5, txt=cddn.FechaInicAct.strftime("%d/%m/%Y"), border='BR', align='L', fill=False)
-            else:
-                formatted_date = ''  # Si FechaInicAct no es datetime, establece como cadena vacía
             
-            pdf.cell(w=36, h=5, txt=formatted_date, border='BR', align='L', fill=False)
+            pdf.cell(w=36, h=5, txt=cddn.FechaInicAct.strftime("%d/%m/%Y") if hasattr(cddn, 'FechaInicAct') else '', border='BR', align='L', fill=False)
+            
         #if cddn == '':
         #    pdf.cell(w=36,h=5,txt='', border='BR', align='L', fill=False)
         #elif cddn.FechaInicAct != '':
