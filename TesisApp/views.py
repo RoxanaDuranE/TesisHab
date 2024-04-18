@@ -35,6 +35,7 @@ from django.contrib.auth import login,logout
 from django.http import HttpResponseRedirect, JsonResponse
 from TesisApp.forms import FormularioLogin #,FormularioUsuario
 
+from django.contrib.auth.decorators import login_required
 from ClienteApp.models import *
 from ConfiguracionApp.models import Ocupacion, Salario
 from datetime import date, datetime
