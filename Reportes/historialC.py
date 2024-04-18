@@ -36,10 +36,10 @@ class HistorialC(FPDF):
     pdf.line(40, 200, 100, 200)
     pdf.text(x=20, y=215, txt='DUI: ')
     pdf.line(40, 215, 100, 215)
-    pdf.text(x=45, y=215, txt=per.Dui if hasattr(per, 'Dui') else '')
+    pdf.text(x=45, y=215, txt=per.Dui)
     pdf.text(x=20, y=230, txt='Fecha: ')
     pdf.line(40, 230, 100, 230)
-    pdf.text(x=45, y=230, txt=fecha.strftime("%d/%m/%Y") if fecha else '')
+    pdf.text(x=45, y=230, txt=fecha.strftime("%d/%m/%Y"))
     pdf.output('historial.pdf', 'F')
     return FileResponse(open('historial.pdf', 'rb'), as_attachment=True, content_type='application/pdf')
     
