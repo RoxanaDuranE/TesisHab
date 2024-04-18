@@ -244,168 +244,173 @@ function cambiarUrlMicro(estado) {
                         progresoSeguroRepo.classList.add("progress-bar-success")
                         progreso = progreso + 1.66
                     }
-                    if (tipoObra != "vivienda") { // **  mejora de vivienda
-                        btnInspeccionLote.textContent = "Inspección vivienda"
-                        if (response[5] == "-0") {
-                            btnInspeccionLote.href = "../../../SolicitudesApp/listaSC/inspeccion/" + response[1]
+                    if(request.user.cargo == 5){
+                        if (tipoObra != "vivienda") { // **  mejora de vivienda
+                            btnInspeccionLote.textContent = "Inspección vivienda"
+                            if (response[5] == "-0") {
+                                btnInspeccionLote.href = "../../../SolicitudesApp/listaSC/inspeccion/" + response[1]
 
-                        } else {
-                            btnInspeccionLote.href = "../../../InspeccionMejViviendaApp/listaIM/editarIM/" + response[5]
-                            descipcion.textContent = "Progreso: Inspección vivienda"
-                            progresoInspeccion.classList.remove("progress-bar-dange")
-                            progresoInspeccion.classList.add("progress-bar-success")
-                            // ***************************************************************  agregar link del reporte inspeccion mejora de vivienda ******************
-                            btnInspeccionLoteRepo.href = "../../../InspeccionMejViviendaApp/listaIM/inspeccionM/" + response[5]
-                            btnInspeccionLoteRepo.onclick = "";
-                            progresoInspeccionRepo.classList.remove("progress-bar-dange")
-                            progresoInspeccionRepo.classList.add("progress-bar-success")
-
-                            btnPrimeraInspeccion.onclick = "";
-                            $('#divubicacion1').fadeOut();
-                            $('#divubicacion2').fadeOut();
-                            $('#divubicacion3').fadeOut();
-                            $('#divEsquema2').fadeOut();
-                            $('#divEsquema3').fadeOut();
-                            if (response[7] == "-0") {
-                                btnPrimeraInspeccion.href = "../../../InspeccionMejViviendaApp/listaIM/pinspeccion/" + response[5] + "/PRIMERA"
                             } else {
-                                btnSegundaInspeccion.onclick = ""
-                                btnPrimeraInspeccion.href = "../../../InspeccionMejViviendaApp/listaPIM/editarPIM/" + response[7]
+                                btnInspeccionLote.href = "../../../InspeccionMejViviendaApp/listaIM/editarIM/" + response[5]
+                                descipcion.textContent = "Progreso: Inspección vivienda"
+                                progresoInspeccion.classList.remove("progress-bar-dange")
+                                progresoInspeccion.classList.add("progress-bar-success")
+                                // ***************************************************************  agregar link del reporte inspeccion mejora de vivienda ******************
+                                btnInspeccionLoteRepo.href = "../../../InspeccionMejViviendaApp/listaIM/inspeccionM/" + response[5]
+                                btnInspeccionLoteRepo.onclick = "";
+                                progresoInspeccionRepo.classList.remove("progress-bar-dange")
+                                progresoInspeccionRepo.classList.add("progress-bar-success")
 
-
-                                btnesquema1Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmU/" + response[7]
+                                btnPrimeraInspeccion.onclick = "";
                                 $('#divubicacion1').fadeOut();
-                                btnPFotografico1Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmR/" + response[7]
-
-                                if (response[8] == "-0") {
-                                    btnSegundaInspeccion.href = "../../../InspeccionMejViviendaApp/listaIM/pinspeccion/" + response[5] + "/SEGUNDA"
+                                $('#divubicacion2').fadeOut();
+                                $('#divubicacion3').fadeOut();
+                                $('#divEsquema2').fadeOut();
+                                $('#divEsquema3').fadeOut();
+                                if (response[7] == "-0") {
+                                    btnPrimeraInspeccion.href = "../../../InspeccionMejViviendaApp/listaIM/pinspeccion/" + response[5] + "/PRIMERA"
                                 } else {
-                                    btnSegundaInspeccion.href = "../../../InspeccionMejViviendaApp/listaPIM/editarPIM/" + response[8]
-                                    btnesquema2Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmU/" + response[8]
-                                    $('#divubicacion2').fadeOut();
-                                    btnPFotografico2Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmR/" + response[8]
-                                    btnTerceraInspeccion.onclick = ""
-                                    if (response[9] == "-0") {
-                                        btnTerceraInspeccion.href = "../../../InspeccionMejViviendaApp/listaIM/pinspeccion/" + response[5] + "/TERCERA"
+                                    btnSegundaInspeccion.onclick = ""
+                                    btnPrimeraInspeccion.href = "../../../InspeccionMejViviendaApp/listaPIM/editarPIM/" + response[7]
+
+
+                                    btnesquema1Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmU/" + response[7]
+                                    $('#divubicacion1').fadeOut();
+                                    btnPFotografico1Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmR/" + response[7]
+
+                                    if (response[8] == "-0") {
+                                        btnSegundaInspeccion.href = "../../../InspeccionMejViviendaApp/listaIM/pinspeccion/" + response[5] + "/SEGUNDA"
                                     } else {
+                                        btnSegundaInspeccion.href = "../../../InspeccionMejViviendaApp/listaPIM/editarPIM/" + response[8]
+                                        btnesquema2Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmU/" + response[8]
+                                        $('#divubicacion2').fadeOut();
+                                        btnPFotografico2Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmR/" + response[8]
+                                        btnTerceraInspeccion.onclick = ""
+                                        if (response[9] == "-0") {
+                                            btnTerceraInspeccion.href = "../../../InspeccionMejViviendaApp/listaIM/pinspeccion/" + response[5] + "/TERCERA"
+                                        } else {
 
-                                        btnTerceraInspeccion.href = "../../../InspeccionMejViviendaApp/listaPIM/editarPIM/" + response[9]
-                                        btnesquema3Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmU/" + response[9]
-                                        $('#divubicacion3').fadeOut();
-                                        btnPFotografico3Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmR/" + response[9]
+                                            btnTerceraInspeccion.href = "../../../InspeccionMejViviendaApp/listaPIM/editarPIM/" + response[9]
+                                            btnesquema3Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmU/" + response[9]
+                                            $('#divubicacion3').fadeOut();
+                                            btnPFotografico3Repo.href = "../../../InspeccionMejViviendaApp/listaPIM/pinspmR/" + response[9]
 
+                                        }
                                     }
                                 }
+                                progreso = progreso + 1.66
                             }
-                            progreso = progreso + 1.66
-                        }
-                        //presupuesto
-                        if (response[6] == "-0") {
-                            btnPresupuestoVivienda.href = "../../../SolicitudesApp/listaSC/presupuesto/" + response[1]
-                        } else {
-                            btnPresupuestoVivienda.href = "../../../PresupuestoApp/listaPM/modPresupuesto/" + response[6]
-                            descipcion.textContent = "Progreso: Presupuesto "
-                            btnPresupuestoViviendaRepo.onclick = ""
-                            btnPresupuestoViviendaRepo.href = "../../../PresupuestoApp/listaPM/presupuestoMj/" + response[6] //**** agregar aqui el link del reporte */
-
-                            progresoPresupuesto.classList.remove("progress-bar-danger")
-                            progresoPresupuesto.classList.add("progress-bar-success")
-
-                            progresoPresupuestoRepo.classList.remove("progress-bar-danger")
-                            progresoPresupuestoRepo.classList.add("progress-bar-success")
-
-                            progreso = progreso + 1.66
-                        }
-
-
-                    } else {                     // *** para lote mas vivienda
-                        if (response[5] == "-0") {
-                            btnInspeccionLote.href = "../../../SolicitudesApp/listaSC/inspeccionl/" + response[1]
-
-                        } else {
-                            btnInspeccionLote.href = "../../../InspeccionLoteApp/listaI/editarIL/" + response[5]
-                            descipcion.textContent = "Progreso: Inspección lote"
-                            progresoInspeccion.classList.remove("progress-bar-dange")
-                            progresoInspeccion.classList.add("progress-bar-success")
-
-
-                            btnInspeccionLoteRepo.href = "../../../InspeccionLoteApp/listaI/inspeccionL/" + response[5]
-                            btnInspeccionLoteRepo.onclick = "";
-                            progresoInspeccionRepo.classList.remove("progress-bar-dange")
-                            progresoInspeccionRepo.classList.add("progress-bar-success")
-
-                            btnPrimeraInspeccion.onclick = "";
-                            $('#divubicacion2').fadeOut();
-                            $('#divubicacion3').fadeOut();
-                            $('#divEsquema2').fadeOut();
-                            $('#divEsquema3').fadeOut();
-                            if (response[7] == "-0") {
-                                btnPrimeraInspeccion.href = "../../../InspeccionLoteApp/listaI/pinspeccionl/" + response[5] + "/PRIMERA"
+                            //presupuesto
+                            if (response[6] == "-0") {
+                                btnPresupuestoVivienda.href = "../../../SolicitudesApp/listaSC/presupuesto/" + response[1]
                             } else {
-                                btnSegundaInspeccion.onclick = ""
-                                btnPrimeraInspeccion.href = "../../../InspeccionLoteApp/listaPIL/editarPIL/" + response[7]
+                                btnPresupuestoVivienda.href = "../../../PresupuestoApp/listaPM/modPresupuesto/" + response[6]
+                                descipcion.textContent = "Progreso: Presupuesto "
+                                btnPresupuestoViviendaRepo.onclick = ""
+                                btnPresupuestoViviendaRepo.href = "../../../PresupuestoApp/listaPM/presupuestoMj/" + response[6] //**** agregar aqui el link del reporte */
+
+                                progresoPresupuesto.classList.remove("progress-bar-danger")
+                                progresoPresupuesto.classList.add("progress-bar-success")
+
+                                progresoPresupuestoRepo.classList.remove("progress-bar-danger")
+                                progresoPresupuestoRepo.classList.add("progress-bar-success")
+
+                                progreso = progreso + 1.66
+                            }
 
 
-                                btnesquema1Repo.href = "../../../InspeccionLoteApp/listaPIL/pinspl/" + response[7]
-                                btnUbicacion1Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplU/" + response[7]
-                                btnPFotografico1Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplR/" + response[7]
+                        } else {                     // *** para lote mas vivienda
+                            if (response[5] == "-0") {
+                                btnInspeccionLote.href = "../../../SolicitudesApp/listaSC/inspeccionl/" + response[1]
 
-                                if (response[8] == "-0") {
-                                    btnSegundaInspeccion.href = "../../../InspeccionLoteApp/listaI/pinspeccionl/" + response[5] + "/SEGUNDA"
+                            } else {
+                                btnInspeccionLote.href = "../../../InspeccionLoteApp/listaI/editarIL/" + response[5]
+                                descipcion.textContent = "Progreso: Inspección lote"
+                                progresoInspeccion.classList.remove("progress-bar-dange")
+                                progresoInspeccion.classList.add("progress-bar-success")
+
+
+                                btnInspeccionLoteRepo.href = "../../../InspeccionLoteApp/listaI/inspeccionL/" + response[5]
+                                btnInspeccionLoteRepo.onclick = "";
+                                progresoInspeccionRepo.classList.remove("progress-bar-dange")
+                                progresoInspeccionRepo.classList.add("progress-bar-success")
+
+                                btnPrimeraInspeccion.onclick = "";
+                                $('#divubicacion2').fadeOut();
+                                $('#divubicacion3').fadeOut();
+                                $('#divEsquema2').fadeOut();
+                                $('#divEsquema3').fadeOut();
+                                if (response[7] == "-0") {
+                                    btnPrimeraInspeccion.href = "../../../InspeccionLoteApp/listaI/pinspeccionl/" + response[5] + "/PRIMERA"
                                 } else {
-                                    btnSegundaInspeccion.href = "../../../InspeccionLoteApp/listaPIL/editarPIL/" + response[8]
-                                    btnesquema2Repo.href = "../../../InspeccionLoteApp/listaPIL/pinspl/" + response[8]
-                                    btnUbicacion2Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplU/" + response[8]
-                                    btnPFotografico2Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplR/" + response[8]
+                                    btnSegundaInspeccion.onclick = ""
+                                    btnPrimeraInspeccion.href = "../../../InspeccionLoteApp/listaPIL/editarPIL/" + response[7]
 
-                                    btnTerceraInspeccion.onclick = ""
-                                    if (response[9] == "-0") {
-                                        btnTerceraInspeccion.href = "../../../InspeccionLoteApp/listaI/pinspeccionl/" + response[5] + "/TERCERA"
+
+                                    btnesquema1Repo.href = "../../../InspeccionLoteApp/listaPIL/pinspl/" + response[7]
+                                    btnUbicacion1Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplU/" + response[7]
+                                    btnPFotografico1Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplR/" + response[7]
+
+                                    if (response[8] == "-0") {
+                                        btnSegundaInspeccion.href = "../../../InspeccionLoteApp/listaI/pinspeccionl/" + response[5] + "/SEGUNDA"
                                     } else {
+                                        btnSegundaInspeccion.href = "../../../InspeccionLoteApp/listaPIL/editarPIL/" + response[8]
+                                        btnesquema2Repo.href = "../../../InspeccionLoteApp/listaPIL/pinspl/" + response[8]
+                                        btnUbicacion2Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplU/" + response[8]
+                                        btnPFotografico2Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplR/" + response[8]
 
-                                        btnTerceraInspeccion.href = "../../../InspeccionLoteApp/listaPIL/editarPIL/" + response[9]
-                                        btnesquema3Repo.href = "../../../InspeccionLoteApp/listaPIL/pinspl/" + response[9]
-                                        btnUbicacion3Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplU/" + response[9]
-                                        btnPFotografico3Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplR/" + response[9]
+                                        btnTerceraInspeccion.onclick = ""
+                                        if (response[9] == "-0") {
+                                            btnTerceraInspeccion.href = "../../../InspeccionLoteApp/listaI/pinspeccionl/" + response[5] + "/TERCERA"
+                                        } else {
+
+                                            btnTerceraInspeccion.href = "../../../InspeccionLoteApp/listaPIL/editarPIL/" + response[9]
+                                            btnesquema3Repo.href = "../../../InspeccionLoteApp/listaPIL/pinspl/" + response[9]
+                                            btnUbicacion3Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplU/" + response[9]
+                                            btnPFotografico3Repo.href = "../../../InspeccionLoteApp/listaPIL/pinsplR/" + response[9]
 
 
+                                        }
                                     }
                                 }
+                                progreso = progreso + 1.66
                             }
-                            progreso = progreso + 1.66
-                        }
 
-                        //presupuesto
-                        if (response[6] == "-0") {
-                            btnPresupuestoVivienda.href = "../../../SolicitudesApp/listaSC/presupuestov/" + response[1]
-                        } else {
-                            btnPresupuestoVivienda.href = "../../../PresupuestoVApp/listaPV/editarPV/" + response[6]
-                            descipcion.textContent = "Progreso: Presupuesto "
-                            btnPresupuestoViviendaRepo.onclick = ""
-                            btnPresupuestoViviendaRepo.href = "../../../PresupuestoVApp/listaPV/presupuestoVv/" + response[6]
-
-                            progresoPresupuesto.classList.remove("progress-bar-danger")
-                            progresoPresupuesto.classList.add("progress-bar-success")
-                            progresoPresupuestoRepo.classList.remove("progress-bar-danger")
-                            progresoPresupuestoRepo.classList.add("progress-bar-success")
-                            $('#trObras').fadeIn();
-                            $('#trObrasRepo').fadeIn();
-                            btnObrasAdicionales.onclick = ""
-                            if (response[12] == "-0") {
-                                btnObrasAdicionales.href = "../../../PresupuestoVApp/listaPV/presupuestovoa/" + response[6]
+                            //presupuesto
+                            if (response[6] == "-0") {
+                                btnPresupuestoVivienda.href = "../../../SolicitudesApp/listaSC/presupuestov/" + response[1]
                             } else {
-                                btnObrasAdicionales.href = "../../../PresupuestoVApp/listaPVO/editarPVO/" + response[12]
-                                progresoObrasAdd.classList.remove("progress-bar-danger")
-                                progresoObrasAdd.classList.add("progress-bar-success")
+                                btnPresupuestoVivienda.href = "../../../PresupuestoVApp/listaPV/editarPV/" + response[6]
+                                descipcion.textContent = "Progreso: Presupuesto "
+                                btnPresupuestoViviendaRepo.onclick = ""
+                                btnPresupuestoViviendaRepo.href = "../../../PresupuestoVApp/listaPV/presupuestoVv/" + response[6]
 
-                                btnObrasAdicionalesRepo.onclick = ""
-                                btnObrasAdicionalesRepo.href = "../../../PresupuestoVApp/listaPVO/presupuestoVvO/" + response[12]
-                                progresoObrasAdicionalesRepo.classList.remove("progress-bar-danger")
-                                progresoObrasAdicionalesRepo.classList.add("progress-bar-success")
+                                progresoPresupuesto.classList.remove("progress-bar-danger")
+                                progresoPresupuesto.classList.add("progress-bar-success")
+                                progresoPresupuestoRepo.classList.remove("progress-bar-danger")
+                                progresoPresupuestoRepo.classList.add("progress-bar-success")
+                                $('#trObras').fadeIn();
+                                $('#trObrasRepo').fadeIn();
+                                btnObrasAdicionales.onclick = ""
+                                if (response[12] == "-0") {
+                                    btnObrasAdicionales.href = "../../../PresupuestoVApp/listaPV/presupuestovoa/" + response[6]
+                                } else {
+                                    btnObrasAdicionales.href = "../../../PresupuestoVApp/listaPVO/editarPVO/" + response[12]
+                                    progresoObrasAdd.classList.remove("progress-bar-danger")
+                                    progresoObrasAdd.classList.add("progress-bar-success")
+
+                                    btnObrasAdicionalesRepo.onclick = ""
+                                    btnObrasAdicionalesRepo.href = "../../../PresupuestoVApp/listaPVO/presupuestoVvO/" + response[12]
+                                    progresoObrasAdicionalesRepo.classList.remove("progress-bar-danger")
+                                    progresoObrasAdicionalesRepo.classList.add("progress-bar-success")
+                                }
+
+                                progreso = progreso + 1.66
                             }
-
-                            progreso = progreso + 1.66
                         }
+                    }else{
+                        btnInspeccionLote.disabled="true"
+                        btnPresupuestoVivienda.disabled="true"
                     }
                     if (response[10] != "-0") {
                         btnlistaChequeo.href = "../../../ListaChequeoApp/listaC/editarCheq/" + response[10]
