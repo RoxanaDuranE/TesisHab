@@ -269,6 +269,8 @@ function cambiarUrlMicro(estado) {
                         progreso = progreso + 1.66
                     }
                     if(cargo != 4){
+                        $('#trInspeccion').fadeIn();
+                        $('#trPresupuesto').fadeIn();
                         if (tipoObra != "vivienda") { // **  mejora de vivienda
                             btnInspeccionLote.textContent = "Inspección vivienda"
                             if (response[5] == "-0") {
@@ -432,9 +434,6 @@ function cambiarUrlMicro(estado) {
                                 progreso = progreso + 1.66
                             }
                         }
-                    }else{
-                        $('#btnInspeccionLote').hide();
-                        $('#progresoInspeccion').hide();
                     }
                     if (response[10] != "-0") {
                         btnlistaChequeo.href = "../../../ListaChequeoApp/listaC/editarCheq/" + response[10]
