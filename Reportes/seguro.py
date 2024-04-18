@@ -102,7 +102,7 @@ class Seguro(FPDF):
         pdf.cell(w=35,h=5,txt='$ '+str(seg.MontoTotaAse) if hasattr(seg, 'MontoTotaAse') else '', border='B', align='L', fill=False)
         pdf.cell(w=40,h=5,txt='', border='', align='C', fill=False)
         pdf.cell(w=25,h=5,txt='San Salvador,', border='', align='L', fill=False)
-        pdf.multi_cell(w=0,h=5,txt='', border='B', align='C', fill=False)
+        pdf.multi_cell(w=0,h=5,txt=fecha.strftime("%d/%m/%Y") if fecha else '', border='B', align='C', fill=False)
         pdf.cell(w=150,h=5,txt='', border='', align='C', fill=False)
         pdf.multi_cell(w=0,h=8,txt='', border='B', align='C', fill=False)
         pdf.cell(w=150,h=5,txt='', border='', align='C', fill=False)
