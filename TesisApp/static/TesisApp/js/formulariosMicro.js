@@ -15,7 +15,7 @@ fetch('/user-info/')
     // Procesa la información del usuario aquí
     userData = data;
     console.log(data);
-    procesarDatosUsuario(userDato.cargo);
+    procesarDatosUsuario(userData.cargo);
   })
   .catch(error => {
     console.error('Error:', error);
