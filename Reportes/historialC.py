@@ -39,7 +39,7 @@ class HistorialC(FPDF):
     pdf.text(x=45, y=214, txt=per.Dui if hasattr(per, 'Dui') else '')
     pdf.text(x=20, y=230, txt='Fecha: ')
     pdf.line(40, 230, 100, 230)
-    pdf.text(x=45, y=2289 txt=fecha.strftime("%d/%m/%Y") if fecha else '')
+    pdf.text(x=45, y=229 txt=fecha.strftime("%d/%m/%Y") if fecha else '')
     pdf.output('historial.pdf', 'F')
     return FileResponse(open('historial.pdf', 'rb'), as_attachment=True, content_type='application/pdf')
     
