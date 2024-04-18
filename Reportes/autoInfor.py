@@ -1,4 +1,6 @@
 from fpdf import FPDF
+from datetime import date
+import locale
 from ClienteApp.models import *
 
 from django.http import FileResponse
@@ -8,6 +10,8 @@ class Autorizacion(FPDF):
 
    def autorizacionI(request, id):
 
+    locale.setlocale(locale.LC_TIME, '')
+    fecha=date.today()
    # idSolicitud=request.POST['idSoli']
     try:
       per=Perfil.objects.get(Id=id)
@@ -38,12 +42,14 @@ class Autorizacion(FPDF):
     pdf.line(40, 150, 100, 150)
     pdf.text(x=20, y=165, txt='DUI: ')
     pdf.line(40, 165, 100, 165)
+    pdf.text(x=45, y=165, txt=per.Dui if hasattr(per, 'Dui') else '')
     pdf.text(x=20, y=180, txt='Correo electrónico: ')
     pdf.line(60, 180, 120, 180)
     pdf.text(x=20, y=195, txt='Número de teléfono: ')
     pdf.line(60, 195, 120, 195)
     pdf.text(x=20, y=210, txt='Fecha: ')
     pdf.line(40, 210, 100, 210)
+    pdf.text(x=45, y=210, txt=fecha.strftime("%d/%m/%Y") if fecha else '')
     pdf.output('autorizacion.pdf', 'F')
     return FileResponse(open('autorizacion.pdf', 'rb'), as_attachment=True, content_type='application/pdf')
     #return redirect("listaSolicitud")
