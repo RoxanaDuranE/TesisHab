@@ -240,7 +240,6 @@ function cambiarUrlMicro(estado) {
                             $('#trCclienteFiadorRepo').fadeOut();
                         }
 
-
                         if (response[3] == "-0") {
                             btnDeclaracionJurada.href = "../../../SolicitudesApp/listaSC/declaracionjc/" + response[1]
 
