@@ -154,7 +154,7 @@ function cambiarUrlMicro(estado) {
         dataType: "json",
         success: function (response) {
             if (response != "-0") {               
-                if(cargo != 5){   
+                if(cargo != 5){
                     $('#trSolicitud').fadeIn();
                     $('#trEvaluacion').fadeIn();
                     $('#trConozCliente').fadeIn();
@@ -272,8 +272,8 @@ function cambiarUrlMicro(estado) {
                             progresoSeguroRepo.classList.add("progress-bar-success")
                             progreso = progreso + 1.66
                         }
-                    }
-                    if(cargo != 4){
+                }
+                    if(cargo != 4 && cargo != 3){
                         $('#trInspeccion').fadeIn();
                         $('#trPresupuesto').fadeIn();
                         if (tipoObra != "vivienda") { // **  mejora de vivienda
