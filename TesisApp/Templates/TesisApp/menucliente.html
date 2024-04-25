@@ -4,8 +4,9 @@
   <li><a><i class="fa fa-users"></i> Cliente <span class="fa fa-chevron-down"></span></a>
     <ul class="nav child_menu">
       <li><a href="{% url 'perfil'%}">Perfil de Cliente</a></li>
-      <li><a href="{% url 'listaClientesAdmin'%}">Administrar Clientes</a></li>
-      <!--li><a href="{% url 'listaPerfil'%}">Lista de Cliente</a></li-->
+      <li><a href="{% url 'administrarPerfil' id=request.user.agencia.Id%}">Administrar Clientes</a></li>
+      <!--li><a href="{% url 'listaClientesAdmin'%}">Administrar Clientes</a></li-->
+      <!--li><a href="{% url 'listaPerfil'%}">Lista de Cliente</a></li--{% url 'listarSNCA' id=request.user.agencia.Id%}>
     </ul>
   </li>
   
