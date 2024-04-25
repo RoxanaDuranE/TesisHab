@@ -6,21 +6,21 @@ function procesarDatosUsuario(userCargo) {
     // Procesa los datos del usuario aquí
     cargo = userCargo;
     console.log(cargo);
-  
-  }
+
+}
 
 fetch('/user-info/')
-  .then(response => response.json())
-  .then(data => {
-    // Procesa la información del usuario aquí
-    userData = data;
-    console.log(data);
-    procesarDatosUsuario(userData.cargo);
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
-  
+    .then(response => response.json())
+    .then(data => {
+        // Procesa la información del usuario aquí
+        userData = data;
+        console.log(data);
+        procesarDatosUsuario(userData.cargo);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+
 
 
 //botones para formularios
@@ -153,128 +153,128 @@ function cambiarUrlMicro(estado) {
         headers: { "X-CSRFToken": '{{ csrf_token }}' },
         dataType: "json",
         success: function (response) {
-            if (response != "-0") {               
-                if(cargo != 5){
+            if (response != "-0") {
+                if (cargo != 5) {
                     $('#trSolicitud').fadeIn();
                     $('#trEvaluacion').fadeIn();
                     $('#trConozCliente').fadeIn();
                     $('#trDeclaracionJ').fadeIn();
                     $('#trSeguro').fadeIn();
                 }
-                    if (estadoCliente == "2") {
-                        btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
-                        btnSolicitudCredito.href = "../../../EvaluacionMicroApp/listaEvaluacionm/solicitudMicro/" + idCliente
+                if (estadoCliente == "2") {
+                    btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
+                    btnSolicitudCredito.href = "../../../EvaluacionMicroApp/listaEvaluacionm/solicitudMicro/" + idCliente
 
+                    progresoEvaluacionMicro.classList.remove("progress-bar-dange")
+                    progresoEvaluacionMicro.classList.add("progress-bar-success")
+                    progreso++
+                }
+                if (parseInt(estadoCliente) > 3) {
+                    $('#home-tab').fadeIn();
+                    $('#btnDicom').fadeIn();
+                    if (response[11] == "-0") {
+                        btnDicom.href = "../../../HistorialApp/listaHis/registroHistCli/" + response[1]
+                    } else {
+                        btnDicom.href = "../../../HistorialApp/editHistCli/" + response[11]
+                    }
+                    $('#btnlistaChequeo').fadeIn();
+                    desactivarAlerta()
+                    progreso = 0.85
+                    idSoli = response[1]
+                    descipcion.textContent = "Progreso: Solicitud registrada"
+                    titulo.textContent = "Solicitud para ingresos provenientes de microempresa"
+                    btnSolicitudCredito.href = "../../../SolicitudesApp/listaSoli/modificarSolicitudMicro/" + response[1]
+                    btnSolicitudRepo.onclick = ""
+                    btnSolicitudRepo.href = "../../../SolicitudesApp/listaSC/solic/" + response[1] + "/" + idCliente
+                    progresoSoliMicro.classList.remove("progress-bar-dange")
+                    progresoSoliMicro.classList.add("progress-bar-success")
+                    progresoSolicitudRepo.classList.remove("progress-bar-dange")
+                    progresoSolicitudRepo.classList.add("progress-bar-success")
+                    if (response[0] == "-0") {
+                        btnEvaluacion.href = "../../listaPerfil/evaluacionm/" + idCliente
+                    } else {
+                        btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
                         progresoEvaluacionMicro.classList.remove("progress-bar-dange")
                         progresoEvaluacionMicro.classList.add("progress-bar-success")
-                        progreso++
-                    }
-                    if (parseInt(estadoCliente) > 3) {
-                        $('#home-tab').fadeIn();
-                        $('#btnDicom').fadeIn();
-                        if (response[11] == "-0") {
-                            btnDicom.href = "../../../HistorialApp/listaHis/registroHistCli/" + response[1]
-                        } else {
-                            btnDicom.href = "../../../HistorialApp/editHistCli/" + response[11]
-                        }
-                        $('#btnlistaChequeo').fadeIn();
-                        desactivarAlerta()
+                        btnEvaluacioRepo.onclick = ""
+                        btnEvaluacioRepo.href = "../../../EvaluacionMicroApp/listaEvaluacionm/evaluacionIM/" + response[0]
+                        progresoEvaluacionRepo.classList.remove("progress-bar-dange")
+                        progresoEvaluacionRepo.classList.add("progress-bar-success")
+                        descipcion.textContent = "Progreso: Evaluacion de Microempresa"
                         progreso = 0.85
-                        idSoli = response[1]
-                        descipcion.textContent = "Progreso: Solicitud registrada"
-                        titulo.textContent = "Solicitud para ingresos provenientes de microempresa"
-                        btnSolicitudCredito.href = "../../../SolicitudesApp/listaSoli/modificarSolicitudMicro/" + response[1]
-                        btnSolicitudRepo.onclick = ""
-                        btnSolicitudRepo.href = "../../../SolicitudesApp/listaSC/solic/" + response[1] + "/" + idCliente
-                        progresoSoliMicro.classList.remove("progress-bar-dange")
-                        progresoSoliMicro.classList.add("progress-bar-success")
-                        progresoSolicitudRepo.classList.remove("progress-bar-dange")
-                        progresoSolicitudRepo.classList.add("progress-bar-success")
-                        if(response[0] == "-0"){
-                            btnEvaluacion.href = "../../listaPerfil/evaluacionm/" +idCliente
-                        }else{
-                            btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
-                            progresoEvaluacionMicro.classList.remove("progress-bar-dange")
-                            progresoEvaluacionMicro.classList.add("progress-bar-success")
-                            btnEvaluacioRepo.onclick=""
-                            btnEvaluacioRepo.href = "../../../EvaluacionMicroApp/listaEvaluacionm/evaluacionIM/" + response[0]
-                            progresoEvaluacionRepo.classList.remove("progress-bar-dange")
-                            progresoEvaluacionRepo.classList.add("progress-bar-success")
-                            descipcion.textContent = "Progreso: Evaluacion de Microempresa"                        
-                            progreso = 0.85
-                        }
+                    }
 
-                        if (response[2] == "-0") {
-                            btnConozCliente.href = "../../../SolicitudesApp/listaSC/ccliente/" + response[1]
+                    if (response[2] == "-0") {
+                        btnConozCliente.href = "../../../SolicitudesApp/listaSC/ccliente/" + response[1]
+
+                    } else {
+                        btnConozCliente.href = "../../../ConozcaClienteApp/listaCC/editarCliente/" + response[2]
+                        btnConozClienteRepo.onclick = ""
+                        btnConozClienteRepo.href = "../../../ConozcaClienteApp/listaCC/conozcaC/" + response[2]
+                        descipcion.textContent = "Progreso: formulario conozca a su cliente"
+
+                        progresoConozcaCliente.classList.remove("progress-bar-danger")
+                        progresoConozcaCliente.classList.add("progress-bar-success")
+                        progresoConozcaClienteRepo.classList.remove("progress-bar-danger")
+                        progresoConozcaClienteRepo.classList.add("progress-bar-success")
+                        progreso = progreso + 0.83
+                    }
+
+                    if (response[13] != "-1") {
+                        if (response[13] == "-0") {
+                            btnConozClienteFiador.href = "../../../ConozcaClienteApp/cclientedgf/?idsol=" + response[1]
 
                         } else {
-                            btnConozCliente.href = "../../../ConozcaClienteApp/listaCC/editarCliente/" + response[2]
-                            btnConozClienteRepo.onclick = ""
-                            btnConozClienteRepo.href = "../../../ConozcaClienteApp/listaCC/conozcaC/" + response[2]
-                            descipcion.textContent = "Progreso: formulario conozca a su cliente"
+                            btnConozClienteFiador.href = "../../../ConozcaClienteApp/listaCC/editarCliente/" + response[13]
+                            btnConozClienteRepoFiador.onclick = ""
+                            btnConozClienteRepoFiador.href = "../../../ConozcaClienteApp/listaCC/conozcaC/" + response[13]
+                            descipcion.textContent = "Progreso: formulario conozca a su cliente-fiador"
 
-                            progresoConozcaCliente.classList.remove("progress-bar-danger")
-                            progresoConozcaCliente.classList.add("progress-bar-success")
-                            progresoConozcaClienteRepo.classList.remove("progress-bar-danger")
-                            progresoConozcaClienteRepo.classList.add("progress-bar-success")
+                            progresoConozcaClienteFiador.classList.remove("progress-bar-danger")
+                            progresoConozcaClienteFiador.classList.add("progress-bar-success")
+                            progresoConozcaClienteRepoFiador.classList.remove("progress-bar-danger")
+                            progresoConozcaClienteRepoFiador.classList.add("progress-bar-success")
                             progreso = progreso + 0.83
                         }
+                    } else {
+                        $('#trCclienteFiador').fadeOut();
+                        $('#trCclienteFiadorRepo').fadeOut();
+                    }
 
-                        if (response[13] != "-1") {
-                            if (response[13] == "-0") {
-                                btnConozClienteFiador.href = "../../../ConozcaClienteApp/cclientedgf/?idsol=" + response[1]
+                    if (response[3] == "-0") {
+                        btnDeclaracionJurada.href = "../../../SolicitudesApp/listaSC/declaracionjc/" + response[1]
 
-                            } else {
-                                btnConozClienteFiador.href = "../../../ConozcaClienteApp/listaCC/editarCliente/" + response[13]
-                                btnConozClienteRepoFiador.onclick = ""
-                                btnConozClienteRepoFiador.href = "../../../ConozcaClienteApp/listaCC/conozcaC/" + response[13]
-                                descipcion.textContent = "Progreso: formulario conozca a su cliente-fiador"
+                    } else {
+                        btnDeclaracionJurada.href = "../../../DeclaracionJurClienteApp/listaDJ/editarDJ/" + response[3]
+                        descipcion.textContent = "Progreso: Declaracion jurada cliente"
+                        btnDeclaracionJuradaRepo.onclick = ""
+                        btnDeclaracionJuradaRepo.href = "../../../DeclaracionJurClienteApp/listaDJ/declaracionjc/" + response[3] + "/" + idCliente
 
-                                progresoConozcaClienteFiador.classList.remove("progress-bar-danger")
-                                progresoConozcaClienteFiador.classList.add("progress-bar-success")
-                                progresoConozcaClienteRepoFiador.classList.remove("progress-bar-danger")
-                                progresoConozcaClienteRepoFiador.classList.add("progress-bar-success")
-                                progreso = progreso + 0.83
-                            }
-                        } else {
-                            $('#trCclienteFiador').fadeOut();
-                            $('#trCclienteFiadorRepo').fadeOut();
-                        }
+                        progresoDeclaracion.classList.remove("progress-bar-dange")
+                        progresoDeclaracion.classList.add("progress-bar-success")
+                        progresoDeclaracionRepo.classList.remove("progress-bar-dange")
+                        progresoDeclaracionRepo.classList.add("progress-bar-success")
 
-                        if (response[3] == "-0") {
-                            btnDeclaracionJurada.href = "../../../SolicitudesApp/listaSC/declaracionjc/" + response[1]
+                        progreso = progreso + 1.66
+                    }
 
-                        } else {
-                            btnDeclaracionJurada.href = "../../../DeclaracionJurClienteApp/listaDJ/editarDJ/" + response[3]
-                            descipcion.textContent = "Progreso: Declaracion jurada cliente"
-                            btnDeclaracionJuradaRepo.onclick = ""
-                            btnDeclaracionJuradaRepo.href = "../../../DeclaracionJurClienteApp/listaDJ/declaracionjc/" + response[3] + "/" + idCliente
+                    if (response[4] == "-0") {
+                        btnInscripcionSeguro.href = "../../../SolicitudesApp/listaSC/solicitudI/" + response[1]
 
-                            progresoDeclaracion.classList.remove("progress-bar-dange")
-                            progresoDeclaracion.classList.add("progress-bar-success")
-                            progresoDeclaracionRepo.classList.remove("progress-bar-dange")
-                            progresoDeclaracionRepo.classList.add("progress-bar-success")
+                    } else {
+                        btnInscripcionSeguro.href = "../../../SolicitudInscripcionSApp/listaIS/editarSIS/" + response[4]
+                        descipcion.textContent = "Progreso: Inscripción de seguro"
+                        btnInscripcionSeguroRepo.onclick = ""
+                        btnInscripcionSeguroRepo.href = "../../../SolicitudInscripcionSApp/listaIS/seguro/" + response[1]
 
-                            progreso = progreso + 1.66
-                        }
+                        progresoSeguro.classList.remove("progress-bar-dange")
+                        progresoSeguro.classList.add("progress-bar-success")
+                        progresoSeguroRepo.classList.remove("progress-bar-dange")
+                        progresoSeguroRepo.classList.add("progress-bar-success")
+                        progreso = progreso + 1.66
+                    }
 
-                        if (response[4] == "-0") {
-                            btnInscripcionSeguro.href = "../../../SolicitudesApp/listaSC/solicitudI/" + response[1]
-
-                        } else {
-                            btnInscripcionSeguro.href = "../../../SolicitudInscripcionSApp/listaIS/editarSIS/" + response[4]
-                            descipcion.textContent = "Progreso: Inscripción de seguro"
-                            btnInscripcionSeguroRepo.onclick = ""
-                            btnInscripcionSeguroRepo.href = "../../../SolicitudInscripcionSApp/listaIS/seguro/" + response[1]
-
-                            progresoSeguro.classList.remove("progress-bar-dange")
-                            progresoSeguro.classList.add("progress-bar-success")
-                            progresoSeguroRepo.classList.remove("progress-bar-dange")
-                            progresoSeguroRepo.classList.add("progress-bar-success")
-                            progreso = progreso + 1.66
-                        }
-                
-                    if(cargo != 4 && cargo != 3){
+                    if (cargo != 4 && cargo != 3) {
                         $('#trInspeccion').fadeIn();
                         $('#trPresupuesto').fadeIn();
                         if (tipoObra != "vivienda") { // **  mejora de vivienda
@@ -477,8 +477,8 @@ function cambiarUrlNatural(estado) {
         dataType: "json",
         success: function (response) {
             if (response != "-0") {
-                titulo.textContent = "Solicitud Personal" 
-                if(cargo != 5){   
+                titulo.textContent = "Solicitud Personal"
+                if (cargo != 5) {
                     $('#trSolicitud').fadeIn();
                     $('#trEvaluacion').fadeIn();
                     $('#trConozCliente').fadeIn();
@@ -511,18 +511,18 @@ function cambiarUrlNatural(estado) {
                         btnSolicitudRepo.onclick = ""
                         btnSolicitudRepo.href = "../../../NaturalApp/listarSNC/soliPer/" + response[1]
                         progresoSolicitudRepo.classList.remove("progress-bar-dange")
-                        progresoSolicitudRepo.classList.add("progress-bar-success")                    
-                        if(response[0] == "-0"){
+                        progresoSolicitudRepo.classList.add("progress-bar-success")
+                        if (response[0] == "-0") {
                             btnEvaluacion.href = "../../listaPerfil/evaluacionf/" + idCliente
-                        }else{
+                        } else {
                             btnEvaluacion.href = "../../../EvaluacionIvEFApp/listaEvaluacion/editarEvaluacion/" + response[0]
                             progresoEvaluacionMicro.classList.remove("progress-bar-dange")
                             progresoEvaluacionMicro.classList.add("progress-bar-success")
-                            btnEvaluacioRepo.onclick=""
+                            btnEvaluacioRepo.onclick = ""
                             btnEvaluacioRepo.href = "../../../EvaluacionIvEFApp/listaEvaluacion/evaluacionIvEF/" + response[0]
                             progresoEvaluacionRepo.classList.remove("progress-bar-dange")
                             progresoEvaluacionRepo.classList.add("progress-bar-success")
-                            descipcion.textContent = "Progreso: Evaluación de Ingresos vs Egresos"                        
+                            descipcion.textContent = "Progreso: Evaluación de Ingresos vs Egresos"
                             progreso = 0.85
                         }
                         if (response[2] == "-0") {
@@ -591,9 +591,9 @@ function cambiarUrlNatural(estado) {
                             progresoSeguroRepo.classList.remove("progress-bar-dange")
                             progresoSeguroRepo.classList.add("progress-bar-success")
                             progreso = progreso + 1.66
-                        }                    
+                        }
                     }
-                    if(cargo != 4){
+                    if (cargo != 4) {
                         $('#trInspeccion').fadeIn();
                         $('#trPresupuesto').fadeIn();
                         if (tipoObra != "vivienda") { //  mejora de vivienda
