@@ -519,7 +519,7 @@ def distri(request):
     idmuni=request.GET['municipio']
     idmuni=Municipio.objects.get(Id=idmuni)
     destri=Distrito.objects.filter(IdMunicipio=idmuni)
-    print(' paso '+str(destri))
+    #print(' paso '+str(destri))
     return render(request,"ClienteApp/distrito.html", {"MuniDistrito":destri})
 
 def municipio(request):

@@ -87,7 +87,7 @@ def mu(request):
                 lista_muni.append({"id":item.Id, "nombre":item.NombreMuni})
         except Exception:
             None
-        print("pasoo"+str(muni))
+        #print("pasoo"+str(muni))
         serialized_data = json.dumps(lista_muni,default=str)
         #serialized_data = serialize("safe",[lista_muni])
         return HttpResponse(serialized_data, content_type="application/json")
@@ -175,7 +175,7 @@ def mun(request):
                 lista_distri.append({"id":item.Id, "nombre":item.Distrito})
         except Exception:
             None
-        print("pasoo"+str(muni))
+        #print("pasoo"+str(muni))
         serialized_data = json.dumps(lista_distri,default=str)
         #serialized_data = serialize("safe",[lista_muni])
         return HttpResponse(serialized_data, content_type="application/json")
