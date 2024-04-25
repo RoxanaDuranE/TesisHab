@@ -154,12 +154,15 @@ function cambiarUrlMicro(estado) {
         dataType: "json",
         success: function (response) {
             if (response != "-0") {
-                if (cargo != 5) {
+                if (cargo != 5 && cargo != 3) {
                     $('#trSolicitud').fadeIn();
                     $('#trEvaluacion').fadeIn();
                     $('#trConozCliente').fadeIn();
                     $('#trDeclaracionJ').fadeIn();
                     $('#trSeguro').fadeIn();
+                }else if(cargo==3){
+                    $('#trSolicitud').fadeIn();
+                    $('#trEvaluacion').fadeIn();
                 }
                 if (estadoCliente == "2") {
                     btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
@@ -478,12 +481,15 @@ function cambiarUrlNatural(estado) {
         success: function (response) {
             if (response != "-0") {
                 titulo.textContent = "Solicitud Personal"
-                if (cargo != 5 ) {
+                if (cargo != 5 && cargo != 3) {
                     $('#trSolicitud').fadeIn();
                     $('#trEvaluacion').fadeIn();
                     $('#trConozCliente').fadeIn();
                     $('#trDeclaracionJ').fadeIn();
                     $('#trSeguro').fadeIn();
+                }else if(cargo==3){
+                    $('#trSolicitud').fadeIn();
+                    $('#trEvaluacion').fadeIn();
                 }
                 if (estadoCliente == "3") {
                     progresoEvaluacionMicro.classList.remove("progress-bar-dange")
@@ -594,7 +600,7 @@ function cambiarUrlNatural(estado) {
                         progreso = progreso + 1.66
                     }
 
-                    if (cargo != 4) {
+                    if (cargo != 4 && cargo != 3) {
                         $('#trInspeccion').fadeIn();
                         $('#trPresupuesto').fadeIn();
                         if (tipoObra != "vivienda") { //  mejora de vivienda
