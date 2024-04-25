@@ -160,6 +160,7 @@ function cambiarUrlMicro(estado) {
                     $('#trConozCliente').fadeIn();
                     $('#trDeclaracionJ').fadeIn();
                     $('#trSeguro').fadeIn();
+                }
                     if (estadoCliente == "2") {
                         btnEvaluacion.href = "../../../EvaluacionMicroApp/listaEvaluacionm/editarEvaluacionm/" + response[0]
                         btnSolicitudCredito.href = "../../../EvaluacionMicroApp/listaEvaluacionm/solicitudMicro/" + idCliente
@@ -272,7 +273,7 @@ function cambiarUrlMicro(estado) {
                             progresoSeguroRepo.classList.add("progress-bar-success")
                             progreso = progreso + 1.66
                         }
-                }
+                
                     if(cargo != 4 && cargo != 3){
                         $('#trInspeccion').fadeIn();
                         $('#trPresupuesto').fadeIn();
