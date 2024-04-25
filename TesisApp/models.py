@@ -4,6 +4,7 @@ from tabnanny import verbose
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager 
 from ConfiguracionApp.models import Agencia
+from ClienteApp.models import Perfil
 import uuid
 
 class UsuarioManager(BaseUserManager): #metodos consultas cre
@@ -37,6 +38,7 @@ class Usuario(AbstractBaseUser):
     usuario_administrador=models.BooleanField(default= False)
     token=models.UUIDField(primary_key=False, editable=False, null=True, blank=True)
     estado=models.BooleanField(default=0) #Usuario inactivo
+    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE, null=True)
     objects = UsuarioManager()
    
     USERNAME_FIELD='username'  #Inicio de sesion del administrador de django
