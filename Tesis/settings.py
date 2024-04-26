@@ -119,7 +119,7 @@ STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         'NAME': 'railway',
@@ -128,8 +128,18 @@ DATABASES = {
         'HOST':'monorail.proxy.rlwy.net',
         'PORT':"24566",
     }
-}
+}"""
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        'NAME': 'railway',
+        'USER':'postgres',
+        'PASSWORD':'kwqYybOuLduKNZSCyUdqhFAmowoUGnfx',
+        'HOST':'monorail.proxy.rlwy.net',
+        'PORT':"59782",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
