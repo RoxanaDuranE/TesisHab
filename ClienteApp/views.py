@@ -231,8 +231,8 @@ def registrarPerfil(request):
         perfil=Perfil.objects.create(Nombres=nombres,Apellidos=apellidos,Dui=dui,Telefono=telefono,Nacionalidad=nacionalidad,FechaNaci=fecha,Edad=edad,IdOcupacion=idocu,Salario=sal,IdDistrito=muni,Direccion=direccion,Correo=correo,Contrasena=cont,ContrasenaVeri=rcont,Estado=esta,IdAgencia=zo,EstadoSoli=estadosoli)
         registroBit(request, "Registro de perfil" + nombres + " " + apellidos + " DUI " + dui, "Registro")
         ####### Registrar cliente para que pueda iniciar sesion
-        
-        login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1)
+        per=Perfil.objects.get(Dui=dui)
+        login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1, perfil=per.Id)
         mensaje="Datos guardados"
         messages.success(request, mensaje)
     usua=request.user.iduser
@@ -364,7 +364,7 @@ def registrarPerfilc(request):
         perfil=Perfil.objects.create(Nombres=nombres,Apellidos=apellidos,Dui=dui,Telefono=telefono,Nacionalidad=nacionalidad,FechaNaci=fecha,Edad=edad,IdOcupacion=idocu,Salario=sal,IdDistrito=muni,Direccion=direccion,Correo=correo,Contrasena=cont,ContrasenaVeri=rcont,Estado=esta,IdAgencia=zo,EstadoSoli=estadosoli)
         #registroBit(request, "Registro de perfil" + nombres + " " + apellidos + " DUI " + dui, "Registro")
         ####### Registrar cliente para que pueda iniciar sesion
-        
+        per=Perfil.objects.get(Dui=dui)
         login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1)
         mensaje="Datos guardados"
         messages.success(request, mensaje)
