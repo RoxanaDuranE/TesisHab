@@ -232,7 +232,7 @@ def registrarPerfil(request):
         registroBit(request, "Registro de perfil" + nombres + " " + apellidos + " DUI " + dui, "Registro")
         ####### Registrar cliente para que pueda iniciar sesion
         per=Perfil.objects.get(Dui=dui)
-        login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1, perfil=per.Id)
+        login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1, perfil=per)
         mensaje="Datos guardados"
         messages.success(request, mensaje)
     usua=request.user.iduser
@@ -365,7 +365,7 @@ def registrarPerfilc(request):
         #registroBit(request, "Registro de perfil" + nombres + " " + apellidos + " DUI " + dui, "Registro")
         ####### Registrar cliente para que pueda iniciar sesion
         per=Perfil.objects.get(Dui=dui)
-        login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1)
+        login=Usuario.objects.create(username=username, nombre=nombres,apellido=apellidos, cargo=3, email=correo, password=cont, agencia=zo, estado=1, perfil=per.Id)
         mensaje="Datos guardados"
         messages.success(request, mensaje)
         
